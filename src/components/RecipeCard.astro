@@ -18,6 +18,7 @@ const { recipe } = Astro.props;
     </div>
     <div class="content">
         <h3>{recipe.data.title}</h3>
+        <p>{recipe.data.subtitle}</p>
     </div>
 </li>
 
@@ -52,7 +53,12 @@ const { recipe } = Astro.props;
         padding: 1rem;
 
         h3 {
-            margin-block-start: 0;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            color: #808080;
         }
     }
 </style>

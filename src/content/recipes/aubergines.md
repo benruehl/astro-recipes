@@ -1,5 +1,6 @@
 ---
 title: Auberginen
+subtitle: mit Miso-Marinade
 image: ./aubergines.jpg
 ingredients: []
 source: https://youtu.be/BDwLAn_N_ZU?t=292
