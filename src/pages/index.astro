@@ -1,19 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import RecipeGrid from '../components/RecipeGrid.astro';
 import Layout from '../layouts/Layout.astro';
-import RecipeCard from '../components/RecipeCard.astro';
-
-const allRecipes = await getCollection('recipes');
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<ul>
-			{allRecipes.map(recipe => (
-				<RecipeCard recipe={recipe}/>
-			))}
-		</ul>
+		<RecipeGrid/>
 	</main>
 </Layout>
 
@@ -23,7 +16,6 @@ const allRecipes = await getCollection('recipes');
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}

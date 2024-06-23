@@ -1,0 +1,32 @@
+---
+interface Props {
+  gap?: string;
+  maxColumns?: number;
+  minItemWidth?: string;
+}
+
+const { gap = "1rem", maxColumns = 8, minItemWidth = "100px" } = Astro.props;
+---
+
+<ul class="grid">
+    <slot/>
+</ul>
+
+<style define:vars={{
+    "grid-layout-gap": gap,
+    "grid-column-count": maxColumns,
+    "grid-item-min-width": minItemWidth
+}}>
+    /**
+    * See https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
+    */
+    .grid {
+        --gap-count: calc(var(--grid-column-count) - 1);
+        --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+        --grid-item-max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item-min-width), var(--grid-item-max-width)), 1fr));
+        grid-gap: var(--grid-layout-gap);
+    }
+</style>

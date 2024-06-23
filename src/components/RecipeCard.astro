@@ -12,6 +12,47 @@ const { recipe } = Astro.props;
 ---
 
 <li>
-    <h3>{recipe.data.title}</h3>
-    <Image src={recipe.data.image} alt={recipe.data.title}/>
+    <div class="header">
+        <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
+        <Image src={recipe.data.image} alt={recipe.data.title}/>
+    </div>
+    <div class="content">
+        <h3>{recipe.data.title}</h3>
+    </div>
 </li>
+
+<style lang="scss">
+    li {
+        all: unset;
+    }
+
+    .header {
+        display: grid;
+        grid-template-areas: "overlay";
+    }
+
+    img {
+        grid-area: overlay;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 1rem;
+
+        &.image-blur {
+            z-index: -1;
+            filter: blur(10px);
+            scale: .95;
+            translate: 0 15px;
+            opacity: .5;
+        }
+    }
+
+    .content {
+        padding: 1rem;
+
+        h3 {
+            margin-block-start: 0;
+        }
+    }
+</style>

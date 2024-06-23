@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import RecipeCard from '../components/RecipeCard.astro';
+import Grid from './Grid.astro';
+
+const allRecipes = await getCollection('recipes');
+---
+
+<Grid minItemWidth="300px" maxColumns={3}>
+    {allRecipes.map(recipe => (
+        <RecipeCard recipe={recipe}/>
+    ))}
+</Grid>
