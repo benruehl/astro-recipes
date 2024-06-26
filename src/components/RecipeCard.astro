@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { Icon } from "astro-icon/components";
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -15,6 +16,10 @@ const { recipe } = Astro.props;
     <div class="header">
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
         <Image src={recipe.data.image} alt={recipe.data.title}/>
+        <div class="total-time">
+            <Icon name="solar:clock-circle-outline" size={18} />
+            {recipe.data.totalTime}
+        </div>
     </div>
     <div class="content">
         <h3>{recipe.data.title}</h3>
@@ -30,22 +35,36 @@ const { recipe } = Astro.props;
     .header {
         display: grid;
         grid-template-areas: "overlay";
-    }
 
-    img {
-        grid-area: overlay;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 1rem;
+        img {
+            grid-area: overlay;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 1rem;
 
-        &.image-blur {
-            z-index: -1;
-            filter: blur(10px);
-            scale: .95;
-            translate: 0 15px;
-            opacity: .5;
+            &.image-blur {
+                z-index: -1;
+                filter: blur(10px);
+                scale: .95;
+                translate: 0 15px;
+                opacity: .5;
+            }
+        }
+
+        .total-time {
+            grid-area: overlay;
+            justify-self: flex-end;
+            align-self: flex-end;
+            margin: 1rem;
+            background: rgba(var(--page-background), .8);
+            border-radius: .5rem;
+            padding: 0 .5em;
+            display: flex;
+            align-items: center;
+            gap: .5ch;
+            backdrop-filter: blur(10px);
         }
     }
 

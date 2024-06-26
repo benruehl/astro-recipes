@@ -2,6 +2,8 @@
 title: Coleslaw
 subtitle: mit Spitzkohl
 image: ./coleslaw.jpg
+category: SideDish
+totalTime: 30 min
 ingredients: []
 source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-15-minuten-rezepte-13/coleslaw-286
 ---

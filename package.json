@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
+    "@iconify-json/solar": "^1.1.9",
     "astro": "^4.11.0",
+    "astro-icon": "^1.1.0",
     "sass": "^1.77.6",
     "typescript": "^5.5.2"
   }

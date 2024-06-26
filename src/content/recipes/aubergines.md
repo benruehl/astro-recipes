@@ -2,6 +2,8 @@
 title: Auberginen
 subtitle: mit Miso-Marinade
 image: ./aubergines.jpg
+category: SideDish
+totalTime: 15 min
 ingredients: []
 source: https://youtu.be/BDwLAn_N_ZU?t=292
 ---

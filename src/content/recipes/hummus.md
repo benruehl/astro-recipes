@@ -2,6 +2,8 @@
 title: Hummus
 subtitle: mit Karotten
 image: ./hummus.jpg
+category: SideDish
+totalTime: 60 min
 ingredients: []
 source: "https://youtu.be/BDwLAn_N_ZU?t=138"
 ---
