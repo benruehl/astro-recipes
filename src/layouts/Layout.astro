@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
 	title: string;
 }
@@ -15,6 +17,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions/>
 	</head>
 	<body>
 		<slot />
@@ -46,6 +49,7 @@ const { title } = Astro.props;
 		font-size: min(5rem, 14vw);
 		line-height: 1;
 		margin-bottom: 1em;
+		text-align: center;
 	}
 
 	h2 {
@@ -69,5 +73,12 @@ const { title } = Astro.props;
 		/* @media (max-width: $sm) {
 			font-size: 1.8rem;
 		} */
+	}
+	
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
 	}
 </style>

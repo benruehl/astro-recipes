@@ -12,7 +12,7 @@ interface Props {
 const { recipe } = Astro.props;
 ---
 
-<li>
+<a href=`/recipes/${recipe.slug}`>
     <div class="header">
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
         <Image src={recipe.data.image} alt={recipe.data.title}/>
@@ -25,10 +25,10 @@ const { recipe } = Astro.props;
         <h3>{recipe.data.title}</h3>
         <p>{recipe.data.subtitle}</p>
     </div>
-</li>
+</a>
 
 <style lang="scss">
-    li {
+    a {
         all: unset;
     }
 
@@ -43,6 +43,13 @@ const { recipe } = Astro.props;
             aspect-ratio: 16 / 9;
             object-fit: cover;
             border-radius: 1rem;
+            cursor: pointer;
+            transition: transform .2s ease;
+
+            &:hover,
+            &:focus-visible {
+                transform: scale(1.015);
+            }
 
             &.image-blur {
                 z-index: -1;
@@ -50,6 +57,7 @@ const { recipe } = Astro.props;
                 scale: .95;
                 translate: 0 15px;
                 opacity: .5;
+                pointer-events: none;
             }
         }
 

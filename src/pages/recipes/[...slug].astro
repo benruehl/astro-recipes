@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import RecipeGrid from '../../components/RecipeGrid.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const allRecipes = await getCollection('recipes');
+  	return allRecipes.map(recipe => ({
+		params: { slug: recipe.slug },
+		props: { recipe },
+	}));
+}
+
+type Recipe = CollectionEntry<'recipes'>;
+
+interface Props {
+  recipe: Recipe;
+}
+
+const { recipe } = Astro.props;
+const { Content } = await recipe.render();
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<RecipeGrid/>
+		<aside>
+			<Content/>
+		</aside>
+	</main>
+</Layout>
