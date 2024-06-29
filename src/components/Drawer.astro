@@ -1,0 +1,12 @@
+<div class="container">
+    <slot/>
+    <slot name="right"/>
+</div>
+
+<style lang="scss">
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+</style>

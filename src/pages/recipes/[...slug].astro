@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import RecipeGrid from '../../components/RecipeGrid.astro';
 import Layout from '../../layouts/Layout.astro';
+import Drawer from '../../components/Drawer.astro';
+import RecipeDetails from '../../components/RecipeDetails.astro';
 
 export async function getStaticPaths() {
 	const allRecipes = await getCollection('recipes');
@@ -19,15 +21,16 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
-const { Content } = await recipe.render();
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<RecipeGrid/>
-		<aside>
-			<Content/>
-		</aside>
+		<Drawer>
+			<RecipeGrid/>
+			<slot name="right">
+				<RecipeDetails recipe={recipe}/>
+			</slot>
+		</Drawer>
 	</main>
 </Layout>

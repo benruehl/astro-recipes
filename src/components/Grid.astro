@@ -8,9 +8,9 @@ interface Props {
 const { gap = "1rem", maxColumns = 8, minItemWidth = "100px" } = Astro.props;
 ---
 
-<ul class="grid">
+<div class="grid">
     <slot/>
-</ul>
+</div>
 
 <style define:vars={{
     "grid-layout-gap": gap,
