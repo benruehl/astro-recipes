@@ -30,6 +30,15 @@ const { recipe } = Astro.props;
 <style lang="scss">
     a {
         all: unset;
+        cursor: pointer;
+        border-radius: 1rem;
+
+        &:hover,
+        &:focus-visible {
+            img {
+                transform: scale(1.015);
+            }
+        }
     }
 
     .header {
@@ -43,13 +52,7 @@ const { recipe } = Astro.props;
             aspect-ratio: 16 / 9;
             object-fit: cover;
             border-radius: 1rem;
-            cursor: pointer;
             transition: transform .2s ease;
-
-            &:hover,
-            &:focus-visible {
-                transform: scale(1.015);
-            }
 
             &.image-blur {
                 z-index: -1;
