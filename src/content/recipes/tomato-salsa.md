@@ -3,7 +3,7 @@ title: Tomatensalsa
 subtitle: mit Jalapeño und Chipotle Paste
 image: ./tomato-salsa.jpg
 category: SideDish
-totalTime: 20 min
+totalTime: 40 min
 ingredients: []
 source: https://youtu.be/sTFJJCX0RRY?t=500
 ---
