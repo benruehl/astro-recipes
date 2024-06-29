@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { Icon } from "astro-icon/components";
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -17,6 +18,9 @@ const { Content } = await recipe.render();
     <h3>{recipe.data.title}</h3>
     <p>{recipe.data.subtitle}</p>
     <Content/>
+    <a class="close-button" href="/" aria-label="Schließen">
+        <Icon name="solar:close-circle-bold-duotone" size={42}/>
+    </a>
 </aside>
 
 <style lang="scss">
@@ -45,5 +49,13 @@ const { Content } = await recipe.render();
     p {
         margin: 0;
         color: #808080;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        border-radius: 100px;
+        line-height: 0;
     }
 </style>
