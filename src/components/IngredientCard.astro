@@ -6,9 +6,10 @@ type Recipe = CollectionEntry<'recipes'>;
 
 interface Props {
   ingredient: Recipe["data"]["ingredients"][0];
+  size: "small" | "large";
 }
 
-const { ingredient } = Astro.props;
+const { ingredient, size } = Astro.props;
 
 const imageMap: { [id in Recipe["data"]["ingredients"][0]["name"]] : string } = {
     "Aubergine": "aubergine.jpg",
@@ -31,9 +32,18 @@ const imageFileName = imageMap[ingredient.name];
 const imageFile = ingredientImages.find(file => file.src.includes(`/${imageFileName}?`));
 ---
 
-<div class="card">
-    <Image src={imageFile} alt={ingredient.name} width={70} height={50}/>
-    <p>{ingredient.name}</p>
+<div class:list={["card", size]}>
+    <Image
+        src={imageFile}
+        alt={ingredient.name}
+        width={size === 'large' ? 100 : 60}
+        height={size === 'large' ? 70 : 40}
+    />
+    <p>
+        {ingredient.name}
+        <br/>
+        <span class="amount">{ingredient.amount}</span>
+    </p>
 </div>
 
 <style lang="scss">
@@ -44,16 +54,25 @@ const imageFile = ingredientImages.find(file => file.src.includes(`/${imageFileN
         gap: .5rem;
         background: hsl(51, 80%, 94%);
         border-radius: 1rem;
-        padding: .5rem 1rem;
+        padding: .5rem 1rem .75rem 1rem;
+
+        &.large {
+            padding: .5rem 1rem .75rem 1rem;
+        }
     }
+    
+        img {
+            object-fit: contain;
+            object-position: center 75%;
+            mix-blend-mode: multiply;
+        }
 
     p {
         margin: 0;
+        line-height: 1;
     }
 
-    img {
-        object-fit: contain;
-        object-position: center 75%;
-        mix-blend-mode: multiply;
+    .amount {
+        opacity: .5;
     }
 </style>

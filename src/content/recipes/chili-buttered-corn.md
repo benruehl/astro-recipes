@@ -14,12 +14,10 @@ ingredients: [
         amount: "3 EL"
     },
     {
-        name: "Öl",
-        amount: "Schuss"
+        name: "Öl"
     },
     {
-        name: "Frühlingszwiebel",
-        amount: "1 x"
+        name: "Frühlingszwiebel"
     },
     {
         name: "Chili"

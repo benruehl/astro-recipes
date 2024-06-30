@@ -19,9 +19,20 @@ const { Content } = await recipe.render();
     <h3>{recipe.data.title}</h3>
     <p>{recipe.data.subtitle}</p>
     <div class="ingredient-grid">
-        {recipe.data.ingredients.map(ingredient => (
-            <IngredientCard ingredient={ingredient}/>
-        ))}
+        {recipe.data.ingredients
+            .filter(ingredient => ingredient.hasOwnProperty("amount"))
+            .map(ingredient => (
+                <IngredientCard ingredient={ingredient} size="large"/>
+            )
+        )}
+    </div>
+    <div class="ingredient-grid">
+        {recipe.data.ingredients
+            .filter(ingredient => !ingredient.hasOwnProperty("amount"))
+            .map(ingredient => (
+                <IngredientCard ingredient={ingredient} size="small"/>
+            )
+        )}
     </div>
     <Content/>
     <a class="close-button" href="/" aria-label="Schließen">
@@ -61,6 +72,7 @@ const { Content } = await recipe.render();
         display: flex;
         flex-wrap: wrap;
         gap: .5rem;
+        margin-top: 1.5rem;
     }
 
     .close-button {

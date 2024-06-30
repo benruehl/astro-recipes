@@ -15,8 +15,7 @@ ingredients: [
         amount: "1 EL"
     },
     {
-        name: "Öl",
-        amount: "Schuss"
+        name: "Öl"
     },
     {
         name: "Honig",
@@ -27,8 +26,7 @@ ingredients: [
         amount: "1 Zehe"
     },
     {
-        name: "Chili",
-        amount: "Kleine Schote"
+        name: "Chili"
     }
 ]
 ---
