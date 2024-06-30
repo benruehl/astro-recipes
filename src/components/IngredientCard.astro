@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { mapIngredientFile } from '../utils/ingredients';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -11,35 +12,10 @@ interface Props {
 
 const { ingredient, size } = Astro.props;
 
-const imageMap: { [id in Recipe["data"]["ingredients"][0]["name"]] : string } = {
-    "Apfel": "apple.jpg",
-    "Aubergine": "aubergine.jpg",
-    "Butter": "butter.png",
-    "Chili": "chili.png",
-    "Creme Vega": "creme-vega.jpg",
-    "Essig": "vinegar.png",
-    "Frühlingszwiebel": "spring-onion.png",
-    "Limettensaft": "lime.png",
-    "Limettenschale": "lime.png",
-    "Maiskolben": "corn.png",
-    "Mayonnaise": "mayonnaise.png",
-    "Misopaste": "miso.png",
-    "Honig": "honey.jpg",
-    "Karotte": "carrot.png",
-    "Knoblauch": "garlic.jpg",
-    "Knoblauchpulver": "garlic-powder.png",
-    "Koriander": "koriander.png",
-    "Öl": "oil.png",
-    "Salz": "salt.png",
-    "Schnittlauch": "chives.jpg",
-    "Spitzkohl": "pointed-cabbage.png",
-    "Zucker": "garlic-powder.png"
-};
-
 const ingredientImages = await Astro.glob("/src/images/ingredients/*").then(files => {
     return files.map(file => file.default);
 });
-const imageFileName = imageMap[ingredient.name];
+const imageFileName = mapIngredientFile(ingredient.name);
 const imageFile = ingredientImages.find(file => file.src.includes(`/${imageFileName}?`));
 ---
 
