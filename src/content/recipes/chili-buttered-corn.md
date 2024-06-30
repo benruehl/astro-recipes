@@ -6,27 +6,27 @@ category: SideDish
 totalTime: 20 min
 ingredients: [
     {
-        name: "Maiskolben",
+        key: "corn",
         amount: "2 x"
     },
     {
-        name: "Butter",
+        key: "butter",
         amount: "3 EL"
     },
     {
-        name: "Öl"
+        key: "oil"
     },
     {
-        name: "Frühlingszwiebel"
+        key: "spring-onion"
     },
     {
-        name: "Chili"
+        key: "chili"
     },
     {
-        name: "Koriander"
+        key: "koriander"
     },
     {
-        name: "Knoblauchpulver"
+        key: "garlic-powder"
     },
 ]
 source: https://youtu.be/sTFJJCX0RRY?t=584

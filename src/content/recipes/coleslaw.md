@@ -6,46 +6,46 @@ category: SideDish
 totalTime: 30 min
 ingredients: [
     {
-        name: "Spitzkohl",
+        key: "pointed-cabbage",
         amount: "1/2 x"
     },
     {
-        name: "Apfel",
+        key: "apple",
         amount: "1 x"
     },
     {
-        name: "Karotte",
+        key: "carrot",
         amount: "1 x"
     },
     {
-        name: "Schnittlauch",
+        key: "chives",
         amount: "1 Bund"
     },
     {
-        name: "Creme Vega",
+        key: "creme-vega",
         amount: "1 EL"
     },
     {
-        name: "Mayonnaise",
+        key: "mayonnaise",
         amount: "1 EL"
     },
     {
-        name: "Limettenschale"
+        key: "lime-zest"
     },
     {
-        name: "Limettensaft"
+        key: "lime-juice"
     },
     {
-        name: "Zucker"
+        key: "sugar"
     },
     {
-        name: "Salz"
+        key: "salt"
     },
     {
-        name: "Essig"
+        key: "vinegar"
     },
     {
-        name: "Öl"
+        key: "oil"
     },
 ]
 source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-15-minuten-rezepte-13/coleslaw-286

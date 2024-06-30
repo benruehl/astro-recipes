@@ -7,26 +7,26 @@ totalTime: 15 min
 source: https://youtu.be/BDwLAn_N_ZU?t=292
 ingredients: [
     {
-        name: "Aubergine",
+        key: "aubergine",
         amount: "1 x"
     },
     {
-        name: "Misopaste",
+        key: "miso",
         amount: "1 EL"
     },
     {
-        name: "Öl"
+        key: "oil"
     },
     {
-        name: "Honig",
+        key: "honey",
         amount: "1 TL"
     },
     {
-        name: "Knoblauch",
+        key: "garlic",
         amount: "1 Zehe"
     },
     {
-        name: "Chili"
+        key: "chili"
     }
 ]
 ---

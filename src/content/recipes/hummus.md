@@ -6,47 +6,47 @@ category: SideDish
 totalTime: 60 min
 ingredients: [
     {
-        name: "Karotte",
+        key: "carrot",
         amount: "2 x"
     },
     {
-        name: "Kichererbsen",
+        key: "chickpeas",
         amount: "1 Dose"
     },
     {
-        name: "Knoblauch",
+        key: "garlic",
         amount: "2 Knolle"
     },
     {
-        name: "Tahini",
+        key: "tahini",
         amount: "1 EL"
     },
     {
-        name: "Kreuzkümmel"
+        key: "cumin"
     },
     {
-        name: "Limettensaft"
+        key: "lime-juice"
     },
     {
-        name: "Cayenne"
+        key: "cayenne"
     },
     {
-        name: "Paprikapulver"
+        key: "paprika"
     },
     {
-        name: "Kurkuma"
+        key: "turmeric"
     },
     {
-        name: "Zimt"
+        key: "cinnamon"
     },
     {
-        name: "Öl"
+        key: "oil"
     },
     {
-        name: "Salz"
+        key: "salt"
     },
     {
-        name: "Pfeffer"
+        key: "pepper"
     },
 ]
 source: "https://youtu.be/BDwLAn_N_ZU?t=138"

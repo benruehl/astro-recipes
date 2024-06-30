@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { mapIngredientFile } from '../utils/ingredients';
+import { mapIngredient } from '../utils/ingredients';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -15,19 +15,19 @@ const { ingredient, size } = Astro.props;
 const ingredientImages = await Astro.glob("/src/images/ingredients/*").then(files => {
     return files.map(file => file.default);
 });
-const imageFileName = mapIngredientFile(ingredient.name);
-const imageFile = ingredientImages.find(file => file.src.includes(`/${imageFileName}?`));
+const { img, name, background } = mapIngredient(ingredient.key);
+const imageFile = ingredientImages.find(file => file.src.includes(`/${img}?`));
 ---
 
-<div class:list={["card", size]}>
+<div class:list={["card", size]} style={{ background: background }}>
     <Image
         src={imageFile}
-        alt={ingredient.name}
+        alt={name}
         width={size === 'large' ? 100 : 60}
         height={size === 'large' ? 70 : 40}
     />
     <p>
-        {ingredient.name}
+        {name}
         <br/>
         <span class="amount">{ingredient.amount}</span>
     </p>
@@ -39,7 +39,6 @@ const imageFile = ingredientImages.find(file => file.src.includes(`/${imageFileN
         flex-direction: column;
         align-items: center;
         gap: .5rem;
-        background: hsl(51, 80%, 94%);
         border-radius: 1rem;
         padding: .5rem 1rem .75rem 1rem;
 
