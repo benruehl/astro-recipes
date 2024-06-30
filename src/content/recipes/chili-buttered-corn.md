@@ -4,7 +4,33 @@ subtitle: mit Chili
 image: ./chili-buttered-corn.jpg
 category: SideDish
 totalTime: 20 min
-ingredients: []
+ingredients: [
+    {
+        name: "Maiskolben",
+        amount: "2 x"
+    },
+    {
+        name: "Butter",
+        amount: "3 EL"
+    },
+    {
+        name: "Öl",
+        amount: "Schuss"
+    },
+    {
+        name: "Frühlingszwiebel",
+        amount: "1 x"
+    },
+    {
+        name: "Chili"
+    },
+    {
+        name: "Koriander"
+    },
+    {
+        name: "Knoblauchpulver"
+    },
+]
 source: https://youtu.be/sTFJJCX0RRY?t=584
 ---
 

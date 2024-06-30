@@ -8,7 +8,22 @@ const recipeCollection = defineCollection({
         image: image(),
         category: z.enum(["SideDish", "Salad", "Dressing"]),
         totalTime: z.string(),
-        ingredients: z.array(z.string()),
+        ingredients: z.array(z.object({
+            name: z.enum([
+                "Aubergine",
+                "Butter",
+                "Chili",
+                "Frühlingszwiebel",
+                "Maiskolben",
+                "Misopaste",
+                "Honig",
+                "Knoblauch",
+                "Knoblauchpulver",
+                "Koriander",
+                "Öl"
+            ]),
+            amount: z.string().optional(),
+        })),
         source: z.string().optional(),
     }),
 });

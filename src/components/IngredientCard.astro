@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+type Recipe = CollectionEntry<'recipes'>;
+
+interface Props {
+  ingredient: Recipe["data"]["ingredients"][0];
+}
+
+const { ingredient } = Astro.props;
+
+const imageMap: { [id in Recipe["data"]["ingredients"][0]["name"]] : string } = {
+    "Aubergine": "aubergine.jpg",
+    "Butter": "butter.png",
+    "Chili": "chili.png",
+    "Frühlingszwiebel": "spring-onion.png",
+    "Maiskolben": "corn.png",
+    "Misopaste": "miso.png",
+    "Honig": "honey.jpg",
+    "Knoblauch": "garlic.jpg",
+    "Knoblauchpulver": "garlic-powder.png",
+    "Koriander": "koriander.png",
+    "Öl": "oil.png"
+};
+
+const ingredientImages = await Astro.glob("/src/images/ingredients/*").then(files => {
+    return files.map(file => file.default);
+});
+const imageFileName = imageMap[ingredient.name];
+const imageFile = ingredientImages.find(file => file.src.includes(`/${imageFileName}?`));
+---
+
+<div class="card">
+    <Image src={imageFile} alt={ingredient.name} width={70} height={50}/>
+    <p>{ingredient.name}</p>
+</div>
+
+<style lang="scss">
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+        background: hsl(51, 80%, 94%);
+        border-radius: 1rem;
+        padding: .5rem 1rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    img {
+        object-fit: contain;
+        object-position: center 75%;
+        mix-blend-mode: multiply;
+    }
+</style>

@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from "astro-icon/components";
+import IngredientCard from './IngredientCard.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -17,6 +18,11 @@ const { Content } = await recipe.render();
     <Image src={recipe.data.image} alt={recipe.data.title}/>
     <h3>{recipe.data.title}</h3>
     <p>{recipe.data.subtitle}</p>
+    <div class="ingredient-grid">
+        {recipe.data.ingredients.map(ingredient => (
+            <IngredientCard ingredient={ingredient}/>
+        ))}
+    </div>
     <Content/>
     <a class="close-button" href="/" aria-label="Schließen">
         <Icon name="solar:close-circle-bold-duotone" size={42}/>
@@ -49,6 +55,12 @@ const { Content } = await recipe.render();
     p {
         margin: 0;
         color: #808080;
+    }
+
+    .ingredient-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
     }
 
     .close-button {
