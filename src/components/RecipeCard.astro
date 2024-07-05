@@ -13,37 +13,25 @@ interface Props {
 const { recipe, isActive } = Astro.props;
 ---
 
-<a
-    class={isActive ? "card--active" : isActive === false ? "card--inactive" : ""}
-    href=`/preview/${recipe.slug}`
->
-    <div class="header">
+<div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
+    <a class="header" href=`/preview/${recipe.slug}`>
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
         <Image src={recipe.data.image} alt={recipe.data.title}/>
         <div class="total-time">
             <Icon name="solar:clock-circle-outline" size={18} />
             {recipe.data.totalTime}
         </div>
-    </div>
+    </a>
     <div class="content">
         <h3>{recipe.data.title}</h3>
         <p>{recipe.data.subtitle}</p>
+        <a href=`/recipes/${recipe.slug}`>Details</a>
     </div>
-</a>
+</div>
 
 <style lang="scss">
-    a {
-        all: unset;
-        cursor: pointer;
+    .card {
         border-radius: 1rem;
-        position: relative;
-
-        &:hover,
-        &:focus-visible {
-            img {
-                transform: scale(1.015);
-            }
-        }
 
         &.card--inactive {
             // opacity: .5;
@@ -62,6 +50,19 @@ const { recipe, isActive } = Astro.props;
     .header {
         display: grid;
         grid-template-areas: "overlay";
+
+        a {
+            all: unset;
+            cursor: pointer;
+            position: relative;
+
+            &:hover,
+            &:focus-visible {
+                img {
+                    transform: scale(1.015);
+                }
+            }
+        }
 
         img {
             grid-area: overlay;
@@ -98,6 +99,8 @@ const { recipe, isActive } = Astro.props;
     }
 
     .content {
+        display: grid;
+        grid-auto-flow: column;
         padding: 1rem;
 
         h3 {
@@ -107,6 +110,13 @@ const { recipe, isActive } = Astro.props;
         p {
             margin: 0;
             color: #808080;
+        }
+
+        a {
+            grid-row: span 2;
+            grid-column: 2;
+            align-self: flex-end;
+            justify-self: flex-end;
         }
     }
 </style>
