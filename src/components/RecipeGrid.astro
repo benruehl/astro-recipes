@@ -1,13 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import RecipeCard from '../components/RecipeCard.astro';
 import Grid from './Grid.astro';
+import RecipeDetails from './RecipeDetails.astro';
+
+type Recipe = CollectionEntry<'recipes'>;
+
+interface Props {
+  activeRecipe?: Recipe;
+}
+
+const { activeRecipe } = Astro.props;
 
 const allRecipes = await getCollection('recipes');
 ---
 
 <Grid minItemWidth="300px" maxColumns={3}>
-    {allRecipes.map(recipe => (
-        <RecipeCard recipe={recipe}/>
-    ))}
+    {allRecipes.map(recipe => {
+        return activeRecipe?.slug === recipe.slug ? (
+            <RecipeCard recipe={recipe} isActive={true}/>
+            <RecipeDetails recipe={activeRecipe}/>
+        ) : <RecipeCard recipe={recipe} isActive={activeRecipe ? false : null}/>
+    })}
 </Grid>

@@ -14,10 +14,7 @@ const { recipe } = Astro.props;
 const { Content } = await recipe.render();
 ---
 
-<aside>
-    <Image src={recipe.data.image} alt={recipe.data.title}/>
-    <h3>{recipe.data.title}</h3>
-    <p>{recipe.data.subtitle}</p>
+<div class="recipe-details">
     <div class="ingredient-grid">
         {recipe.data.ingredients
             .filter(ingredient => ingredient.hasOwnProperty("amount"))
@@ -34,20 +31,25 @@ const { Content } = await recipe.render();
             )
         )}
     </div>
-    <Content/>
     <a class="close-button" href="/" aria-label="Schließen">
-        <Icon name="solar:close-circle-bold-duotone" size={42}/>
+        <Icon name="solar:close-circle-bold" size={42}/>
     </a>
 </aside>
 
 <style lang="scss">
-    aside {
-        position: sticky;
-        top: 0;
-        align-self: start;
+    .recipe-details {
+        grid-column: 1 / -1;
         background: white;
         border-radius: 1rem;
         padding: 1rem;
+        position: relative;
+        box-shadow:
+            rgba(14, 63, 126, 0.02) 0px 0px 0px 1px,
+            rgba(42, 51, 69, 0.02) 0px 1px 1px -0.5px,
+            rgba(42, 51, 70, 0.02) 0px 3px 3px -1.5px,
+            rgba(42, 51, 70, 0.02) 0px 6px 6px -3px,
+            rgba(14, 63, 126, 0.02) 0px 12px 12px -6px,
+            rgba(14, 63, 126, 0.02) 0px 24px 24px -12px;
     }
 
     img {
@@ -72,14 +74,18 @@ const { Content } = await recipe.render();
         display: flex;
         flex-wrap: wrap;
         gap: .5rem;
-        margin-top: 1.5rem;
+
+        &:not(:first-child) {
+            margin-top: 1.5rem;
+        }
     }
 
     .close-button {
         position: absolute;
-        top: 1rem;
-        right: 1rem;
+        top: .5rem;
+        right: .5rem;
         border-radius: 100px;
         line-height: 0;
+        color: rgb(var(--accent));
     }
 </style>
