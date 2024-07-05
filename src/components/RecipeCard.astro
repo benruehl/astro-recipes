@@ -15,7 +15,7 @@ const { recipe, isActive } = Astro.props;
 
 <a
     class={isActive ? "card--active" : isActive === false ? "card--inactive" : ""}
-    href=`/recipes/${recipe.slug}`
+    href=`/preview/${recipe.slug}`
 >
     <div class="header">
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
