@@ -16,7 +16,7 @@ const { recipe, isActive } = Astro.props;
 <div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
     <a class="header" href=`/preview/${recipe.slug}`>
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
-        <Image src={recipe.data.image} alt={recipe.data.title}/>
+        <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
         <div class="total-time">
             <Icon name="solar:clock-circle-outline" size={18} />
             {recipe.data.totalTime}

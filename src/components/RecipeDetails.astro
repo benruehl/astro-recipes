@@ -15,7 +15,7 @@ const { Content } = await recipe.render();
 ---
 
 <h2>{recipe.data.title}</h2>
-<Image src={recipe.data.image} alt={recipe.data.title}/>
+        <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
 <Content/>
 <RecipePreview recipe={recipe}/>
 
