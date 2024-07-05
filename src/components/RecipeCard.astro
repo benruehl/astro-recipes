@@ -25,7 +25,7 @@ const { recipe, isActive } = Astro.props;
     <div class="content">
         <h3>{recipe.data.title}</h3>
         <p>{recipe.data.subtitle}</p>
-        <a href=`/recipes/${recipe.slug}`>Details</a>
+        <a class="button" href=`/recipes/${recipe.slug}`>Details</a>
     </div>
 </div>
 
@@ -47,22 +47,22 @@ const { recipe, isActive } = Astro.props;
         }
     }
 
+    a {
+        all: unset;
+        cursor: pointer;
+        position: relative;
+
+        &:hover,
+        &:focus-visible {
+            img {
+                transform: scale(1.015);
+            }
+        }
+    }
+
     .header {
         display: grid;
         grid-template-areas: "overlay";
-
-        a {
-            all: unset;
-            cursor: pointer;
-            position: relative;
-
-            &:hover,
-            &:focus-visible {
-                img {
-                    transform: scale(1.015);
-                }
-            }
-        }
 
         img {
             grid-area: overlay;
@@ -112,11 +112,14 @@ const { recipe, isActive } = Astro.props;
             color: #808080;
         }
 
-        a {
+        .button {
             grid-row: span 2;
             grid-column: 2;
             align-self: flex-end;
             justify-self: flex-end;
+            background: rgb(var(--accent));
+            border-radius: 1rem;
+            padding: .25rem 1rem;
         }
     }
 </style>
