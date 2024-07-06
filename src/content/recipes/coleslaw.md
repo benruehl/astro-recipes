@@ -4,6 +4,7 @@ subtitle: mit Spitzkohl
 image: ./coleslaw.jpg
 category: SideDish
 totalTime: 30 min
+source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-15-minuten-rezepte-13/coleslaw-286
 ingredients: [
     {
         key: "pointed-cabbage",
@@ -48,7 +49,6 @@ ingredients: [
         key: "oil"
     },
 ]
-source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-15-minuten-rezepte-13/coleslaw-286
 ---
 
 1. Halben Spitzkohl in dünne Streifen schneiden und in eine Schüssel geben

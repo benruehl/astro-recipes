@@ -4,6 +4,7 @@ subtitle: mit Karotten
 image: ./hummus.jpg
 category: SideDish
 totalTime: 60 min
+source: "https://youtu.be/BDwLAn_N_ZU?t=138"
 ingredients: [
     {
         key: "carrot",
@@ -49,7 +50,6 @@ ingredients: [
         key: "pepper"
     },
 ]
-source: "https://youtu.be/BDwLAn_N_ZU?t=138"
 ---
 
 1. Karotten längs halbieren und in 3-5 cm lange Stücke schneiden

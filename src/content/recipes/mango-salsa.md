@@ -4,6 +4,7 @@ subtitle: mit Avocado und Zwiebeln
 image: ./mango-salsa.jpg
 category: SideDish
 totalTime: 20 min
+source: https://youtu.be/sTFJJCX0RRY?t=234
 ingredients: [
     {
         key: "mango",
@@ -31,7 +32,6 @@ ingredients: [
         key: "salt"
     }
 ]
-source: https://youtu.be/sTFJJCX0RRY?t=234
 ---
 
 1. Mango in 1 cm breite Würfel schneiden

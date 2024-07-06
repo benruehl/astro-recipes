@@ -4,6 +4,7 @@ subtitle: mit Chili
 image: ./chili-buttered-corn.jpg
 category: SideDish
 totalTime: 20 min
+source: https://youtu.be/sTFJJCX0RRY?t=584
 ingredients: [
     {
         key: "corn",
@@ -29,7 +30,6 @@ ingredients: [
         key: "garlic-powder"
     },
 ]
-source: https://youtu.be/sTFJJCX0RRY?t=584
 ---
 
 1. Öl über Maiskolben geben und ringsum gold-braun anbraten (ca. 10 min)

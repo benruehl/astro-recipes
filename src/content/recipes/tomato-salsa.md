@@ -4,6 +4,7 @@ subtitle: mit Jalapeño und Chipotle Paste
 image: ./tomato-salsa.jpg
 category: SideDish
 totalTime: 40 min
+source: https://youtu.be/sTFJJCX0RRY?t=500
 ingredients: [
     {
         key: "tomato",
@@ -38,7 +39,6 @@ ingredients: [
         key: "salt"
     },
 ]
-source: https://youtu.be/sTFJJCX0RRY?t=500
 ---
 
 1. Kirschtomaten halbieren

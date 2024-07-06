@@ -4,6 +4,7 @@ subtitle: mit Parika und Mandeln
 image: ./romesco-sauce.jpg
 category: Dressing
 totalTime: 30 min
+source: https://youtu.be/BDwLAn_N_ZU?t=396
 ingredients: [
     {
         key: "bell-pepper",
@@ -33,7 +34,6 @@ ingredients: [
         key: "salt"
     }
 ]
-source: https://youtu.be/BDwLAn_N_ZU?t=396
 ---
 
 1. Rote Paprika in große Stücke schneiden, auf Backblech verteilen und Öl darüber geben

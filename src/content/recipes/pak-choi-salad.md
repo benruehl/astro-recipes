@@ -4,6 +4,7 @@ subtitle: mit Paprika
 image: ./pak-choi-salad.jpg
 category: Salad
 totalTime: 15 min
+source: https://youtu.be/BDwLAn_N_ZU?t=266
 ingredients: [
     {
         key: "pak-choi",
@@ -23,7 +24,6 @@ ingredients: [
         key: "salt"
     }
 ]
-source: https://youtu.be/BDwLAn_N_ZU?t=266
 ---
 
 1. Pak Choi in 1 - 2 cm breite Stücke schneiden
