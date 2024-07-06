@@ -11,12 +11,12 @@ interface Props {
 }
 
 const { recipe, isActive } = Astro.props;
-
 const HeaderElement = isActive ? 'div' : 'a';
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
-    <HeaderElement class="header" href=`/preview/${recipe.slug}`>
+    <HeaderElement class="header" href=`${baseUrl}/preview/${recipe.slug}`>
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
         <div class="total-time overlay">
@@ -24,7 +24,7 @@ const HeaderElement = isActive ? 'div' : 'a';
             {recipe.data.totalTime}
         </div>        
         {isActive &&
-            <a class="overlay" href={`/recipes/${recipe.slug}`} title="Details">
+            <a class="overlay" href={`${baseUrl}/recipes/${recipe.slug}`} title="Details">
                 <Icon name="solar:chef-hat-outline" size={24} />
             </a>
         }
