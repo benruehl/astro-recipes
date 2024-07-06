@@ -33,6 +33,7 @@ const { Content } = await recipe.render();
 
     p {
         margin-top: 0;
+        margin-bottom: 3rem;
         color: #808080;
         font-size: 1.7rem;
     }
@@ -42,6 +43,27 @@ const { Content } = await recipe.render();
         grid-template-columns: 4fr 3fr;
         gap: 2rem;
         margin-bottom: 4rem;
+        position: relative;
+
+        @media (max-width: $md) {
+            grid-template-columns: 1fr;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -2rem;
+            right: 0;
+            top: -2rem;
+            height: 360px;
+            background: rgb(var(--card-background));
+            border-radius: 2rem;
+            z-index: -1;
+
+            @media (max-width: $md) {
+                right: -2rem;
+            }
+        }
     }
 
     img {
@@ -54,5 +76,6 @@ const { Content } = await recipe.render();
 
     .ingredients {
         grid-row: span 2;
+        margin-top: 1rem;
     }
 </style>
