@@ -151,6 +151,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Misopaste",
         background: "hsl(39, 56%, 94%)",
     },
+    "mustard": {
+        img: "mustard.jpg",
+        name: "Senf",
+        background: "hsl(39, 56%, 94%)",
+    },
     "oil": {
         img: "oil.jpg",
         name: "Öl",
@@ -187,7 +192,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "hsl(51, 10%, 94%)",
     },
     "salt": {
-        img: "salt.png",
+        img: "salt.jpg",
         name: "Salz",
         background: "hsl(51, 10%, 94%)",
     },
@@ -230,6 +235,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         img: "vinegar.png",
         name: "Essig",
         background: "hsl(49, 94%, 94%)",
+    },
+    "yoghurt": {
+        img: "yoghurt.jpg",
+        name: "Yoghurt",
+        background: "hsl(70, 50%, 94%)",
     },
 };
 

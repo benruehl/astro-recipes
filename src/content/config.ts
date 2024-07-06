@@ -39,6 +39,7 @@ const recipeCollection = defineCollection({
                 "mayonnaise",
                 "mirin",
                 "miso",
+                "mustard",
                 "oil",
                 "onion",
                 "pak-choi",
@@ -55,6 +56,7 @@ const recipeCollection = defineCollection({
                 "tomato",
                 "turmeric",
                 "vinegar",
+                "yoghurt"
             ]),
             amount: z.string().optional(),
         })),
