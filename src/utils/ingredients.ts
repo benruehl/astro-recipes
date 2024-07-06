@@ -11,6 +11,11 @@ interface IngredientMetadata {
 }
 
 const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
+    "almonds": {
+        img: "almonds.jpg",
+        name: "Mandeln",
+        background: "hsl(29, 47%, 94%)",
+    },
     "apple": {
         img: "apple.jpg",
         name: "Apfel",
@@ -46,6 +51,16 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Chili",
         background: "hsl(5, 85%, 94%)",
     },
+    "chili-flakes": {
+        img: "chili-flakes.png",
+        name: "Chiliflocken",
+        background: "hsl(5, 85%, 94%)",
+    },
+    "chipotle-paste": {
+        img: "chipotle-paste.png",
+        name: "Chipotle Paste",
+        background: "hsl(5, 85%, 94%)",
+    },
     "creme-vega": {
         img: "creme-vega.jpg",
         name: "Créme Vega",
@@ -59,6 +74,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "spring-onion": {
         img: "spring-onion.png",
         name: "Lauchzwiebel",
+        background: "hsl(110, 29%, 94%)",
+    },
+    "jalapeno": {
+        img: "jalapeno.jpg",
+        name: "Jalapeño",
         background: "hsl(110, 29%, 94%)",
     },
     "lime-juice": {
@@ -161,6 +181,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Salz",
         background: "hsl(51, 10%, 94%)",
     },
+    "sun-dried-tomatoes": {
+        img: "sun-dried-tomatoes.png",
+        name: "Sonnengetrocknete Tomaten",
+        background: "hsl(21, 74%, 94%)",
+    },
     "chives": {
         img: "chives.jpg",
         name: "Schnittlauch",
@@ -175,6 +200,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         img: "tahini.png",
         name: "Tahini",
         background: "hsl(42, 47%, 94%)",
+    },
+    "tomato": {
+        img: "tomato.jpg",
+        name: "Tomate",
+        background: "hsl(8, 81%, 94%)",
     },
     "cinnamon": {
         img: "cinnamon.png",

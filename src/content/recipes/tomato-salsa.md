@@ -4,7 +4,40 @@ subtitle: mit Jalapeño und Chipotle Paste
 image: ./tomato-salsa.jpg
 category: SideDish
 totalTime: 40 min
-ingredients: []
+ingredients: [
+    {
+        key: "tomato",
+        amount: "300 g"
+    },
+    {
+        key: "onion",
+        amount: "1 x"
+    },
+    {
+        key: "jalapeno",
+        amount: "1 x"
+    },
+    {
+        key: "chipotle-paste",
+        amount: "1 x"
+    },
+    {
+        key: "garlic",
+        amount: "1 Zehe"
+    },
+    {
+        key: "koriander"
+    },
+    {
+        key: "lime-juice"
+    },
+    {
+        key: "oil"
+    },
+    {
+        key: "salt"
+    },
+]
 source: https://youtu.be/sTFJJCX0RRY?t=500
 ---
 

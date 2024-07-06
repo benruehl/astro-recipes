@@ -4,7 +4,35 @@ subtitle: mit Parika und Mandeln
 image: ./romesco-sauce.jpg
 category: Dressing
 totalTime: 30 min
-ingredients: []
+ingredients: [
+    {
+        key: "bell-pepper",
+        amount: "1 x"
+    },
+    {
+        key: "almonds",
+        amount: "30 g"
+    },
+    {
+        key: "sun-dried-tomatoes",
+        amount: "30 g"
+    },
+    {
+        key: "lime-juice"
+    },
+    {
+        key: "chili-flakes"
+    },
+    {
+        key: "paprika"
+    },
+    {
+        key: "oil"
+    },
+    {
+        key: "salt"
+    }
+]
 source: https://youtu.be/BDwLAn_N_ZU?t=396
 ---
 

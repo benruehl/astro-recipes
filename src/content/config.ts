@@ -10,6 +10,7 @@ const recipeCollection = defineCollection({
         totalTime: z.string(),
         ingredients: z.array(z.object({
             key: z.enum([
+                "almonds",
                 "apple",
                 "aubergine",
                 "avocado",
@@ -17,9 +18,12 @@ const recipeCollection = defineCollection({
                 "butter",
                 "cayenne",
                 "chili",
+                "chili-flakes",
+                "chipotle-paste",
                 "creme-vega",
                 "vinegar",
                 "spring-onion",
+                "jalapeno",
                 "lime-juice",
                 "lime-zest",
                 "corn",
@@ -40,9 +44,11 @@ const recipeCollection = defineCollection({
                 "paprika",
                 "pepper",
                 "salt",
+                "sun-dried-tomatoes",
                 "chives",
                 "pointed-cabbage",
                 "tahini",
+                "tomato",
                 "cinnamon",
                 "sugar"
             ]),
