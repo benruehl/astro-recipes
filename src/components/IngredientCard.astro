@@ -15,6 +15,8 @@ const { ingredient, size } = Astro.props;
 const ingredientImages = await Astro.glob("/src/images/ingredients/*").then(files => {
     return files.map(file => file.default);
 });
+console.log("ingredientImages");
+console.log(ingredientImages);
 const { img, name, background } = mapIngredient(ingredient.key);
 const imageFile = ingredientImages.find(file => file.src.includes(`/${img}?`));
 ---
