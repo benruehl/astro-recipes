@@ -141,13 +141,18 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Mayonnaise",
         background: "hsl(49, 63%, 94%)",
     },
+    "mirin": {
+        img: "mirin.jpg",
+        name: "Mirin ",
+        background: "hsl(54, 89%, 94%)",
+    },
     "miso": {
         img: "miso.png",
         name: "Misopaste",
         background: "hsl(39, 56%, 94%)",
     },
     "oil": {
-        img: "oil.png",
+        img: "oil.jpg",
         name: "Öl",
         background: "hsl(51, 80%, 94%)",
     },
@@ -176,10 +181,20 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Spitzkohl",
         background: "hsl(73, 36%, 94%)",
     },
+    "sesame-oil": {
+        img: "oil.jpg",
+        name: "Sesamöl",
+        background: "hsl(51, 10%, 94%)",
+    },
     "salt": {
         img: "salt.png",
         name: "Salz",
         background: "hsl(51, 10%, 94%)",
+    },
+    "soy-sauce": {
+        img: "soy-sauce.jpg",
+        name: "Sojasauce",
+        background: "hsl(110, 29%, 94%)",
     },
     "spring-onion": {
         img: "spring-onion.png",

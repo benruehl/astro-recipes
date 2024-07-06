@@ -8,6 +8,7 @@ const recipeCollection = defineCollection({
         image: image(),
         category: z.enum(["SideDish", "Salad", "Dressing"]),
         totalTime: z.string(),
+        source: z.string().optional(),
         ingredients: z.array(z.object({
             key: z.enum([
                 "almonds",
@@ -36,6 +37,7 @@ const recipeCollection = defineCollection({
                 "lime-zest",
                 "mango",
                 "mayonnaise",
+                "mirin",
                 "miso",
                 "oil",
                 "onion",
@@ -44,6 +46,8 @@ const recipeCollection = defineCollection({
                 "pepper",
                 "pointed-cabbage",
                 "salt",
+                "sesame-oil",
+                "soy-sauce",
                 "spring-onion",
                 "sugar",
                 "sun-dried-tomatoes",
@@ -54,7 +58,6 @@ const recipeCollection = defineCollection({
             ]),
             amount: z.string().optional(),
         })),
-        source: z.string().optional(),
     }),
 });
 
