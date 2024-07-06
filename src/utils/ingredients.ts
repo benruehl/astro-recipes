@@ -21,6 +21,16 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Aubergine",
         background: "hsl(27, 19%, 94%)",
     },
+    "avocado": {
+        img: "avocado.jpg",
+        name: "Avocado",
+        background: "hsl(65, 51%, 94%)",
+    },
+    "bell-pepper": {
+        img: "bell-pepper.jpg",
+        name: "Paprika",
+        background: "hsl(0, 99%, 94%)",
+    },
     "butter": {
         img: "butter.png",
         name: "Butter",
@@ -65,6 +75,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         img: "corn.png",
         name: "Maiskolben",
         background: "hsl(41, 83%, 94%)",
+    },
+    "mango": {
+        img: "mango.avif",
+        name: "Mango",
+        background: "hsl(45, 92%, 94%)",
     },
     "mayonnaise": {
         img: "mayonnaise.png",
@@ -120,6 +135,16 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         img: "oil.png",
         name: "Öl",
         background: "hsl(51, 80%, 94%)",
+    },
+    "onion": {
+        img: "onion.jpg",
+        name: "Zwiebel",
+        background: "hsl(23, 22%, 94%)",
+    },
+    "pak-choi": {
+        img: "pak-choi.png",
+        name: "Pak-Choi",
+        background: "hsl(86, 59%, 94%)",
     },
     "paprika": {
         img: "paprika.png",

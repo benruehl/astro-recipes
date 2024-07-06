@@ -4,7 +4,33 @@ subtitle: mit Avocado und Zwiebeln
 image: ./mango-salsa.jpg
 category: SideDish
 totalTime: 20 min
-ingredients: []
+ingredients: [
+    {
+        key: "mango",
+        amount: "1 x"
+    },
+    {
+        key: "avocado",
+        amount: "1 x"
+    },
+    {
+        key: "onion",
+        amount: "1 x"
+    },
+    {
+        key: "spring-onion",
+        amount: "1 x"
+    },
+    {
+        key: "chili"
+    },
+    {
+        key: "lime-juice"
+    },
+    {
+        key: "salt"
+    }
+]
 source: https://youtu.be/sTFJJCX0RRY?t=234
 ---
 

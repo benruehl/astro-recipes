@@ -4,7 +4,25 @@ subtitle: mit Paprika
 image: ./pak-choi-salad.jpg
 category: Salad
 totalTime: 15 min
-ingredients: []
+ingredients: [
+    {
+        key: "pak-choi",
+        amount: "2 x"
+    },
+    {
+        key: "bell-pepper",
+        amount: "1 x"
+    },
+    {
+        key: "lime-juice"
+    },
+    {
+        key: "oil"
+    },
+    {
+        key: "salt"
+    }
+]
 source: https://youtu.be/BDwLAn_N_ZU?t=266
 ---
 
