@@ -41,10 +41,20 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Butter",
         background: "hsl(40, 60%, 94%)",
     },
+    "carrot": {
+        img: "carrot.png",
+        name: "Karotte",
+        background: "hsl(28, 95%, 94%)",
+    },
     "cayenne": {
         img: "cayenne.png",
         name: "Cayenne",
         background: "hsl(5, 85%, 94%)",
+    },
+    "chickpeas": {
+        img: "chickpeas.png",
+        name: "Kichererbsen",
+        background: "hsl(24, 70%, 94%)",
     },
     "chili": {
         img: "chili.png",
@@ -61,25 +71,55 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Chipotle Paste",
         background: "hsl(5, 85%, 94%)",
     },
+    "chives": {
+        img: "chives.jpg",
+        name: "Schnittlauch",
+        background: "hsl(102, 22%, 94%)",
+    },
+    "cinnamon": {
+        img: "cinnamon.png",
+        name: "Zimt",
+        background: "hsl(28, 63%, 94%)",
+    },
+    "corn": {
+        img: "corn.png",
+        name: "Maiskolben",
+        background: "hsl(41, 83%, 94%)",
+    },
     "creme-vega": {
         img: "creme-vega.jpg",
         name: "Créme Vega",
         background: "hsl(51, 73%, 94%)",
     },
-    "vinegar": {
-        img: "vinegar.png",
-        name: "Essig",
-        background: "hsl(49, 94%, 94%)",
+    "cumin": {
+        img: "cumin.png",
+        name: "Kreuzkümmel",
+        background: "hsl(26, 27%, 94%)",
     },
-    "spring-onion": {
-        img: "spring-onion.png",
-        name: "Lauchzwiebel",
-        background: "hsl(110, 29%, 94%)",
+    "garlic": {
+        img: "garlic.jpg",
+        name: "Knoblauch",
+        background: "hsl(39, 51%, 94%)",
+    },
+    "garlic-powder": {
+        img: "garlic-powder.png",
+        name: "Knoblauchpulver",
+        background: "hsl(39, 51%, 94%)",
+    },
+    "honey": {
+        img: "honey.jpg",
+        name: "Honig",
+        background: "hsl(29, 68%, 94%)",
     },
     "jalapeno": {
         img: "jalapeno.jpg",
         name: "Jalapeño",
         background: "hsl(110, 29%, 94%)",
+    },
+    "koriander": {
+        img: "koriander.png",
+        name: "Koriander",
+        background: "hsl(108, 67%, 94%)",
     },
     "lime-juice": {
         img: "lime.png",
@@ -90,11 +130,6 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         img: "lime.png",
         name: "Limettenschale",
         background: "hsl(86, 82%, 94%)",
-    },
-    "corn": {
-        img: "corn.png",
-        name: "Maiskolben",
-        background: "hsl(41, 83%, 94%)",
     },
     "mango": {
         img: "mango.avif",
@@ -110,46 +145,6 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         img: "miso.png",
         name: "Misopaste",
         background: "hsl(39, 56%, 94%)",
-    },
-    "honey": {
-        img: "honey.jpg",
-        name: "Honig",
-        background: "hsl(29, 68%, 94%)",
-    },
-    "carrot": {
-        img: "carrot.png",
-        name: "Karotte",
-        background: "hsl(28, 95%, 94%)",
-    },
-    "chickpeas": {
-        img: "chickpeas.png",
-        name: "Kichererbsen",
-        background: "hsl(24, 70%, 94%)",
-    },
-    "garlic": {
-        img: "garlic.jpg",
-        name: "Knoblauch",
-        background: "hsl(39, 51%, 94%)",
-    },
-    "garlic-powder": {
-        img: "garlic-powder.png",
-        name: "Knoblauchpulver",
-        background: "hsl(39, 51%, 94%)",
-    },
-    "koriander": {
-        img: "koriander.png",
-        name: "Koriander",
-        background: "hsl(108, 67%, 94%)",
-    },
-    "cumin": {
-        img: "cumin.png",
-        name: "Kreuzkümmel",
-        background: "hsl(26, 27%, 94%)",
-    },
-    "turmeric": {
-        img: "turmeric.png",
-        name: "Kurkuma",
-        background: "hsl(35, 96%, 94%)",
     },
     "oil": {
         img: "oil.png",
@@ -176,25 +171,30 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Pfeffer",
         background: "hsl(30, 33%, 94%)",
     },
+    "pointed-cabbage": {
+        img: "pointed-cabbage.png",
+        name: "Spitzkohl",
+        background: "hsl(73, 36%, 94%)",
+    },
     "salt": {
         img: "salt.png",
         name: "Salz",
         background: "hsl(51, 10%, 94%)",
     },
+    "spring-onion": {
+        img: "spring-onion.png",
+        name: "Lauchzwiebel",
+        background: "hsl(110, 29%, 94%)",
+    },
+    "sugar": {
+        img: "garlic-powder.png",
+        name: "Zucker",
+        background: "hsl(60, 10%, 94%)",
+    },
     "sun-dried-tomatoes": {
         img: "sun-dried-tomatoes.png",
         name: "Sonnengetrocknete Tomaten",
         background: "hsl(21, 74%, 94%)",
-    },
-    "chives": {
-        img: "chives.jpg",
-        name: "Schnittlauch",
-        background: "hsl(102, 22%, 94%)",
-    },
-    "pointed-cabbage": {
-        img: "pointed-cabbage.png",
-        name: "Spitzkohl",
-        background: "hsl(73, 36%, 94%)",
     },
     "tahini": {
         img: "tahini.png",
@@ -206,15 +206,15 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Tomate",
         background: "hsl(8, 81%, 94%)",
     },
-    "cinnamon": {
-        img: "cinnamon.png",
-        name: "Zimt",
-        background: "hsl(28, 63%, 94%)",
+    "turmeric": {
+        img: "turmeric.png",
+        name: "Kurkuma",
+        background: "hsl(35, 96%, 94%)",
     },
-    "sugar": {
-        img: "garlic-powder.png",
-        name: "Zucker",
-        background: "hsl(60, 10%, 94%)",
+    "vinegar": {
+        img: "vinegar.png",
+        name: "Essig",
+        background: "hsl(49, 94%, 94%)",
     },
 };
 
