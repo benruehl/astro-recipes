@@ -11,21 +11,27 @@ interface Props {
 }
 
 const { recipe, isActive } = Astro.props;
+
+const HeaderElement = isActive ? 'div' : 'a';
 ---
 
 <div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
-    <a class="header" href=`/preview/${recipe.slug}`>
+    <HeaderElement class="header" href=`/preview/${recipe.slug}`>
         <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
-        <div class="total-time">
+        <div class="total-time overlay">
             <Icon name="solar:clock-circle-outline" size={18} />
             {recipe.data.totalTime}
-        </div>
-    </a>
+        </div>        
+        {isActive &&
+            <a class="overlay" href={`/recipes/${recipe.slug}`} title="Details">
+                <Icon name="solar:chef-hat-outline" size={24} />
+            </a>
+        }
+    </HeaderElement>
     <div class="content">
         <h3>{recipe.data.title}</h3>
         <p>{recipe.data.subtitle}</p>
-        <a class="button" href=`/recipes/${recipe.slug}`>Details</a>
     </div>
 </div>
 
@@ -64,8 +70,11 @@ const { recipe, isActive } = Astro.props;
         display: grid;
         grid-template-areas: "overlay";
 
-        img {
+        & > * {
             grid-area: overlay;
+        }
+
+        img {
             width: 100%;
             height: auto;
             aspect-ratio: 16 / 9;
@@ -83,24 +92,31 @@ const { recipe, isActive } = Astro.props;
             }
         }
 
-        .total-time {
-            grid-area: overlay;
-            justify-self: flex-end;
-            align-self: flex-end;
+        .overlay {
             margin: 1rem;
             background: rgba(var(--page-background), .8);
             border-radius: .5rem;
             padding: 0 .5em;
+            backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
             gap: .5ch;
-            backdrop-filter: blur(10px);
+        }
+
+        .total-time {
+            justify-self: flex-start;
+            align-self: flex-start;
+        }
+
+        a { 
+            justify-self: flex-end;
+            align-self: flex-end;
+            padding: .75em !important;
+            border-radius: 1000px !important;
         }
     }
 
     .content {
-        display: grid;
-        grid-auto-flow: column;
         padding: 1rem;
 
         h3 {
@@ -110,16 +126,6 @@ const { recipe, isActive } = Astro.props;
         p {
             margin: 0;
             color: #808080;
-        }
-
-        .button {
-            grid-row: span 2;
-            grid-column: 2;
-            align-self: flex-end;
-            justify-self: flex-end;
-            background: rgb(var(--accent));
-            border-radius: 1rem;
-            padding: .25rem 1rem;
         }
     }
 </style>
