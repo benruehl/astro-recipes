@@ -14,8 +14,6 @@ const { recipe } = Astro.props;
 const { Content } = await recipe.render();
 ---
 
-<h2>{recipe.data.title}</h2>
-<p>{recipe.data.subtitle}</p>
 <div class="grid">
     <section class="header">
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
