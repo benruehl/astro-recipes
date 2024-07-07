@@ -5,6 +5,7 @@ import Grid from './Grid.astro';
 import RecipeDetails from './RecipePreview.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
+type Category = Recipe["data"]["category"];
 
 interface Props {
   activeRecipe?: Recipe;
@@ -13,13 +14,24 @@ interface Props {
 const { activeRecipe } = Astro.props;
 
 const allRecipes = await getCollection('recipes');
+
+const categoryMap: { [id in Category ] : string } = {
+    SideDish: "Beilagen",
+    Salad: "Salate",
+    Dressing: "Dressings"
+};
+const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
 ---
 
-<Grid minItemWidth="300px" maxColumns={3}>
-    {allRecipes.map(recipe => {
-        return activeRecipe?.slug === recipe.slug ? (
-            <RecipeCard recipe={recipe} isActive={true}/>
-            <RecipeDetails recipe={activeRecipe}/>
-        ) : <RecipeCard recipe={recipe} isActive={activeRecipe ? false : null}/>
-    })}
-</Grid>
+{categories.map(category => (
+    <h2>{categoryMap[category]}</h2>
+    <hr/>
+    <Grid minItemWidth="300px" maxColumns={3}>
+        {allRecipes.filter(r => r.data.category === category).map(recipe => {
+            return activeRecipe?.slug === recipe.slug ? (
+                <RecipeCard recipe={recipe} isActive={true}/>
+                <RecipeDetails recipe={activeRecipe}/>
+            ) : <RecipeCard recipe={recipe} isActive={activeRecipe ? false : null}/>
+        })}
+    </Grid>
+))}
