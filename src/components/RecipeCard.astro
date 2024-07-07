@@ -39,17 +39,12 @@ const baseUrl = import.meta.env.BASE_URL;
     .card {
         border-radius: 1rem;
 
-        &.card--inactive {
-            // opacity: .5;
+        &.card--inactive:not(:hover) {
+            opacity: .5;
         }
         &.card--active {
             opacity: 1;
             background: white;
-
-            img {
-                // transform: scale(0.95);
-                transform-origin: center bottom;
-            }
         }
     }
 
