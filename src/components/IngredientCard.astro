@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { mapIngredient } from '../utils/ingredients';
@@ -11,19 +12,15 @@ interface Props {
 }
 
 const { ingredient, size } = Astro.props;
+const { img: imgFileName, name, background } = mapIngredient(ingredient.key);
 
-const ingredientImages = await Astro.glob("/src/images/ingredients/*").then(files => {
-    return files.map(file => file.default);
-});
-console.log("ingredientImages");
-console.log(ingredientImages);
-const { img, name, background } = mapIngredient(ingredient.key);
-const imageFile = ingredientImages.find(file => file.src.includes(`/${img}?`));
+const ingredientImages = import.meta.glob<{ default: ImageMetadata }>("/src/images/ingredients/*");
+const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
 ---
 
 <div class:list={["card", size]} style={{ background: background }}>
     <Image
-        src={imageFile}
+        src={imageFile()}
         alt={name}
         width={size === 'large' ? 100 : 60}
         height={size === 'large' ? 70 : 40}
