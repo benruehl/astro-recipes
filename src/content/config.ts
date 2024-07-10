@@ -16,6 +16,7 @@ const recipeCollection = defineCollection({
                 "aubergine",
                 "avocado",
                 "bell-pepper",
+                "broccoli",
                 "butter",
                 "carrot",
                 "cayenne",

@@ -41,6 +41,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Butter",
         background: "hsl(40, 60%, 94%)",
     },
+    "broccoli": {
+        img: "broccoli.jpg",
+        name: "Brokkoli",
+        background: "hsl(108, 35%, 94%)",
+    },
     "carrot": {
         img: "carrot.png",
         name: "Karotte",
