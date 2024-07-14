@@ -9,16 +9,17 @@ type Recipe = CollectionEntry<'recipes'>;
 interface Props {
   ingredient: Recipe["data"]["ingredients"][0];
   size: "small" | "large";
+  direction: "horizontal" | "vertical";
 }
 
-const { ingredient, size } = Astro.props;
+const { ingredient, size, direction } = Astro.props;
 const { img: imgFileName, name, background } = mapIngredient(ingredient.key);
 
 const ingredientImages = import.meta.glob<{ default: ImageMetadata }>("/src/images/ingredients/*");
 const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
 ---
 
-<div class:list={["card", `card--${size}`]} style={{ background: background }}>
+<div class:list={["card", `card--${size}`, `card--${direction}`]} style={{ background: background }}>
     <Image
         src={imageFile()}
         alt={name}
@@ -35,14 +36,16 @@ const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
 <style lang="scss">
     .card {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: .5rem;
+        gap: .5rem 1rem;
         border-radius: 1rem;
         padding: .5rem 1rem .75rem 1rem;
 
         &.card--large {
             padding: .5rem 1rem .75rem 1rem;
+        }
+        &.card--horizontal {
+            flex-direction: column;
         }
     }
     

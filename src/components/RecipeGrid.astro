@@ -32,7 +32,7 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
             return activeRecipe?.slug === recipe.slug ? (
                 <RecipeCard recipe={recipe} isActive={true}/>
                 <Card class="ingredient-box">
-                    <IngredientGrid recipe={activeRecipe}/>
+                    <IngredientGrid recipe={activeRecipe} direction="horizontal"/>
                 </Card>
             ) : <RecipeCard recipe={recipe} isActive={activeRecipe ? false : null}/>
         })}
