@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from "astro-icon/components";
-import RecipePreview from './RecipePreview.astro';
+import IngredientGrid from './IngredientGrid.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -19,7 +19,7 @@ const { Content } = await recipe.render();
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
     </section>
     <section class="ingredients">
-        <RecipePreview recipe={recipe}/>
+        <IngredientGrid recipe={recipe}/>
     </section>
     <Content/>
 </div>
@@ -46,25 +46,10 @@ const { Content } = await recipe.render();
         @media (max-width: $md) {
             grid-template-columns: 1fr;
         }
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: -2rem;
-            right: 0;
-            top: -2rem;
-            height: 360px;
-            background: rgb(var(--card-background));
-            border-radius: 2rem;
-            z-index: -1;
-
-            @media (max-width: $md) {
-                right: -2rem;
-            }
-        }
     }
 
     img {
+        max-width: 600px;
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;

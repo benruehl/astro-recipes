@@ -6,6 +6,7 @@ import icon from "astro-icon";
 export default defineConfig({
   site: 'https://benruehl.github.io',
   base: 'astro-recipes',
+  scopedStyleStrategy: 'class',
   integrations: [icon()],
   vite: {
     css: {

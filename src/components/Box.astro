@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<div class:list={["box", className]}>
+    <slot/>
+    <a class="close-button" href={baseUrl} aria-label="Schließen">
+        <Icon name="solar:close-circle-bold" size={42}/>
+    </a>
+</div>
+
+<style lang="scss">
+    .box {
+        background: white;
+        border-radius: 1rem;
+        padding: 1rem;
+        position: relative;
+        box-shadow:
+            rgba(14, 63, 126, 0.02) 0px 0px 0px 1px,
+            rgba(42, 51, 69, 0.02) 0px 1px 1px -0.5px,
+            rgba(42, 51, 70, 0.02) 0px 3px 3px -1.5px,
+            rgba(42, 51, 70, 0.02) 0px 6px 6px -3px,
+            rgba(14, 63, 126, 0.02) 0px 12px 12px -6px,
+            rgba(14, 63, 126, 0.02) 0px 24px 24px -12px;
+    }
+
+    .close-button {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        border-radius: 100px;
+        line-height: 0;
+        color: rgb(var(--accent));
+    }
+</style>

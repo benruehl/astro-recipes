@@ -2,7 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import RecipeCard from '../components/RecipeCard.astro';
 import Grid from './Grid.astro';
-import RecipeDetails from './RecipePreview.astro';
+import IngredientGrid from './IngredientGrid.astro';
+import Card from './Box.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 type Category = Recipe["data"]["category"];
@@ -30,8 +31,16 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
         {allRecipes.filter(r => r.data.category === category).map(recipe => {
             return activeRecipe?.slug === recipe.slug ? (
                 <RecipeCard recipe={recipe} isActive={true}/>
-                <RecipeDetails recipe={activeRecipe}/>
+                <Card class="ingredient-box">
+                    <IngredientGrid recipe={activeRecipe}/>
+                </Card>
             ) : <RecipeCard recipe={recipe} isActive={activeRecipe ? false : null}/>
         })}
     </Grid>
 ))}
+
+<style>
+    .ingredient-box {
+        grid-column: 1 / -1;
+    }
+</style>
