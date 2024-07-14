@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from "astro-icon/components";
 
@@ -12,12 +12,14 @@ interface Props {
 
 const { recipe, isActive } = Astro.props;
 const HeaderElement = isActive ? 'div' : 'a';
+const optimizedImage = await getImage({src: recipe.data.image});
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
     <HeaderElement class="header" href=`${baseUrl}/preview/${recipe.slug}`>
-        <Image class="image-blur" src={recipe.data.image} alt={recipe.data.title}/>
+        <div class="image-blur" style={`background-image: url(${optimizedImage.src});`}>
+        </div>
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
         <div class="total-time overlay">
             <Icon name="solar:clock-circle-outline" size={18} />
@@ -76,15 +78,14 @@ const baseUrl = import.meta.env.BASE_URL;
             object-fit: cover;
             border-radius: 1rem;
             transition: transform .2s ease;
+        }
 
-            &.image-blur {
-                z-index: -1;
-                filter: blur(10px);
-                scale: .95;
-                translate: 0 15px;
-                opacity: .5;
-                pointer-events: none;
-            }
+        .image-blur {
+            background-size: cover;
+            filter: blur(10px);
+            scale: .95;
+            translate: 0 15px;
+            opacity: .5;
         }
 
         .overlay {
