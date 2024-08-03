@@ -14,56 +14,71 @@ const { recipe } = Astro.props;
 const { Content } = await recipe.render();
 ---
 
-<div class="grid">
-    <section class="header">
-        <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
-    </section>
-    <section class="ingredients">
-        <IngredientGrid recipe={recipe} direction="vertical"/>
-    </section>
-    <section class="instructions">
-        <Content/>
-    </section>
-</div>
+<section class="header">
+    <Image src={recipe.data.image} alt={recipe.data.title} width={600} transition:name="recipe-image"/>
+    <h1>
+        <span>{recipe.data.title}</span>
+        <span class="small">{recipe.data.subtitle}</span>
+    </h1>
+</section>
+<section class="ingredients">
+    <IngredientGrid recipe={recipe} direction="horizontal"/>
+</section>
+<section class="instructions">
+    <Content/>
+</section>
 
 <style lang="scss">
-    h2 {
-        margin: 0;
-    }
-
-    p {
-        margin-top: 0;
-        margin-bottom: 3rem;
-        color: #808080;
-        font-size: 1.7rem;
-    }
-
-    .grid {
+    .header {
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-        max-width: 1000px;
-        margin: auto;
-        margin-bottom: 4rem;
-        position: relative;
+        grid-template-columns: auto 1fr;
+        align-items: flex-end;
 
-        @media (max-width: $md) {
-            grid-template-columns: 1fr;
+        h1 {
+            font-size: 3rem;
+            line-height: 1.4;
+            text-align: left;
+            margin: 0;
+            margin: 0 0 1rem -200px;
+            z-index: 1;
+            
+            span {
+                display: block;
+                background: rgba(var(--page-background), .6);
+                backdrop-filter: blur(10px);
+                padding: 0 2rem;
+                margin-top: 2px;
+                border-radius: 4px;
+
+                &.small {
+                    color: rgba(var(--text-base), .6);
+                }
+            }
+        }
+
+        img {
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 1rem;
         }
     }
 
-    img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 1rem;
+    .instructions {
+        :global(h3) {
+            font-size: 1.05rem;
+            font-weight: bold;
+            margin: 1.25rem 0 .75rem 0;
+        }
+
+        :global(ol) {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
     }
 
-    .ingredients {
-        grid-row: span 2;
-        background: rgb(var(--card-background));
-        padding: 1rem;
-        border-radius: 1rem;
+    section {
+        margin-bottom: 4rem;
     }
 </style>

@@ -23,10 +23,12 @@ const { recipe } = Astro.props;
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>
-			{recipe.data.title}
-			<span class="small">{recipe.data.subtitle}</span>
-		</h1>
 		<RecipeDetails recipe={recipe}/>
 	</main>
 </Layout>
+
+<style>
+	main {
+        max-width: 900px;
+	}
+</style>

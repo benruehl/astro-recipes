@@ -19,7 +19,7 @@ const ingredientImages = import.meta.glob<{ default: ImageMetadata }>("/src/imag
 const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
 ---
 
-<div class:list={["card", `card--${size}`, `card--${direction}`]} style={{ background: background }}>
+<div class:list={["card", `card--${size}`, `card--${direction}`]}>
     <Image
         src={imageFile()}
         alt={name}
@@ -33,13 +33,27 @@ const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
     </p>
 </div>
 
-<style lang="scss">
+<style lang="scss" define:vars={{
+    "ingredient-color": background,
+}}>
     .card {
         display: flex;
         align-items: center;
         gap: .5rem 1rem;
         border-radius: 1rem;
         padding: .5rem 1rem .75rem 1rem;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -30% -50%;
+            background: radial-gradient(
+                ellipse at 50% 50%,
+                hsl(var(--ingredient-color), 92%),
+                transparent 70%
+            );
+        }
 
         &.card--large {
             padding: .5rem 1rem .75rem 1rem;
@@ -53,14 +67,16 @@ const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
         object-fit: contain;
         object-position: center 75%;
         mix-blend-mode: multiply;
+        z-index: 1;
     }
 
     p {
         margin: 0;
         line-height: 1;
+        z-index: 1;
     }
 
     .amount {
-        opacity: .5;
+        color: rgb(var(--text-secondary));
     }
 </style>

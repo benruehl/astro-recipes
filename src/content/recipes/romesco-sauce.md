@@ -36,7 +36,15 @@ ingredients: [
 ]
 ---
 
-1. Rote Paprika in große Stücke schneiden, auf Backblech verteilen und Öl darüber geben
-2. Bei 190 °C garen, bis sie leicht angeröstet und weich sind
-3. Mandeln in Wasser einweichen (z.B. über Nacht); optional Schale entfernen
-4. Paprika, Sonnengereifte Tomaten, Mandeln, Limettensaft, Knoblauch, Chiliflocken, Paprikapulver, Salz und Öl in Mixer geben und pürieren
+### Vorbereitung
+
+1. 💧 Mandeln in Wasser einweichen (z.B. über Nacht); optional Schale entfernen
+
+### Ofengemüse garen
+
+2. 🔪 Rote Paprika in große Stücke schneiden, auf Backblech verteilen und Öl darüber geben.
+3. 🔥 Bei 190 °C garen, bis sie leicht angeröstet und weich sind.
+
+### Zutaten pürieren
+
+4. ⚙️ Paprika, Sonnengereifte Tomaten, Mandeln, Limettensaft, Knoblauch, Chiliflocken, Paprikapulver, Salz und Öl in Mixer geben und pürieren

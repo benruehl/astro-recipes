@@ -10,28 +10,39 @@ interface Props {
 }
 
 const { recipe, direction } = Astro.props;
+
+const largeIngredients = recipe.data.ingredients
+    .filter(ingredient => ingredient.hasOwnProperty("amount"));
+const smallIngredients = recipe.data.ingredients
+    .filter(ingredient => !ingredient.hasOwnProperty("amount"));
+
+const largeIngredientsColumns =
+    smallIngredients.length <= 3 ? 5 :
+        largeIngredients.length % 3 === 0 ? 3 :
+            largeIngredients.length % 2 === 0 ? 2 : 3;
 ---
 
-<h3>Komponenten</h3>
-<div class:list={["ingredient-grid", `ingredient-grid--${direction}`]}>
-    {recipe.data.ingredients
-        .filter(ingredient => ingredient.hasOwnProperty("amount"))
-        .map(ingredient => (
+<div class="container">
+    <div class:list={["ingredient-grid-large", `ingredient-grid--${direction}`]}>
+        {largeIngredients.map(ingredient => (
             <IngredientCard {ingredient} {direction} size="large"/>
-        )
-    )}
-</div>
-<h3>Gewürze</h3>
-<div class:list={["ingredient-grid", `ingredient-grid--${direction}`]}>
-    {recipe.data.ingredients
-        .filter(ingredient => !ingredient.hasOwnProperty("amount"))
-        .map(ingredient => (
+        ))}
+    </div>
+    <div class:list={["ingredient-grid-small", `ingredient-grid--${direction}`]}>
+        {smallIngredients.map(ingredient => (
             <IngredientCard {ingredient} {direction} size="small"/>
-        )
-    )}
+        ))}
+    </div>
 </div>
 
-<style lang="scss">
+<style lang="scss" define:vars={{
+    "large-ingredients-columns": largeIngredientsColumns
+}}>
+    .container {
+        display: flex;
+        gap: 1rem;
+    }
+
     img {
         width: calc(100% + 1rem);
         height: auto;
@@ -43,20 +54,30 @@ const { recipe, direction } = Astro.props;
 
     p {
         margin: 0;
-        color: #808080;
+        color: rgb(var(--text-secondary));
     }
 
-    .ingredient-grid {
-        display: flex;
-        flex-wrap: wrap;
+    .ingredient-grid-large {
+        display: grid;
+        grid-template-columns: repeat(var(--large-ingredients-columns), auto);
+        grid-auto-flow: row;
+        align-content: flex-start;
         gap: .5rem;
 
         &.ingredient-grid--vertical {
             flex-direction: column;
         }
+    }
 
-        &:not(:first-child) {
-            margin-top: 1.5rem;
+    .ingredient-grid-small {
+        display: flex;
+        align-items: flex-start;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        &.ingredient-grid--vertical {
+            flex-direction: column;
         }
     }
 </style>

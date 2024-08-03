@@ -52,11 +52,16 @@ ingredients: [
 ]
 ---
 
-1. Karotten längs halbieren und in 3-5 cm lange Stücke schneiden
-2. Karottenstücke in Olivenöl wälzen und mit Kreuzkümmel(samen) würzen
-3. Karottenstücke auf Ofenblech verteilen
-4. Knoblauchknolle etwas anschneiden oder aufschlagen, mit Öl beträufeln, in Alufolie einwickeln und mit aufs Blech legen
-5. Bei 200 °C ca. 30 min garen
-6. Karottenstücke und Knoblauch etwas abkühlen lassen
-7. Karottenstücke, Knoblauch, Kichererbsen, Tahini, Limettensaft, Cayennepfeffer, Paprikapulver, Kurkuma, Zimt, Olivenöl, Salz und Pfeffer in Mixer geben
-8. Beim Mixen Wasser hinzugeben, bis die Konsistenz cremig ist
+### Karotten im Ofen garen
+
+1. 🔪 Karotten längs halbieren und in 3-5 cm lange Stücke schneiden.
+2. 🧂 Karottenstücke in Olivenöl wälzen und mit Kreuzkümmel(samen) würzen.
+3. 🥕 Karottenstücke auf Ofenblech verteilen.
+4. 🧄 Knoblauchknolle etwas anschneiden oder aufschlagen, mit Öl beträufeln, in Alufolie einwickeln und mit aufs Blech legen.
+5. 🔥 Bei 200 °C ca. 30 min garen.
+6. 💤 Karottenstücke und Knoblauch etwas abkühlen lassen.
+
+### Zutaten pürieren
+
+7. ⚙️ Karottenstücke, Knoblauch, Kichererbsen, Tahini, Limettensaft, Cayennepfeffer, Paprikapulver, Kurkuma, Zimt, Olivenöl, Salz und Pfeffer in Mixer geben.
+8. 💧 Beim Mixen Wasser hinzugeben, bis die Konsistenz cremig ist.
