@@ -15,7 +15,12 @@ const { Content } = await recipe.render();
 ---
 
 <section class="header">
-    <Image src={recipe.data.image} alt={recipe.data.title} width={600} transition:name="recipe-image"/>
+    <Image
+        src={recipe.data.image}
+        alt={recipe.data.title}
+        width={600}
+        transition:name=`recipe-image-${recipe.data.title}`
+    />
     <h1>
         <span>{recipe.data.title}</span>
         <span class="small">{recipe.data.subtitle}</span>
@@ -41,6 +46,16 @@ const { Content } = await recipe.render();
             margin: 0;
             margin: 0 0 1rem -200px;
             z-index: 1;
+            opacity: 0;
+            transform: translateX(40px);
+            animation: slide-in .3s .2s 1 forwards;
+
+            @keyframes slide-in {
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
             
             span {
                 display: block;

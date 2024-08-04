@@ -17,10 +17,10 @@ const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
-    <HeaderElement class="header" href=`${baseUrl}/preview/${recipe.slug}`>
+    <HeaderElement class="header" href=`${baseUrl}/recipes/${recipe.slug}`>
         <div class="image-blur" style={`background-image: url(${optimizedImage.src});`}>
         </div>
-        <Image src={recipe.data.image} alt={recipe.data.title} transition:name="recipe-image"/>
+        <Image src={recipe.data.image} alt={recipe.data.title} transition:name=`recipe-image-${recipe.data.title}`/>
         <div class="total-time overlay">
             <Icon name="solar:clock-circle-outline" size={18} />
             {recipe.data.totalTime}
