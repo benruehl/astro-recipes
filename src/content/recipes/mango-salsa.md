@@ -41,7 +41,7 @@ ingredients: [
 3. 🔪 Chilischote in feine Stücke schneiden.
 4. 🔪 Avocado in 1 cm breite Stücke schneiden.
 
-# Zutaten mischen
+### Zutaten mischen
 
 5. 🥣 Mango, Zwiebel, Frühlingszwiebel, Chili, (NICHT die Avocado), Limettensaft und Salz in Schüssel geben und vermischen.
 6. 🥣 Avocado, Koriander und schwarzen Pfeffer dazu geben und vorsichtig vermischen.
