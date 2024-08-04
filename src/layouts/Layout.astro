@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import '@fontsource/averia-serif-libre';
 
 interface Props {
 	title: string;
@@ -38,7 +39,8 @@ const { title } = Astro.props;
 	:root {
 		--accent: 203, 200, 197;
 		--text-base: 0, 0, 0;
-		--text-secondary: 128, 128, 128;
+		--text-light: 128, 128, 128;
+		--text-lighter: 200, 200, 200;
 		--page-background: 245, 243, 240;
 		--card-background: 255, 255, 255;
 	}
@@ -52,6 +54,7 @@ const { title } = Astro.props;
 	}
 
 	h1 {
+		font-family: 'Averia Serif Libre', system-ui;
 		font-size: min(4rem, 14vw);
 		line-height: 1;
 		margin-bottom: 1em;
@@ -59,15 +62,16 @@ const { title } = Astro.props;
 	}
 
 	h2 {
-		font-size: 2.5rem;
+		font-family: 'Averia Serif Libre', system-ui;
+		font-size: min(12rem, 20vw);
 		font-weight: 400;
 		line-height: 1;
 		margin-top: 3rem;
 		hyphens: auto;
-
-		/* @media (max-width: $sm) {
-			font-size: 2.5rem;
-		} */
+		letter-spacing: -.04em;
+		color: rgb(var(--text-lighter));
+		margin-bottom: -.25em;
+		mask-image: linear-gradient(to bottom, #fff, #0000);
 	}
 
 	h3 {
@@ -102,7 +106,7 @@ const { title } = Astro.props;
 	.small {
 		display: block;
 		font-size: .4em;
-		color: rgb(var(--text-secondary));
+		color: rgb(var(--text-light));
 		line-height: 2;
 	}
 </style>

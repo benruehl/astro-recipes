@@ -3,12 +3,13 @@ interface Props {
   gap?: string;
   maxColumns?: number;
   minItemWidth?: string;
+  class?: string;
 }
 
-const { gap = "1rem", maxColumns = 8, minItemWidth = "100px" } = Astro.props;
+const { gap = "1rem", maxColumns = 8, minItemWidth = "100px", class: className } = Astro.props;
 ---
 
-<div class="grid">
+<div class:list={["grid", className]}>
     <slot/>
 </div>
 
