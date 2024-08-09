@@ -54,7 +54,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "cayenne": {
         img: "cayenne.png",
         name: "Cayenne",
-        background: "5, 85%",
+        background: "5, 50%",
     },
     "chickpeas": {
         img: "chickpeas.png",
@@ -64,17 +64,17 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "chili": {
         img: "chili.png",
         name: "Chili",
-        background: "5, 85%",
+        background: "5, 50%",
     },
     "chili-flakes": {
         img: "chili-flakes.png",
         name: "Chiliflocken",
-        background: "5, 85%",
+        background: "5, 50%",
     },
     "chipotle-paste": {
         img: "chipotle-paste.png",
         name: "Chipotle Paste",
-        background: "5, 85%",
+        background: "5, 50%",
     },
     "chives": {
         img: "chives.jpg",
@@ -164,7 +164,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "oil": {
         img: "oil.jpg",
         name: "Öl",
-        background: "51, 80%",
+        background: "41, 74%",
     },
     "onion": {
         img: "onion.jpg",

@@ -1,8 +1,9 @@
 ---
 import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { mapIngredient } from '../utils/ingredients';
+import ingredientMaskImage from "../images/ingredient-mask.svg";
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -10,13 +11,16 @@ interface Props {
   ingredient: Recipe["data"]["ingredients"][0];
   size: "small" | "large";
   direction: "horizontal" | "vertical";
+  backgroundRotationDeg: number;
 }
 
-const { ingredient, size, direction } = Astro.props;
+const { ingredient, size, direction, backgroundRotationDeg } = Astro.props;
 const { img: imgFileName, name, background } = mapIngredient(ingredient.key);
 
 const ingredientImages = import.meta.glob<{ default: ImageMetadata }>("/src/images/ingredients/*");
 const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
+
+const maskImage = await getImage({ src: ingredientMaskImage });
 ---
 
 <div class:list={["card", `card--${size}`, `card--${direction}`]}>
@@ -35,6 +39,8 @@ const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
 
 <style lang="scss" define:vars={{
     "ingredient-color": background,
+    "mask-image-src": `url(${maskImage.src})`,
+    "background-rotation-deg": `${backgroundRotationDeg}deg`,
 }}>
     .card {
         display: flex;
@@ -50,9 +56,14 @@ const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
             inset: -30% -50%;
             background: radial-gradient(
                 ellipse at 50% 50%,
-                hsl(var(--ingredient-color), 92%),
+                hsl(var(--ingredient-color), 90%),
                 transparent 70%
             );
+            mask-image: var(--mask-image-src);
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: 80%;
+            transform: rotate(var(--background-rotation-deg));
         }
 
         &.card--large {

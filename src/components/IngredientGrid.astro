@@ -20,17 +20,21 @@ const largeIngredientsColumns =
     smallIngredients.length <= 3 ? 5 :
         largeIngredients.length % 3 === 0 ? 3 :
             largeIngredients.length % 2 === 0 ? 2 : 3;
+
+const getRandomInt = (max: number) => {
+    return Math.floor(Math.random() * max);
+}
 ---
 
 <div class="container">
     <div class:list={["ingredient-grid-large", `ingredient-grid--${direction}`]}>
         {largeIngredients.map(ingredient => (
-            <IngredientCard {ingredient} {direction} size="large"/>
+            <IngredientCard {ingredient} {direction} size="large" backgroundRotationDeg={getRandomInt(360)}/>
         ))}
     </div>
     <div class:list={["ingredient-grid-small", `ingredient-grid--${direction}`]}>
         {smallIngredients.map(ingredient => (
-            <IngredientCard {ingredient} {direction} size="small"/>
+            <IngredientCard {ingredient} {direction} size="small" backgroundRotationDeg={getRandomInt(360)}/>
         ))}
     </div>
 </div>
