@@ -48,14 +48,12 @@ const { Content } = await recipe.render();
             margin: 0;
             margin: 0 0 1rem -200px;
             z-index: 1;
-            opacity: 0;
-            transform: translateX(40px);
             animation: slide-in .3s .2s 1 forwards;
+            clip-path: inset(0 0 0 100%);
 
             @keyframes slide-in {
                 to {
-                    opacity: 1;
-                    transform: translateX(0);
+                    clip-path: inset(0);
                 }
             }
             
