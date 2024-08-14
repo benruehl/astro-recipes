@@ -5,6 +5,7 @@ image: ./coleslaw.jpg
 category: SideDish
 totalTime: 30 min
 source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-15-minuten-rezepte-13/coleslaw-286
+hueRotate: 300
 ingredients: [
     {
         key: "pointed-cabbage",

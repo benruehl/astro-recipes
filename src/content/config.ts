@@ -9,6 +9,7 @@ const recipeCollection = defineCollection({
         category: z.enum(["SideDish", "Salad", "Dressing"]),
         totalTime: z.string(),
         source: z.string().optional(),
+        hueRotate: z.number(),
         ingredients: z.array(z.object({
             key: z.enum([
                 "almonds",

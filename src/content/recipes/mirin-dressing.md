@@ -4,6 +4,7 @@ subtitle: mit Sojasauce und Sesamöl
 image: ./mirin-dressing.jpg
 category: Dressing
 totalTime: 5 min
+hueRotate: 150
 ingredients: [
     {
         key: "mirin",

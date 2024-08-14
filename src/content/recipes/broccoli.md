@@ -4,6 +4,7 @@ subtitle: im Ofen
 image: ./broccoli.jpg
 category: SideDish
 totalTime: 15 min
+hueRotate: 250
 ingredients: [
     {
         key: "broccoli",

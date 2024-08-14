@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { Icon } from "astro-icon/components";
 import IngredientGrid from './IngredientGrid.astro';
+import BrushStroke from './BrushStroke.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -15,12 +15,14 @@ const { Content } = await recipe.render();
 ---
 
 <section class="header">
-    <Image
-        src={recipe.data.image}
-        alt={recipe.data.title}
-        width={600}
-        transition:name=`recipe-image-${recipe.data.title}`
-    />
+    <BrushStroke hueRotate={recipe.data.hueRotate}>
+        <Image
+            src={recipe.data.image}
+            alt={recipe.data.title}
+            width={600}
+            transition:name=`recipe-image-${recipe.data.title}`
+        />
+    </BrushStroke>
     <h1>
         <span>{recipe.data.title}</span>
         <span class="small">{recipe.data.subtitle}</span>

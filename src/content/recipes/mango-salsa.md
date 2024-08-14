@@ -5,6 +5,7 @@ image: ./mango-salsa.jpg
 category: SideDish
 totalTime: 20 min
 source: https://youtu.be/sTFJJCX0RRY?t=234
+hueRotate: 250
 ingredients: [
     {
         key: "mango",

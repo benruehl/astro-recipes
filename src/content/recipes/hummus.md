@@ -5,6 +5,7 @@ image: ./hummus.jpg
 category: SideDish
 totalTime: 60 min
 source: "https://youtu.be/BDwLAn_N_ZU?t=138"
+hueRotate: 150
 ingredients: [
     {
         key: "carrot",

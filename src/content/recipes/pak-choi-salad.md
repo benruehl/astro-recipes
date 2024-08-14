@@ -5,6 +5,7 @@ image: ./pak-choi-salad.jpg
 category: Salad
 totalTime: 15 min
 source: https://youtu.be/BDwLAn_N_ZU?t=266
+hueRotate: 250
 ingredients: [
     {
         key: "pak-choi",

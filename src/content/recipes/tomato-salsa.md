@@ -5,6 +5,7 @@ image: ./tomato-salsa.jpg
 category: SideDish
 totalTime: 40 min
 source: https://youtu.be/sTFJJCX0RRY?t=500
+hueRotate: 150
 ingredients: [
     {
         key: "tomato",

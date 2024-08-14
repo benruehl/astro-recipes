@@ -4,6 +4,7 @@ subtitle: mit Joghurt
 image: ./honey-mustard-dressing.jpg
 category: Dressing
 totalTime: 5 min
+hueRotate: 120
 ingredients: [
     {
         key: "yoghurt",
