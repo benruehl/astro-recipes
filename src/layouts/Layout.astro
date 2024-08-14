@@ -53,6 +53,15 @@ const { title } = Astro.props;
 		color: rgb(var(--text-base));
 	}
 
+	html,
+	body {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+	body {
+		margin: 0;
+	}
+
 	h1 {
 		font-family: 'Averia Serif Libre', system-ui;
 		font-size: min(4rem, 14vw);

@@ -25,12 +25,14 @@ const optimizedImage = await getImage({src: brushImage});
         &::before {
             content: "";
             position: absolute;
-            inset: -35%;
+            inset: 0;
             background-image: var(--brush-image-src);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
             mix-blend-mode: multiply;
+            transform: scale(1.7);
+            transform-origin: center;
             filter: hue-rotate(var(--hue-rotate));
             z-index: -1;
         }
