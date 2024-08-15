@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
+    "@astrojs/check": "^0.9.2",
     "@fontsource/averia-serif-libre": "^5.0.19",
     "@iconify-json/solar": "^1.1.9",
-    "astro": "^4.11.0",
+    "astro": "^4.14.2",
     "astro-icon": "^1.1.0",
     "sass": "^1.77.6",
     "typescript": "^5.5.2"
