@@ -10,7 +10,7 @@ interface Props {
   direction: "horizontal" | "vertical";
 }
 
-const { recipe, direction } = Astro.props;
+const { recipe } = Astro.props;
 
 const largeIngredients = recipe.data.ingredients
     .filter(ingredient => ingredient.hasOwnProperty("amount"));
@@ -21,12 +21,12 @@ const smallIngredients = recipe.data.ingredients
 <div class="container">
     <Grid>
         {largeIngredients.map(ingredient => (
-            <IngredientCard {ingredient} {direction} size="large"/>
+            <IngredientCard {ingredient} size="large"/>
         ))}
     </Grid>
     <Grid>
         {smallIngredients.map(ingredient => (
-            <IngredientCard {ingredient} {direction} size="small"/>
+            <IngredientCard {ingredient} size="small"/>
         ))}
     </Grid>
 </div>
