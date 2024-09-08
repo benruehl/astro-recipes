@@ -96,9 +96,19 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Créme Vega",
         background: "51, 73%",
     },
+    "cucumber": {
+        img: "cucumber.jpg",
+        name: "Gurke",
+        background: "137, 81%",
+    },
     "cumin": {
         img: "cumin.png",
         name: "Kreuzkümmel",
+        background: "26, 27%",
+    },
+    "fish-sauce": {
+        img: "soy-sauce.jpg",
+        name: "Fischsauce",
         background: "26, 27%",
     },
     "garlic": {
@@ -109,6 +119,11 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "garlic-powder": {
         img: "garlic-powder.png",
         name: "Knoblauchpulver",
+        background: "39, 51%",
+    },
+    "gochugaru": {
+        img: "cayenne.png",
+        name: "Gochugaru",
         background: "39, 51%",
     },
     "honey": {
@@ -191,14 +206,19 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         name: "Spitzkohl",
         background: "73, 36%",
     },
-    "sesame-oil": {
-        img: "oil.jpg",
-        name: "Sesamöl",
-        background: "51, 10%",
-    },
     "salt": {
         img: "salt.jpg",
         name: "Salz",
+        background: "51, 10%",
+    },
+    "sesame": {
+        img: "cumin.png",
+        name: "Sesam",
+        background: "51, 10%",
+    },
+    "sesame-oil": {
+        img: "oil.jpg",
+        name: "Sesamöl",
         background: "51, 10%",
     },
     "soy-sauce": {
