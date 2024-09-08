@@ -28,18 +28,23 @@ const { Content } = await recipe.render();
         <span class="small">{recipe.data.subtitle}</span>
     </h1>
 </section>
-<section class="ingredients">
-    <IngredientGrid recipe={recipe} direction="horizontal"/>
-</section>
-<section class="instructions">
-    <Content/>
-</section>
+<div class="content">
+    <section class="ingredients">
+        <h2>Zutaten</h2>
+        <IngredientGrid recipe={recipe} direction="horizontal"/>
+    </section>
+    <section class="instructions">
+        <h2>Zubereitung</h2>
+        <Content/>
+    </section>
+</div>
 
 <style lang="scss">
     .header {
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: flex-end;
+        margin-bottom: 4rem;
 
         @media (max-width: $md) {
             grid-template-columns: 1fr;
@@ -93,7 +98,20 @@ const { Content } = await recipe.render();
         }
     }
 
+    .content {
+        display: grid;
+        gap: 2rem;
+
+        @media (min-width: $md) {
+            grid-template-columns: 1fr minmax(auto, 400px);
+        }
+    }
+
     .instructions {
+        @media (min-width: $md) {
+            order: -1;
+        }
+
         :global(h3) {
             font-size: 1.05rem;
             font-weight: bold;
@@ -107,7 +125,8 @@ const { Content } = await recipe.render();
         }
     }
 
-    section {
-        margin-bottom: 4rem;
+    h2 {
+        font-size: min(4rem, 16vw);
+		margin-top: 1rem;
     }
 </style>
