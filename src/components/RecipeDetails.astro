@@ -17,6 +17,12 @@ const { Content } = await recipe.render();
 <section class="header">
     <BrushStroke hueRotate={recipe.data.hueRotate}>
         <Image
+            class="image-ambilight"
+            src={recipe.data.image}
+            alt={recipe.data.title}
+            width={600}
+        />
+        <Image
             src={recipe.data.image}
             alt={recipe.data.title}
             width={600}
@@ -96,11 +102,25 @@ const { Content } = await recipe.render();
                 border-radius: 0;
             }
         }
+
+        .image-ambilight {
+            position: absolute;
+            inset: 0;
+            transform: scale(1.7);
+            filter: blur(15px);
+            mask-image: radial-gradient(#fff 30%, #0000 70%);
+            mix-blend-mode: overlay;
+        }
     }
 
     .content {
+        flex: 1 1 auto;
         display: grid;
         gap: 2rem;
+        background: rgba(var(--page-background), .6);
+        backdrop-filter: blur(4px);
+        border-radius: 1rem;
+        padding: 1rem;
 
         @media (min-width: $md) {
             grid-template-columns: 1fr minmax(auto, 400px);
