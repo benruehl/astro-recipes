@@ -9,3 +9,12 @@ import Layout from '../layouts/Layout.astro';
 		<RecipeGrid/>
 	</main>
 </Layout>
+
+<style>
+	:global(h2) {
+		font-size: min(12rem, 20vw);
+		color: rgb(var(--text-lighter));
+		margin-bottom: -.2em;
+		mask-image: linear-gradient(to bottom, #fff, #0000);
+	}
+</style>
