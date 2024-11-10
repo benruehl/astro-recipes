@@ -39,6 +39,13 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
 ))}
 
 <style>
+    h2 {
+        font-size: min(12rem, 20vw);
+		color: rgb(var(--text-lighter));
+		margin-bottom: -.2em;
+		mask-image: linear-gradient(to bottom, #fff, #0000);
+    }
+    
     .cards-list {
         background: rgb(var(--page-background));
     }
