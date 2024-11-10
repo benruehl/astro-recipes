@@ -35,6 +35,10 @@ const optimizedImage = await getImage({src: brushImage});
             transform-origin: center;
             filter: hue-rotate(var(--hue-rotate));
             z-index: -1;
+
+            @media (max-width: $md) {
+                transform: scale(1.7) translateY(12%) rotate(16deg);
+            }
         }
     }
 </style>
