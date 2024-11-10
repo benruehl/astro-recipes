@@ -54,6 +54,7 @@ const { Content } = await recipe.render();
 
         @media (max-width: $md) {
             grid-template-columns: 1fr;
+            margin-bottom: 1rem;
         }
 
         h1 {
@@ -66,6 +67,7 @@ const { Content } = await recipe.render();
             clip-path: inset(0 0 0 100%);
 
             @media (max-width: $md) {
+                font-size: 2rem;
                 margin: -1em 0 0 0;
             }
 
@@ -85,6 +87,7 @@ const { Content } = await recipe.render();
 
                 &.small {
                     color: rgba(var(--text-base), .6);
+                    font-size: max(.4em, 1rem);
                 }
             }
         }
@@ -147,7 +150,11 @@ const { Content } = await recipe.render();
     }
 
     h2 {
-        font-size: min(2.5rem, 16vw);
-		margin-top: 1rem;
+        font-size: min(2rem, 16vw);
+		margin-top: .5rem;
+
+        @media (max-width: $md) {
+            font-size: 1.5rem;
+        }
     }
 </style>
