@@ -7,29 +7,22 @@ type Recipe = CollectionEntry<'recipes'>;
 
 interface Props {
   recipe: Recipe;
-  isActive: boolean | null;
 }
 
-const { recipe, isActive } = Astro.props;
-const HeaderElement = isActive ? 'div' : 'a';
+const { recipe } = Astro.props;
 const optimizedImage = await getImage({src: recipe.data.image});
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<div class:list={["card", isActive ? "card--active" : isActive === false ? "card--inactive" : ""]}>
-    <HeaderElement class="header" href=`${baseUrl}/recipes/${recipe.slug}`>
+<div class:list={["card"]}>
+    <a class="header" href=`${baseUrl}/recipes/${recipe.slug}`>
         <div class="image-blur" style={`background-image: url(${optimizedImage.src});`}>
         </div>
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name=`recipe-image-${recipe.data.title}`/>
         <div class="total-time overlay">
             <Icon name="solar:clock-circle-outline" size={18} />
             {recipe.data.totalTime}
-        </div>        
-        {isActive &&
-            <a class="overlay" href={`${baseUrl}/recipes/${recipe.slug}`} title="Details">
-                <Icon name="solar:chef-hat-outline" size={24} />
-            </a>
-        }
+        </div>
     </HeaderElement>
     <div class="content">
         <h3>{recipe.data.title}</h3>
@@ -40,14 +33,6 @@ const baseUrl = import.meta.env.BASE_URL;
 <style lang="scss">
     .card {
         border-radius: 1rem;
-
-        &.card--inactive:not(:hover) {
-            opacity: .5;
-        }
-        &.card--active {
-            opacity: 1;
-            background: rgb(var(--card-background));
-        }
     }
 
     a {
