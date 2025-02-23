@@ -1,10 +1,11 @@
 ---
 interface Props {
+  translateY?: number;
   translateZ: number;
   class?: string;
 }
 
-const { translateZ, class: className } = Astro.props;
+const { translateY, translateZ, class: className } = Astro.props;
 ---
 
 <div class:list={["card-content", className]}>
@@ -12,7 +13,7 @@ const { translateZ, class: className } = Astro.props;
 </div>
 
 <style lang="scss" define:vars={{
-  "card-content-translate": `translateZ(${translateZ}px)`,
+  "card-content-translate": `translateY(${translateY ?? 0}px) translateZ(${translateZ}px)`,
 }}>
     .card-content {
       transform: translateZ(0);

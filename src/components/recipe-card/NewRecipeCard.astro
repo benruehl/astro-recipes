@@ -6,7 +6,9 @@ import Card3D from '../card-3d/Card3D.astro';
 import CardContent from '../card-3d/CardContent.astro';
 import NewCardBackground from './NewCardBackground.astro';
 import NewRecipeCardContent from './NewRecipeCardContent.astro';
-import coleslawImage from '../../content/recipes/coleslaw.png';
+import coleslawBowlBgImage from '../../content/recipes/coleslaw-1.png';
+import coleslawInImage from '../../content/recipes/coleslaw-2.png';
+import coleslawBowlFgImage from '../../content/recipes/coleslaw-3.png';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -22,24 +24,59 @@ const baseUrl = import.meta.env.BASE_URL;
 <Card3D>
     <a class="card-layout" href=`${baseUrl}/recipes/${recipe.slug}`>
         <NewCardBackground/>
-        <CardContent translateZ={15}>
+        <CardContent translateZ={10}>
             <Image
-                src={coleslawImage}
+                src={coleslawBowlBgImage}
                 alt={recipe.data.title}
                 transition:name=`recipe-image-${recipe.data.title}`
             />
-            <div class="total-time overlay">
-                <Icon name="solar:clock-circle-outline" size={18} />
-                {recipe.data.totalTime}
-            </div>
         </CardContent>
-        <CardContent class="card-bottom" translateZ={30}>
+        <CardContent translateZ={20} translateY={-1}>
+            <Image
+                src={coleslawInImage}
+                alt={recipe.data.title}
+                transition:name=`recipe-image-${recipe.data.title}`
+            />
+        </CardContent>
+        <CardContent translateZ={30}>
+            <Image
+                src={coleslawBowlFgImage}
+                alt={recipe.data.title}
+                transition:name=`recipe-image-${recipe.data.title}`
+            />
+        </CardContent>
+        <CardContent class="card-bottom" translateZ={45}>
             <NewRecipeCardContent/>
         </CardContent>
     </a>
 </Card3D>
 
 <style lang="scss">
+
+    .card-layout {
+        display: grid;
+        grid-template-areas: "overlay";
+        transform-style: preserve-3d;
+        width: 340px;
+        aspect-ratio: 57 / 89;
+
+        :global(> *) {
+            grid-area: overlay;
+        }
+
+        .card-bottom {
+            align-self: flex-end;
+        }
+    }
+
+    img {
+        box-sizing: border-box;
+        padding: 3rem;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: top;
+    }
+
     a {
         all: unset;
         cursor: pointer;
@@ -51,53 +88,5 @@ const baseUrl = import.meta.env.BASE_URL;
                 transform: scale(1.015);
             }
         }
-    }
-
-    .card-layout {
-        display: grid;
-        grid-template-areas: "overlay";
-        transform-style: preserve-3d;
-        width: 400px;
-        aspect-ratio: 70 / 120;
-
-        :global(> *) {
-            grid-area: overlay;
-        }
-
-        .card-bottom {
-            align-self: flex-end;
-        }
-
-        .overlay {
-            margin: 1rem;
-            background: rgba(var(--page-background), .8);
-            border-radius: .5rem;
-            padding: 0 .5em;
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            gap: .5ch;
-            z-index: 2;
-        }
-
-        .total-time {
-            justify-self: flex-start;
-            align-self: flex-start;
-        }
-
-        a { 
-            justify-self: flex-end;
-            align-self: flex-end;
-            padding: .75em !important;
-            border-radius: 1000px !important;
-        }
-    }
-
-    img {
-        box-sizing: border-box;
-        padding: 3rem;
-        max-width: 100%;
-        object-fit: contain;
-        object-position: bottom;
     }
 </style>

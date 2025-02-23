@@ -16,6 +16,7 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         border-radius: 1rem;
         position: relative;
         overflow: hidden;
+        transition: transform .2s;
     }
 
     .background-pattern {
@@ -23,5 +24,11 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         inset: 0;
         background-size: 260px 260px;
         mix-blend-mode: multiply;
+    }
+
+    :global(.card-3d--focused) {
+        .card-background {
+            transform: scale(1.05);
+        }
     }
 </style>
