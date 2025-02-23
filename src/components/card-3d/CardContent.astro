@@ -1,0 +1,27 @@
+---
+interface Props {
+  translateZ: number;
+  class?: string;
+}
+
+const { translateZ, class: className } = Astro.props;
+---
+
+<div class:list={["card-content", className]}>
+    <slot/>
+</div>
+
+<style lang="scss" define:vars={{
+  "card-content-translate": `translateZ(${translateZ}px)`,
+}}>
+    .card-content {
+      transform: translateZ(0);
+      transition: transform .2s;
+    }
+
+    :global(.card-3d--focused) {
+      .card-content {
+        transform: var(--card-content-translate);
+      }
+    }
+</style>

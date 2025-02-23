@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
+    "@convergence/throttle-utils": "^0.1.0",
     "@fontsource/averia-serif-libre": "^5.0.19",
     "@iconify-json/solar": "^1.1.9",
     "astro": "^4.14.2",

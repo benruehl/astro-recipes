@@ -1,0 +1,57 @@
+<script>
+    import { throttle } from "@convergence/throttle-utils";
+
+    const cards = document.querySelectorAll<HTMLElement>(".card");
+    for (const card of cards) {
+        card.addEventListener("mousemove", throttle(rotate.bind(card), 10));
+        card.addEventListener("mouseout", stopRotate);
+        card.addEventListener("mouseover", setActive);
+        card.addEventListener("mouseout", setInactive);
+    }
+
+    function rotate(this: HTMLElement, e: MouseEvent) {
+        const halfHeight = this.offsetHeight / 2;
+        const halfWidth = this.offsetWidth / 2;
+
+        const rect = this.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        this.style.transform =
+            "rotateX(" +
+            -(mouseY - halfHeight) / this.offsetHeight * 10 +
+            "deg) rotateY(" +
+            (mouseX - halfWidth) / this.offsetWidth * 20 +
+            "deg)";
+    }
+
+    function stopRotate(this: HTMLElement) {
+        this.style.transform = "rotate(0)";
+    }
+
+    function setActive(this: HTMLElement, e: MouseEvent) {
+        this.classList.add("card-3d--focused");
+    }
+
+    function setInactive(this: HTMLElement, e: MouseEvent) {
+        this.classList.remove("card-3d--focused");
+    }
+</script>
+
+<div class="card-container">
+    <div class="card">
+        <slot/>
+    </div>
+</div>
+
+<style lang="scss">
+    .card-container {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+
+    .card {
+        transform-style: preserve-3d;
+        transition: transform 0.2s;
+    }
+</style>

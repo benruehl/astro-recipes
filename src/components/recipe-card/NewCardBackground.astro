@@ -1,0 +1,27 @@
+---
+import { getImage } from 'astro:assets';
+import patternImage from "../../images/wave-pattern.svg";
+
+const optimizedPatternImage = await getImage({ src: patternImage });
+---
+
+<div class="card-background">
+    <div class="background-pattern" style={`background-image: url('${optimizedPatternImage.src}')`}></div>
+</div>
+
+<style lang="scss">
+    .card-background {
+        transform-style: preserve-3d;
+        background: linear-gradient(to bottom, #755C75, #362836);
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .background-pattern {
+        position: absolute;
+        inset: 0;
+        background-size: 260px 260px;
+        mix-blend-mode: multiply;
+    }
+</style>
