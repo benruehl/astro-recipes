@@ -1,5 +1,12 @@
+---
+import { getImage } from 'astro:assets';
+import ringImage from "../../images/ring.svg";
+
+const optimizedRingImage = await getImage({ src: ringImage });
+---
+
 <div class="content-container">
-    <div class="time">
+    <div class="time" style={`background-image: url('${optimizedRingImage.src}')`}>
         <span>30</span>
     </div>
     <h3>Coleslaw</h3>
@@ -34,29 +41,27 @@
         position: absolute;
         top: 0;
         right: 3rem;
-        width: 58px;
-        height: 58px;
+        width: 72px;
+        height: 72px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #3A3A3A;
         color: #BE5D77;
-        border: 7px solid #BE5D77;
-        border-radius: 1000px;
         font-size: 28px;
         font-weight: bold;
         transform: translateY(calc(-50% - 5px));
 
         & > * {
             position: absolute;
-            top: 5%;
+            top: 15%;
         }
 
         &::after {
             content: "min";
             font-size: 14px;
+            font-weight: 400;
             position: absolute;
-            top: 60%;
+            top: 55%;
         }
     }
 </style>
