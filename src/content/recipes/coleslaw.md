@@ -1,6 +1,7 @@
 ---
 title: Coleslaw
 subtitle: mit Spitzkohl
+tagline: Weniger Mayo als üblich. Passt zu BBQ und Burger.
 image: ./coleslaw.jpg
 category: SideDish
 totalTime: 30 min

@@ -1,6 +1,7 @@
 ---
 title: Honig-Senf-Dressing 
 subtitle: mit Joghurt
+tagline: Standard-Dressing für Salate oder Bowls.
 image: ./honey-mustard-dressing.jpg
 category: Dressing
 totalTime: 5 min

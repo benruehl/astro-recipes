@@ -1,0 +1,55 @@
+---
+import { getImage, Image } from 'astro:assets';
+import ringImage from "../../images/ring.svg";
+
+interface Props {
+    formattedTime: string;
+}
+
+const { formattedTime } = Astro.props;
+
+const optimizedRingImage = await getImage({ src: ringImage });
+const { timeValue, timeUnit } = parseFormattedTime(formattedTime);
+
+function parseFormattedTime(formattedTime: string) {
+    const split = formattedTime.split(" ");
+    return {
+        timeValue: split[0],
+        timeUnit: split[1],
+    }
+}
+---
+
+<div class="time" style={`background-image: url('${optimizedRingImage.src}')`}>
+    <span class="value">{timeValue}</span>
+    <span class="unit">{timeUnit}</span>
+</div>
+
+<style lang="scss">
+    .time {
+        position: absolute;
+        top: -4px;
+        left: 1rem;
+        width: 72px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #BE5D77;
+        font-size: 28px;
+        font-weight: bold;
+        transform: translateY(calc(-50% - 5px));
+
+        .value {
+            position: absolute;
+            top: 15%;
+        }
+
+        .unit {
+            font-size: 14px;
+            font-weight: 400;
+            position: absolute;
+            top: 55%;
+        }
+    }
+</style>

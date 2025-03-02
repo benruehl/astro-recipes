@@ -1,6 +1,7 @@
 ---
 title: Hummus
 subtitle: mit Karotten
+tagline: Milder Dipp für Gebäck oder Gemüse.
 image: ./hummus.jpg
 category: SideDish
 totalTime: 60 min

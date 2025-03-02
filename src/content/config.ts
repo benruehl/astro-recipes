@@ -5,6 +5,7 @@ const recipeCollection = defineCollection({
     schema: ({ image }) => z.object({
         title: z.string(),
         subtitle: z.string(),
+        tagline: z.string().optional(), // TODO: Make mandatory
         image: image(),
         category: z.enum(["SideDish", "Salad", "Dressing"]),
         totalTime: z.string(),

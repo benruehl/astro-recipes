@@ -1,26 +1,32 @@
 ---
 import { getImage, Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Time from './Time.astro';
 import Tag from '../common/Tag.astro';
-import ringImage from "../../images/ring.svg";
 import veggyImage from "../../images/vegetarian.svg";
 
-const optimizedRingImage = await getImage({ src: ringImage });
+type Recipe = CollectionEntry<'recipes'>;
+
+interface Props {
+  recipe: Recipe;
+}
+
+const { recipe } = Astro.props;
+const optimizedImage = await getImage({src: recipe.data.image});
 ---
 
 <div class="content-container">
-    <div class="time" style={`background-image: url('${optimizedRingImage.src}')`}>
-        <span>30</span>
-    </div>
+    <Time formattedTime={recipe.data.totalTime}/>
     <div class="icons">
         <Image src={veggyImage} alt="vegetarisch"/>
     </div>
     <div class="text">
-        <h3>Coleslaw</h3>
+        <h3>{recipe.data.title}</h3>
         <div class="tags">
             <Tag>BBQ</Tag>
             <Tag>Kalt</Tag>
         </div>
-        <p>Weniger Mayo als üblich. Passt zu BBQ und Burger.</p>
+        <p>{recipe.data.tagline}</p>
     </div>
 </div>
 
@@ -59,33 +65,5 @@ const optimizedRingImage = await getImage({ src: ringImage });
     p {
         margin-top: .5em;
         color: #a7a7a7;
-    }
-
-    .time {
-        position: absolute;
-        top: -4px;
-        left: 1rem;
-        width: 72px;
-        height: 72px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #BE5D77;
-        font-size: 28px;
-        font-weight: bold;
-        transform: translateY(calc(-50% - 5px));
-
-        & > * {
-            position: absolute;
-            top: 15%;
-        }
-
-        &::after {
-            content: "min";
-            font-size: 14px;
-            font-weight: 400;
-            position: absolute;
-            top: 55%;
-        }
     }
 </style>

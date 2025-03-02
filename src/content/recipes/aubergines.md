@@ -1,6 +1,7 @@
 ---
 title: Auberginen
 subtitle: mit Miso-Marinade
+tagline: Reich an Umami. Als Beilage sehr vielseitig.
 image: ./aubergines.jpg
 category: SideDish
 totalTime: 15 min
