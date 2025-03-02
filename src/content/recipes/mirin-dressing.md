@@ -1,7 +1,8 @@
 ---
 title: Mirin-Dressing 
 subtitle: mit Sojasauce und Sesamöl
-tagline: Süßlich, leicht salzig. Gibt jeder Bowl eine Ostasiatische Note.
+tagline: Süßlich, leicht salzig. Gibt jeder Bowl eine ostasiatische Note.
+tags: ["Japanisch"]
 image: ./mirin-dressing.jpg
 category: Dressing
 totalTime: 5 min

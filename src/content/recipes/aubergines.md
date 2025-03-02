@@ -2,6 +2,7 @@
 title: Auberginen
 subtitle: mit Miso-Marinade
 tagline: Reich an Umami. Als Beilage sehr vielseitig.
+tags: ["Grillgemüse"]
 image: ./aubergines.jpg
 category: SideDish
 totalTime: 15 min

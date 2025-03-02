@@ -1,6 +1,7 @@
 ---
 title: Romesco Sauce
 subtitle: mit Parika und Mandeln
+tags: ["Spanisch"]
 image: ./romesco-sauce.jpg
 category: Dressing
 totalTime: 30 min

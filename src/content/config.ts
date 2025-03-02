@@ -6,6 +6,7 @@ const recipeCollection = defineCollection({
         title: z.string(),
         subtitle: z.string(),
         tagline: z.string().optional(), // TODO: Make mandatory
+        tags: z.array(z.string()).optional(),
         image: image(),
         category: z.enum(["SideDish", "Salad", "Dressing"]),
         totalTime: z.string(),

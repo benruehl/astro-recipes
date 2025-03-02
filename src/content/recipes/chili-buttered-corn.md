@@ -1,6 +1,7 @@
 ---
 title: Gebutterter Mais
 subtitle: mit Chili
+tags: ["BBQ", "Warm"]
 image: ./chili-buttered-corn.jpg
 category: SideDish
 totalTime: 20 min

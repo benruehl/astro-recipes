@@ -29,8 +29,9 @@ const optimizedImage = await getImage({src: recipe.data.image});
     <div class="text">
         <h3>{recipe.data.title}</h3>
         <div class="tags">
-            <Tag>BBQ</Tag>
-            <Tag>Kalt</Tag>
+            {recipe.data.tags?.map(tag => (
+                <Tag>{tag}</Tag>
+            ))}
         </div>
         <p>{recipe.data.tagline}</p>
     </div>
@@ -65,7 +66,7 @@ const optimizedImage = await getImage({src: recipe.data.image});
     }
 
     h3 {
-        margin: 0 0 4px 0;
+        margin: 0 0 .5em 0;
     }
 
     p {

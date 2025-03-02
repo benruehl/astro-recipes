@@ -2,6 +2,7 @@
 title: Mangosalsa
 subtitle: mit Avocado und Zwiebeln
 tagline: Fruchtig, zwieblig und leicht scharf. Sehr erfrischend.
+tags: ["Fruchtig", "Kalt"]
 image: ./mango-salsa.jpg
 category: SideDish
 totalTime: 20 min

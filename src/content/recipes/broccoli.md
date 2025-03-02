@@ -2,6 +2,7 @@
 title: Brokkoli
 subtitle: im Ofen
 tagline: Das beste Rezept für Brokkoli aus dem Ofen.
+tags: ["Ofengemüse"]
 image: ./broccoli.jpg
 category: SideDish
 totalTime: 15 min

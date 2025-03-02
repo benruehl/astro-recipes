@@ -2,6 +2,7 @@
 title: Hummus
 subtitle: mit Karotten
 tagline: Milder Dipp für Gebäck oder Gemüse.
+tags: ["Orientalisch", "Vielseitig", "Kalt"]
 image: ./hummus.jpg
 category: SideDish
 totalTime: 60 min
