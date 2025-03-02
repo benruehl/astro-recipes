@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import Time from './Time.astro';
 import Tag from '../common/Tag.astro';
 import veggyImage from "../../images/vegetarian.svg";
+import veganImage from "../../images/vegan.svg";
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -18,7 +19,12 @@ const optimizedImage = await getImage({src: recipe.data.image});
 <div class="content-container">
     <Time formattedTime={recipe.data.totalTime}/>
     <div class="icons">
-        <Image src={veggyImage} alt="vegetarisch"/>
+        {recipe.data.diet === "Vegetarian" && (
+            <Image src={veggyImage} alt="vegetarisch"/>
+        )}
+        {recipe.data.diet === "Vegan" && (
+            <Image src={veganImage} alt="vegan"/>
+        )}
     </div>
     <div class="text">
         <h3>{recipe.data.title}</h3>

@@ -5,6 +5,7 @@ tagline: Weniger Mayo als üblich. Passt zu BBQ und Burger.
 image: ./coleslaw.jpg
 category: SideDish
 totalTime: 30 min
+diet: Vegetarian
 source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-15-minuten-rezepte-13/coleslaw-286
 hueRotate: 300
 ingredients: [

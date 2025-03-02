@@ -5,6 +5,7 @@ tagline: Das beste Rezept für Brokkoli aus dem Ofen.
 image: ./broccoli.jpg
 category: SideDish
 totalTime: 15 min
+diet: Vegan
 hueRotate: 250
 ingredients: [
     {

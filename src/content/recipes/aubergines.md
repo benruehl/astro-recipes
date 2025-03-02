@@ -5,6 +5,7 @@ tagline: Reich an Umami. Als Beilage sehr vielseitig.
 image: ./aubergines.jpg
 category: SideDish
 totalTime: 15 min
+diet: Vegetarian
 source: https://youtu.be/BDwLAn_N_ZU?t=292
 hueRotate: 150
 ingredients: [

@@ -4,6 +4,7 @@ subtitle: mit Jalapeño und Chipotle Paste
 image: ./tomato-salsa.jpg
 category: SideDish
 totalTime: 40 min
+diet: Vegetarian
 source: https://youtu.be/sTFJJCX0RRY?t=500
 hueRotate: 150
 ingredients: [

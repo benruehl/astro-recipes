@@ -5,6 +5,7 @@ tagline: Frisch und leicht scharf. Passt zu BBQ oder als Teil einer Bowl.
 image: ./cucumber-kimchi.jpg
 category: SideDish
 totalTime: 35 min
+diet: Vegetarian
 source: https://www.youtube.com/shorts/oXoIhqZIJRU
 hueRotate: 150
 ingredients: [

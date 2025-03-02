@@ -5,6 +5,7 @@ tagline: Milder Dipp für Gebäck oder Gemüse.
 image: ./hummus.jpg
 category: SideDish
 totalTime: 60 min
+diet: Vegan
 source: "https://youtu.be/BDwLAn_N_ZU?t=138"
 hueRotate: 150
 ingredients: [

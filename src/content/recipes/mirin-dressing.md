@@ -5,6 +5,7 @@ tagline: Süßlich, leicht salzig. Gibt jeder Bowl eine Ostasiatische Note.
 image: ./mirin-dressing.jpg
 category: Dressing
 totalTime: 5 min
+diet: Vegetarian
 hueRotate: 150
 ingredients: [
     {

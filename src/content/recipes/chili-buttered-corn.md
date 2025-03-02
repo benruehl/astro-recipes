@@ -4,6 +4,7 @@ subtitle: mit Chili
 image: ./chili-buttered-corn.jpg
 category: SideDish
 totalTime: 20 min
+diet: Vegetarian
 source: https://youtu.be/sTFJJCX0RRY?t=584
 hueRotate: 270
 ingredients: [

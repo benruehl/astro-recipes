@@ -5,6 +5,7 @@ tagline: Sehr simple, hübsche Beilage.
 image: ./pak-choi-salad.jpg
 category: Salad
 totalTime: 15 min
+diet: Vegan
 source: https://youtu.be/BDwLAn_N_ZU?t=266
 hueRotate: 250
 ingredients: [
