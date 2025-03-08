@@ -3,6 +3,11 @@ title: Gurken-Kimchi
 subtitle: koreanischer Art
 tagline: Frisch und leicht scharf. Passt zu BBQ oder als Teil einer Bowl.
 tags: ["Scharf", "Kalt"]
+imageLayers: [
+    "./cucumber-kimchi-1.png",
+    "./cucumber-kimchi-2.png",
+    "./cucumber-kimchi-3.png"
+]
 image: ./cucumber-kimchi.jpg
 category: SideDish
 totalTime: 35 min

@@ -17,34 +17,22 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
-const optimizedImage = await getImage({src: recipe.data.image});
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Card3D>
     <a class="card-layout" href=`${baseUrl}/recipes/${recipe.slug}`>
         <NewCardBackground/>
-        <CardContent translateZ={10}>
-            <Image
-                src={coleslawBowlBgImage}
-                alt={recipe.data.title}
-                transition:name=`recipe-image-${recipe.data.title}`
-            />
-        </CardContent>
-        <CardContent translateZ={20} translateY={-1}>
-            <Image
-                src={coleslawInImage}
-                alt={recipe.data.title}
-                transition:name=`recipe-image-${recipe.data.title}`
-            />
-        </CardContent>
-        <CardContent translateZ={30}>
-            <Image
-                src={coleslawBowlFgImage}
-                alt={recipe.data.title}
-                transition:name=`recipe-image-${recipe.data.title}`
-            />
-        </CardContent>
+        {recipe.data.imageLayers?.map((img, index) => (
+            <CardContent translateZ={(index + 1) * 10}>
+                <Image
+                    src={img}
+                    alt={recipe.data.title}
+                    height={400}
+                    transition:name={`recipe-image-${recipe.data.title}`}
+                />
+            </CardContent>
+        ))}
         <CardContent class="card-bottom" translateZ={45}>
             <NewRecipeCardContent recipe={recipe}/>
         </CardContent>
@@ -73,9 +61,10 @@ const baseUrl = import.meta.env.BASE_URL;
     img {
         box-sizing: border-box;
         padding: 3rem;
+        width: 100%;
         max-width: 100%;
         object-fit: contain;
-        object-position: top;
+        object-position: bottom;
     }
 
     a {

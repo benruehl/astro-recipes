@@ -7,6 +7,7 @@ const recipeCollection = defineCollection({
         subtitle: z.string(),
         tagline: z.string().optional(), // TODO: Make mandatory
         tags: z.array(z.string()).optional(),
+        imageLayers: z.array(image()).optional(), // TODO: Make mandatory
         image: image(),
         category: z.enum(["SideDish", "Salad", "Dressing"]),
         totalTime: z.string(),
