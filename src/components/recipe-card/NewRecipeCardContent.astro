@@ -1,5 +1,5 @@
 ---
-import { getImage, Image } from 'astro:assets';
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Time from './Time.astro';
 import Tag from '../common/Tag.astro';
@@ -13,17 +13,22 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
-const optimizedImage = await getImage({src: recipe.data.image});
 ---
 
 <div class="content-container">
     <Time formattedTime={recipe.data.totalTime}/>
     <div class="icons">
         {recipe.data.diet === "Vegetarian" && (
-            <Image src={veggyImage} alt="vegetarisch"/>
+            <figure class="veggy">
+                <Image src={veggyImage} alt="vegetarisch" width={36}/>
+                <figcaption>veggy</figcaption>
+            </figure>
         )}
         {recipe.data.diet === "Vegan" && (
-            <Image src={veganImage} alt="vegan"/>
+            <figure class="vegan">
+                <Image src={veganImage} alt="vegan" width={36}/>
+                <figcaption>vegan</figcaption>
+            </figure>
         )}
     </div>
     <div class="text">
@@ -45,7 +50,7 @@ const optimizedImage = await getImage({src: recipe.data.image});
         border-top: 8px solid #BE5D77;
         border-radius: 0 0 1rem 1rem;
         display: grid;
-        grid-template-columns: 2rem 1fr;
+        grid-template-columns: auto 1fr;
         gap: 2rem;
         color: white;
         position: relative;
@@ -53,9 +58,11 @@ const optimizedImage = await getImage({src: recipe.data.image});
 
     .icons {
         margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         img {
-            width: 100%;
             height: auto;
         }
     }
@@ -65,6 +72,16 @@ const optimizedImage = await getImage({src: recipe.data.image});
         gap: 4px;
     }
 
+    .veggy {
+        color: #9dba68;
+        font-size: .8em;
+    }
+
+    .vegan {
+        color: #65b267;
+        font-size: .8em;
+    }
+
     h3 {
         margin: 0 0 .5em 0;
     }
@@ -72,5 +89,10 @@ const optimizedImage = await getImage({src: recipe.data.image});
     p {
         margin-top: .5em;
         color: #a7a7a7;
+    }
+
+    figure {
+        margin: 0;
+        line-height: 1;
     }
 </style>
