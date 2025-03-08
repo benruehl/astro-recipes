@@ -1,14 +1,10 @@
 ---
-import { getImage, Image } from 'astro:assets';
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { Icon } from "astro-icon/components";
 import Card3D from '../card-3d/Card3D.astro';
 import CardContent from '../card-3d/CardContent.astro';
 import NewCardBackground from './NewCardBackground.astro';
 import NewRecipeCardContent from './NewRecipeCardContent.astro';
-import coleslawBowlBgImage from '../../content/recipes/coleslaw-1.png';
-import coleslawInImage from '../../content/recipes/coleslaw-2.png';
-import coleslawBowlFgImage from '../../content/recipes/coleslaw-3.png';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -22,7 +18,10 @@ const baseUrl = import.meta.env.BASE_URL;
 
 <Card3D>
     <a class="card-layout" href=`${baseUrl}/recipes/${recipe.slug}`>
-        <NewCardBackground/>
+        <NewCardBackground
+            startColor={recipe.data.background?.startColor}
+            endColor={recipe.data.background?.endColor}
+        />
         {recipe.data.imageLayers?.map((img, index) => (
             <CardContent translateZ={(index + 1) * 10}>
                 <Image

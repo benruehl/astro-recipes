@@ -2,6 +2,12 @@
 import { getImage } from 'astro:assets';
 import patternImage from "../../images/wave-pattern.svg";
 
+interface Props {
+  startColor?: string;
+  endColor?: string;
+}
+
+const { startColor, endColor } = Astro.props;
 const optimizedPatternImage = await getImage({ src: patternImage });
 ---
 
@@ -9,10 +15,13 @@ const optimizedPatternImage = await getImage({ src: patternImage });
     <div class="background-pattern" style={`background-image: url('${optimizedPatternImage.src}')`}></div>
 </div>
 
-<style lang="scss">
+<style lang="scss" define:vars={{
+    "start-color": startColor,
+    "end-color": endColor,
+}}>
     .card-background {
         transform-style: preserve-3d;
-        background: linear-gradient(to bottom, #755C75, #362836);
+        background: linear-gradient(120deg, var(--start-color, #755C75), var(--end-color, #362836));
         border-radius: 1rem;
         position: relative;
         overflow: hidden;

@@ -13,6 +13,9 @@ category: SideDish
 totalTime: 35 min
 diet: Vegetarian
 source: https://www.youtube.com/shorts/oXoIhqZIJRU
+background:
+    startColor: "#724b4b"
+    endColor: "#4F2424"
 hueRotate: 150
 ingredients: [
     {
