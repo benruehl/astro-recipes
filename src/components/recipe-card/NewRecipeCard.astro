@@ -16,43 +16,54 @@ const { recipe } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<Card3D>
-    <a class="card-layout" href=`${baseUrl}/recipes/${recipe.slug}`>
-        <NewCardBackground
-            startColor={recipe.data.background?.startColor}
-            endColor={recipe.data.background?.endColor}
-        />
-        {recipe.data.imageLayers?.map((img, index) => (
-            <CardContent translateZ={(index + 1) * 10}>
-                <Image
-                    src={img}
-                    alt={recipe.data.title}
-                    transition:name={`recipe-image-${recipe.data.title}`}
-                />
-            </CardContent>
-        ))}
-        <CardContent class="card-bottom" translateZ={45}>
-            <NewRecipeCardContent recipe={recipe}/>
-        </CardContent>
-    </a>
-</Card3D>
+<a class="card-container overlay-container" href=`${baseUrl}/recipes/${recipe.slug}`>
+    <Card3D>
+        <div class="card-layout overlay-container">
+            <NewCardBackground
+                startColor={recipe.data.background?.startColor}
+                endColor={recipe.data.background?.endColor}
+            />
+            {recipe.data.imageLayers?.map((img, index) => (
+                <CardContent translateZ={(index + 1) * 10}>
+                    <Image
+                        src={img}
+                        alt={recipe.data.title}
+                        transition:name={`recipe-image-${recipe.data.title}`}
+                    />
+                </CardContent>
+            ))}
+        </div>
+    </Card3D>
+    <div class="card-bottom">
+        <NewRecipeCardContent recipe={recipe}/>
+    </div>
+</a>
 
 <style lang="scss">
+    .card-container {
+        width: 340px;
+        aspect-ratio: 57 / 89;
+        transition: transform 0.2s;
+
+        .card-bottom {
+            align-self: flex-end;
+            pointer-events: none;
+        }
+    }
 
     .card-layout {
+        width: 100%;
+        height: 100%;
+    }
+
+    .overlay-container {
         display: grid;
         grid-template-areas: "overlay";
         transform-style: preserve-3d;
-        width: 340px;
-        aspect-ratio: 57 / 89;
 
         :global(> *) {
             grid-area: overlay;
             min-width: 0;
-        }
-
-        .card-bottom {
-            align-self: flex-end;
         }
     }
 
@@ -64,18 +75,19 @@ const baseUrl = import.meta.env.BASE_URL;
         height: auto;
         object-fit: contain;
         object-position: center;
+        transform: scale(1.1);
+        transition: transform .2s;
+    }
+
+    :global(.card-3d--focused) {
+        img {
+            transform: scale(1.15);
+        }
     }
 
     a {
         all: unset;
         cursor: pointer;
         position: relative;
-
-        &:hover,
-        &:focus-visible {
-            img {
-                transform: scale(1.015);
-            }
-        }
     }
 </style>
