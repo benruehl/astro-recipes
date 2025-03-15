@@ -14,7 +14,7 @@ totalTime: 35 min
 diet: Vegetarian
 source: https://www.youtube.com/shorts/oXoIhqZIJRU
 background:
-    startColor: "#724b4b"
+    startColor: "#755C75"
     endColor: "#4F2424"
 hueRotate: 150
 ingredients: [
