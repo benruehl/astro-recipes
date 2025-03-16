@@ -25,10 +25,24 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
     </Grid>
 ))}
 
-<style>
+<style lang="scss">
     h2 {
         font-size: min(4rem, 20vw);
 		color: rgb(var(--text-lighter));
 		margin-bottom: .5em;
+    }
+
+    .cards-list {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -2rem;
+            top: 4rem;
+            border-radius: 2rem;
+            background-color: #1f1f1f;
+            background-image: url("data:image/svg+xml,%3Csvg fill='%231c1c1c' width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
     }
 </style>

@@ -18,8 +18,7 @@ const optimizedImage = await getImage({src: backgroundImage});
     "background-image-src": `url(${optimizedImage.src})`
 }}>
 	:root {
-		background: #202020;
-		background: radial-gradient(at center bottom, #151517, #060607);
+		background: radial-gradient(at center bottom, #1a1a1a, #0f0f0f);
 		background-attachment: fixed;
 	}
 
@@ -30,7 +29,8 @@ const optimizedImage = await getImage({src: backgroundImage});
 			inset: 0;
 			background-image: var(--background-image-src);
 			background-size: cover;
-			opacity: .2;
+			opacity: .1;
+			mix-blend-mode: difference;
 			pointer-events: none;
 		}
 	}
