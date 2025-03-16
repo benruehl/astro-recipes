@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 const optimizedImage = await getImage({src: backgroundImage});
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Bowls">
 	<main>
 		<h1>Bowls <span class="small">& more</span></h1>
 		<NewRecipeGrid/>
@@ -33,5 +33,9 @@ const optimizedImage = await getImage({src: backgroundImage});
 			mix-blend-mode: difference;
 			pointer-events: none;
 		}
+	}
+
+	h1 {
+		color: rgb(245, 245, 245);
 	}
 </style>
