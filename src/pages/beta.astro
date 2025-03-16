@@ -1,6 +1,10 @@
 ---
+import { getImage } from 'astro:assets';
+import backgroundImage from "../images/background-texture.jpg";
 import NewRecipeGrid from '../components/NewRecipeGrid.astro';
 import Layout from '../layouts/Layout.astro';
+
+const optimizedImage = await getImage({src: backgroundImage});
 ---
 
 <Layout title="Welcome to Astro.">
@@ -10,10 +14,24 @@ import Layout from '../layouts/Layout.astro';
 	</main>
 </Layout>
 
-<style>
+<style lang="scss" define:vars={{
+    "background-image-src": `url(${optimizedImage.src})`
+}}>
 	:root {
 		background: #202020;
-		background: radial-gradient(at center bottom, #202020, #101010);
+		background: radial-gradient(at center bottom, #151517, #060607);
 		background-attachment: fixed;
+	}
+
+	main {
+		&::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			background-image: var(--background-image-src);
+			background-size: cover;
+			opacity: .2;
+			pointer-events: none;
+		}
 	}
 </style>

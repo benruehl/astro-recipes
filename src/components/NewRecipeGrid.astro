@@ -18,7 +18,7 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
 
 {categories.map(category => (
     <h2>{categoryMap[category]}</h2>
-    <Grid class="cards-list" minItemWidth="300px" maxColumns={3}>
+    <Grid class="cards-list" minItemWidth="300px" maxColumns={3} gap="4rem">
         {allRecipes.filter(r => r.data.category === category).map(recipe => {
             return <NewRecipeCard recipe={recipe}/>
         })}
@@ -27,9 +27,8 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
 
 <style>
     h2 {
-        font-size: min(12rem, 20vw);
+        font-size: min(4rem, 20vw);
 		color: rgb(var(--text-lighter));
-		margin-bottom: -.2em;
-		mask-image: linear-gradient(to bottom, #fff, #0000);
+		margin-bottom: .5em;
     }
 </style>
