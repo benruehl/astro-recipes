@@ -1,12 +1,19 @@
 <script>
     import { throttle } from "@convergence/throttle-utils";
 
-    const cards = document.querySelectorAll<HTMLElement>(".card");
-    for (const card of cards) {
-        card.addEventListener("mousemove", throttle(rotate.bind(card), 10));
-        card.addEventListener("mouseout", stopRotate);
-        card.addEventListener("mouseover", setActive);
-        card.addEventListener("mouseout", setInactive);
+    // This runs on first page load and after every navigation.
+    document.addEventListener("astro:page-load", () => {
+        init();
+    });
+
+    function init() {
+        const cards = document.querySelectorAll<HTMLElement>(".card");
+        for (const card of cards) {
+            card.addEventListener("mousemove", throttle(rotate.bind(card), 10));
+            card.addEventListener("mouseout", stopRotate);
+            card.addEventListener("mouseover", setActive);
+            card.addEventListener("mouseout", setInactive);
+        }
     }
 
     function rotate(this: HTMLElement, e: MouseEvent) {
