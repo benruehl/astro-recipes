@@ -3,10 +3,20 @@ title: Brokkoli
 subtitle: im Ofen
 tagline: Das beste Rezept für Brokkoli aus dem Ofen.
 tags: ["Ofengemüse"]
+imageLayers: [
+    "./broccoli-1.png",
+    "./broccoli-2.png",
+    "./broccoli-3.png",
+    "./broccoli-4.png",
+    "./broccoli-5.png"
+]
 image: ./broccoli.jpg
 category: SideDish
 totalTime: 15 min
 diet: Vegan
+background:
+    startColor: "#704754"
+    endColor: "#695e26"
 hueRotate: 250
 ingredients: [
     {
