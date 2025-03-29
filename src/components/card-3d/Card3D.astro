@@ -9,38 +9,51 @@
     function init() {
         const cards = document.querySelectorAll<HTMLElement>(".card");
         for (const card of cards) {
-            card.addEventListener("mousemove", throttle(rotate.bind(card), 10));
+            card.addEventListener("mousemove", throttle(rotateByMouse.bind(card), 10));
             card.addEventListener("mouseout", stopRotate);
             card.addEventListener("mouseover", setActive);
             card.addEventListener("mouseout", setInactive);
+            
+            card.addEventListener("touchmove", throttle(rotateByTouch.bind(card), 10));
+            card.addEventListener("touchend", stopRotate);
+            card.addEventListener("touchstart", setActive);
+            card.addEventListener("touchend", setInactive);
         }
     }
 
-    function rotate(this: HTMLElement, e: MouseEvent) {
-        const halfHeight = this.offsetHeight / 2;
-        const halfWidth = this.offsetWidth / 2;
+    function rotateByMouse(this: HTMLElement, e: MouseEvent) {
+        this.style.transform = calcRotateTransform(this, e.clientX, e.clientY);
+    }
 
-        const rect = this.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
+    function rotateByTouch(this: HTMLElement, e: TouchEvent) {
+        const touch = e.touches[0];
+        this.style.transform = calcRotateTransform(this, touch.pageX, touch.pageY);
+    }
 
-        this.style.transform =
-            "rotateX(" +
-            -(mouseY - halfHeight) / this.offsetHeight * 10 +
+    function calcRotateTransform(element: HTMLElement, cursorOnPagePosX: number, cursorOnPagePosY: number) {
+        const halfHeight = element.offsetHeight / 2;
+        const halfWidth = element.offsetWidth / 2;
+
+        const rect = element.getBoundingClientRect();
+        const cursorX = cursorOnPagePosX - rect.left;
+        const cursorY = cursorOnPagePosY - rect.top;
+
+        return "rotateX(" +
+            -(cursorY - halfHeight) / element.offsetHeight * 10 +
             "deg) rotateY(" +
-            (mouseX - halfWidth) / this.offsetWidth * 20 +
-            "deg)";
+            (cursorX - halfWidth) / element.offsetWidth * 20 +
+            "deg)"
     }
 
     function stopRotate(this: HTMLElement) {
         this.style.transform = "rotate(0)";
     }
 
-    function setActive(this: HTMLElement, e: MouseEvent) {
+    function setActive(this: HTMLElement) {
         this.classList.add("card-3d--focused");
     }
 
-    function setInactive(this: HTMLElement, e: MouseEvent) {
+    function setInactive(this: HTMLElement) {
         this.classList.remove("card-3d--focused");
     }
 </script>
