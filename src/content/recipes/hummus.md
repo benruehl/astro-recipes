@@ -3,11 +3,19 @@ title: Hummus
 subtitle: mit Karotten
 tagline: Milder Dipp für Gebäck oder Gemüse.
 tags: ["Orientalisch", "Vielseitig", "Kalt"]
+imageLayers: [
+    "./hummus-1.png",
+    "./hummus-2.png",
+    "./hummus-3.png"
+]
 image: ./hummus.jpg
 category: SideDish
 totalTime: 60 min
 diet: Vegan
 source: "https://youtu.be/BDwLAn_N_ZU?t=138"
+background:
+    startColor: "#764c59"
+    endColor: "#441e1e"
 hueRotate: 150
 ingredients: [
     {
