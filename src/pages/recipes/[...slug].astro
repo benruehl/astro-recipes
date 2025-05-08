@@ -8,7 +8,7 @@ import RecipeDetails from '../../components/RecipeDetails.astro';
 export async function getStaticPaths() {
 	const allRecipes = await getCollection('recipes');
   	return allRecipes.map(recipe => ({
-		params: { slug: recipe.slug },
+		params: { slug: recipe.id },
 		props: { recipe },
 	}));
 }

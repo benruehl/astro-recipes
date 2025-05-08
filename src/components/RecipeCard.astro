@@ -15,7 +15,7 @@ const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class:list={["card"]}>
-    <a class="header" href=`${baseUrl}/recipes/${recipe.slug}`>
+    <a class="header" href=`${baseUrl}/recipes/${recipe.id}`>
         <div class="image-blur" style={`background-image: url(${optimizedImage.src});`}>
         </div>
         <Image src={recipe.data.image} alt={recipe.data.title} transition:name=`recipe-image-${recipe.data.title}`/>

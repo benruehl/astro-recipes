@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import IngredientGrid from './IngredientGrid.astro';
 import BrushStroke from './BrushStroke.astro';
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
-const { Content } = await recipe.render();
+const { Content } = await render(recipe);
 ---
 
 <section class="header">

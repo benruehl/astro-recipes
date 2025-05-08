@@ -16,7 +16,7 @@ const { recipe } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<a class="card-container overlay-container" href=`${baseUrl}/recipes/${recipe.slug}`>
+<a class="card-container overlay-container" href=`${baseUrl}/recipes/${recipe.id}`>
     <Card3D>
         <div class="card-layout overlay-container">
             <NewCardBackground

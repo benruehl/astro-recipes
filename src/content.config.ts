@@ -1,7 +1,8 @@
 import { z, defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const recipeCollection = defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/[^_]*.{md,mdx,jpg,png}', base: "./src/content/recipes" }),
     schema: ({ image }) => z.object({
         title: z.string(),
         subtitle: z.string(),
