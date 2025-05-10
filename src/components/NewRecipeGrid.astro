@@ -29,11 +29,12 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
     h2 {
         font-size: min(4rem, 20vw);
 		color: rgb(var(--text-lighter));
-		margin-bottom: .5em;
+		margin: 1.5em 0 .5em 0;
     }
 
     .cards-list {
         position: relative;
+        margin-bottom: 2rem;
 
         &::before {
             content: "";
