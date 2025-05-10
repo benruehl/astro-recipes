@@ -1,7 +1,13 @@
 ---
 title: Gebutterter Mais
 subtitle: mit Chili
+tagline: Knaller Beilage! Sollte jeder probiert haben.
 tags: ["BBQ", "Warm"]
+imageLayers: [
+    "./chili-buttered-corn-1.png",
+    "./chili-buttered-corn-2.png",
+    "./chili-buttered-corn-3.png"
+]
 image: ./chili-buttered-corn.jpg
 category: SideDish
 totalTime: 20 min
