@@ -2,6 +2,11 @@
 title: Pak Choi-Salat
 subtitle: mit Paprika
 tagline: Sehr simpel, hübsche Beilage.
+imageLayers: [
+    "./pak-choi-salad-1.png",
+    "./pak-choi-salad-2.png",
+    "./pak-choi-salad-3.png"
+]
 image: ./pak-choi-salad.jpg
 category: Salad
 totalTime: 15 min
