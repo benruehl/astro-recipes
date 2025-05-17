@@ -3,10 +3,18 @@ title: Mangosalsa
 subtitle: mit Avocado und Zwiebeln
 tagline: Fruchtig, zwieblig und leicht scharf. Sehr erfrischend.
 tags: ["Fruchtig", "Kalt"]
+imageLayers: [
+    "./mango-salsa-1.png",
+    "./mango-salsa-2.png",
+    "./mango-salsa-3.png"
+]
 image: ./mango-salsa.jpg
 category: SideDish
 totalTime: 20 min
 diet: Vegan
+background:
+    startColor: "#697047"
+    endColor: "#633324"
 source: https://youtu.be/sTFJJCX0RRY?t=234
 hueRotate: 250
 ingredients: [
