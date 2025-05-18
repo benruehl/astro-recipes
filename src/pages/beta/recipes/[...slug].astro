@@ -2,8 +2,8 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { getImage } from 'astro:assets';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import RecipeDetails from '../../components/RecipeDetails.astro';
+import NewLayout from '../../../layouts/NewLayout.astro';
+import RecipeDetails from '../../../components/RecipeDetails.astro';
 
 export async function getStaticPaths() {
 	const allRecipes = await getCollection('recipes');
@@ -24,12 +24,11 @@ const { recipe } = Astro.props;
 const optimizedImage = await getImage({src: recipe.data.image});
 ---
 
-<BaseLayout title="Welcome to Astro.">
-	<div class="image-background" style={`background-image: url(${optimizedImage.src});`}/>
+<NewLayout title={recipe.data.title}>
 	<main>
 		<RecipeDetails recipe={recipe}/>
 	</main>
-</BaseLayout>
+</NewLayout>
 
 <style lang="scss">
 	main {
@@ -39,15 +38,5 @@ const optimizedImage = await getImage({src: recipe.data.image});
 		@media (min-width: $md) {
 			margin-top: 4rem;
 		}
-	}
-
-	.image-background {
-		position: fixed;
-		inset: -20%;
-		background-size: cover;
-		pointer-events: none;
-		filter: blur(70px);
-		opacity: .2;
-		z-index: -1;
 	}
 </style>

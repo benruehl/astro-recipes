@@ -1,41 +1,16 @@
 ---
-import { getImage } from 'astro:assets';
-import backgroundImage from "../images/background-texture.jpg";
 import NewRecipeGrid from '../components/NewRecipeGrid.astro';
-import Layout from '../layouts/Layout.astro';
-
-const optimizedImage = await getImage({src: backgroundImage});
+import NewLayout from '../layouts/NewLayout.astro';
 ---
 
-<Layout title="Bowls">
+<NewLayout title="Bowls">
 	<main>
 		<h1>Bowls <span class="small">& more</span></h1>
 		<NewRecipeGrid/>
 	</main>
-</Layout>
+</NewLayout>
 
-<style lang="scss" define:vars={{
-    "background-image-src": `url(${optimizedImage.src})`
-}}>
-	:root {
-		background: radial-gradient(at center bottom, #1a1a1a, #0f0f0f);
-		background-attachment: fixed;
-	}
-
-	main {
-		padding-bottom: 4rem;
-
-		&::before {
-			content: "";
-			position: fixed;
-			inset: 0;
-			background-image: var(--background-image-src);
-			background-size: cover;
-			opacity: .05;
-			pointer-events: none;
-		}
-	}
-
+<style lang="scss">
 	h1 {
 		color: rgb(245, 245, 245);
 	}

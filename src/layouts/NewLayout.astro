@@ -1,0 +1,41 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { getImage } from 'astro:assets';
+import backgroundTexture from "../images/background-texture.jpg";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+const backgroundImage = await getImage({src: backgroundTexture});
+---
+
+<BaseLayout title={title}>
+	<div class="layout">
+		<slot/>
+	</div>
+</BaseLayout>
+
+<style lang="scss" define:vars={{
+    "background-image-src": `url(${backgroundImage.src})`
+}}>
+	:root {
+		background: radial-gradient(at center bottom, #1a1a1a, #0f0f0f);
+		background-attachment: fixed;
+	}
+
+	.layout {
+		padding-bottom: 4rem;
+
+		&::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			background-image: var(--background-image-src);
+			background-size: cover;
+			opacity: .05;
+			pointer-events: none;
+		}
+	}
+</style>
