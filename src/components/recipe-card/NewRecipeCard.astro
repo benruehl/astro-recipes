@@ -5,6 +5,7 @@ import Card3D from '../card-3d/Card3D.astro';
 import CardContent from '../card-3d/CardContent.astro';
 import NewCardBackground from './NewCardBackground.astro';
 import NewRecipeCardContent from './NewRecipeCardContent.astro';
+import LayeredRecipeImage from './LayeredRecipeImage.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -20,18 +21,11 @@ const baseUrl = import.meta.env.BASE_URL;
     <Card3D>
         <div class="card-layout overlay-container">
             <NewCardBackground
+                class="card-background"
                 startColor={recipe.data.background?.startColor}
                 endColor={recipe.data.background?.endColor}
             />
-            {recipe.data.imageLayers?.map((img, index) => (
-                <CardContent translateZ={(index + 1) * 10}>
-                    <Image
-                        src={img}
-                        alt={recipe.data.title}
-                        transition:name={`recipe-image-${recipe.data.title}-${index}`}
-                    />
-                </CardContent>
-            ))}
+            <LayeredRecipeImage recipe={recipe}/>
         </div>
     </Card3D>
     <NewRecipeCardContent class="card-bottom" recipe={recipe}/>
@@ -72,6 +66,10 @@ const baseUrl = import.meta.env.BASE_URL;
         height: 100%;
     }
 
+    .card-background {
+        scale: 1.25;
+    }
+
     .overlay-container {
         display: grid;
         grid-template-areas: "overlay";
@@ -81,18 +79,6 @@ const baseUrl = import.meta.env.BASE_URL;
             grid-area: overlay;
             min-width: 0;
         }
-    }
-
-    img {
-        box-sizing: border-box;
-        padding: 3rem 0;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
-        transform: scale(1.1);
-        transition: transform .2s;
     }
 
     :global(.card-3d--focused) {

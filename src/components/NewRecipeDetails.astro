@@ -1,0 +1,108 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import IngredientGrid from './IngredientGrid.astro';
+import Tag from './common/Tag.astro';
+import NewCardBackground from './recipe-card/NewCardBackground.astro';
+import LayeredRecipeImage from './recipe-card/LayeredRecipeImage.astro';
+
+type Recipe = CollectionEntry<'recipes'>;
+
+interface Props {
+  recipe: Recipe;
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+---
+
+<article class="recipe">
+    <div class="head-background">
+        <NewCardBackground
+            startColor={recipe.data.background?.startColor}
+            endColor={recipe.data.background?.endColor}
+        />
+    </div>
+    <section class="image-container">
+        <LayeredRecipeImage class="image" recipe={recipe}/>
+    </section>
+    <section class="overview">
+        <h1>
+            <span>{recipe.data.title}</span>
+            <span class="small">{recipe.data.subtitle}</span>
+        </h1>
+        {recipe.data.tags?.map(tag => (
+            <Tag>{tag}</Tag>
+        ))}
+        <p>{recipe.data.tagline}</p>
+    </section>
+    <section class="ingredients">
+        <h2>Zutaten</h2>
+        <IngredientGrid recipe={recipe} direction="horizontal"/>
+    </section>
+    <section class="instructions">
+        <h2>Zubereitung</h2>
+        <Content/>
+    </section>
+</div>
+
+<style lang="scss">
+    .recipe {
+        display: grid;
+        grid-template-areas:
+            "image overview"
+            "ingredients instructions";
+        gap: 3rem;
+
+        @media (max-width: $md) {
+            grid-template-columns: 1fr;
+            margin-bottom: 1rem;
+        }
+
+        .head-background {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            z-index: -1;
+            scale: 1.25 1;
+            transform-origin: center bottom;
+        }
+
+        .image-container {
+            grid-area: image;
+            width: 300px;
+            overflow-y: clip;
+            position: relative;
+
+            .image {
+                position: absolute;
+                width: 400px;
+                bottom: -20%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    
+        .overview {
+            grid-area: overview;
+            padding: 2rem 0;
+        }
+
+        .ingredients {
+            grid-area: ingredients;
+        }
+
+        .instructions {
+            grid-area: instructions;
+        }
+    }
+
+    h1 {
+        text-align: left;
+        margin-bottom: .2em;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>

@@ -5,13 +5,14 @@ import patternImage from "../../images/wave-pattern.svg";
 interface Props {
   startColor?: string;
   endColor?: string;
+  class?: string;
 }
 
-const { startColor, endColor } = Astro.props;
+const { startColor, endColor, class: className } = Astro.props;
 const optimizedPatternImage = await getImage({ src: patternImage });
 ---
 
-<div class="card-background">
+<div class:list={["card-background", className]}>
     <div class="background-pattern" style={`background-image: url('${optimizedPatternImage.src}')`}></div>
 </div>
 
@@ -28,7 +29,6 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         position: relative;
         overflow: hidden;
         transition: transform .2s;
-        scale: 1.25;
     }
 
     .background-pattern {
