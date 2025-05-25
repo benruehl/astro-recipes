@@ -126,4 +126,15 @@ const { Content } = await render(recipe);
         gap: .5rem;
         align-items: center;
     }
+
+    .instructions {
+        :global(ol) {
+            list-style: none;
+        }
+
+        :global(li) {
+            text-indent: -3ch;
+            margin-bottom: .5rem;
+        }
+    }
 </style>
