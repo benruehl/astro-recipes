@@ -16,7 +16,7 @@ interface Props {
 const { recipe, class: className } = Astro.props;
 ---
 
-<div class:list={["content-container", className]}>
+<div class:list={["content-container", className]} transition:name={`recipe-content-${recipe.data.title}`}>
     <Time formattedTime={recipe.data.totalTime}/>
     <div class="icons">
         {recipe.data.diet === "Vegetarian" && (
