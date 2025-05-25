@@ -14,4 +14,20 @@ import NewLayout from '../layouts/NewLayout.astro';
 	h1 {
 		color: rgb(245, 245, 245);
 	}
+
+	// ### START WORKAROUND ###
+	// Makes missing clipping during view-transitions less noticeable.
+	// Might be replaced by "Nested view transitions" which is estimated for Chrome 138.
+	// https://chromestatus.com/feature/5162799714795520
+	:global(html::view-transition-old(*)) {
+        clip-path: xywh(-100% 0 200% 90%);
+    }
+    :global(html::view-transition-new(*)) {
+        clip-path: xywh(0 0 100% 100%);
+    }
+    :global(html::view-transition-old(root)),
+	:global(html::view-transition-new(root)) {
+        clip-path: none;
+    }
+	// ### END WORKAROUND ###
 </style>
