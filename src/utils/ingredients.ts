@@ -12,27 +12,27 @@ interface IngredientMetadata {
 
 const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "almonds": {
-        img: "almonds.jpg",
+        img: "almonds.png",
         name: "Mandeln",
         background: "29, 47%",
     },
     "apple": {
-        img: "apple.jpg",
+        img: "apple.png",
         name: "Apfel",
         background: "14, 80%",
     },
     "aubergine": {
-        img: "aubergine.jpg",
+        img: "aubergine.png",
         name: "Aubergine",
         background: "27, 19%",
     },
     "avocado": {
-        img: "avocado.jpg",
+        img: "avocado.png",
         name: "Avocado",
         background: "65, 51%",
     },
     "bell-pepper": {
-        img: "bell-pepper.jpg",
+        img: "bell-pepper.png",
         name: "Paprika",
         background: "0, 99%",
     },
@@ -42,7 +42,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "40, 60%",
     },
     "broccoli": {
-        img: "broccoli.jpg",
+        img: "broccoli.png",
         name: "Brokkoli",
         background: "108, 35%",
     },
@@ -77,7 +77,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "5, 50%",
     },
     "chives": {
-        img: "chives.jpg",
+        img: "chives.png",
         name: "Schnittlauch",
         background: "102, 22%",
     },
@@ -92,12 +92,12 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "41, 83%",
     },
     "creme-vega": {
-        img: "creme-vega.jpg",
+        img: "creme-vega.png",
         name: "Créme Vega",
         background: "51, 73%",
     },
     "cucumber": {
-        img: "cucumber.jpg",
+        img: "cucumber.png",
         name: "Gurke",
         background: "137, 81%",
     },
@@ -107,12 +107,12 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "26, 27%",
     },
     "fish-sauce": {
-        img: "soy-sauce.jpg",
+        img: "soy-sauce.png",
         name: "Fischsauce",
         background: "26, 27%",
     },
     "garlic": {
-        img: "garlic.jpg",
+        img: "garlic.png",
         name: "Knoblauch",
         background: "39, 51%",
     },
@@ -127,12 +127,12 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "39, 51%",
     },
     "honey": {
-        img: "honey.jpg",
+        img: "honey.png",
         name: "Honig",
         background: "29, 68%",
     },
     "jalapeno": {
-        img: "jalapeno.jpg",
+        img: "jalapeno.png",
         name: "Jalapeño",
         background: "110, 29%",
     },
@@ -152,7 +152,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "86, 82%",
     },
     "mango": {
-        img: "mango.avif",
+        img: "mango.png",
         name: "Mango",
         background: "45, 92%",
     },
@@ -162,7 +162,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "49, 63%",
     },
     "mirin": {
-        img: "mirin.jpg",
+        img: "mirin.png",
         name: "Mirin ",
         background: "54, 89%",
     },
@@ -172,17 +172,17 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "39, 56%",
     },
     "mustard": {
-        img: "mustard.jpg",
+        img: "mustard.png",
         name: "Senf",
         background: "39, 56%",
     },
     "oil": {
-        img: "oil.jpg",
+        img: "oil.png",
         name: "Öl",
         background: "41, 74%",
     },
     "onion": {
-        img: "onion.jpg",
+        img: "onion.png",
         name: "Zwiebel",
         background: "23, 22%",
     },
@@ -197,7 +197,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "23, 100%",
     },
     "pepper": {
-        img: "pepper.jpg",
+        img: "pepper.png",
         name: "Pfeffer",
         background: "30, 33%",
     },
@@ -207,7 +207,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "73, 36%",
     },
     "salt": {
-        img: "salt.jpg",
+        img: "salt.png",
         name: "Salz",
         background: "51, 10%",
     },
@@ -217,12 +217,12 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "51, 10%",
     },
     "sesame-oil": {
-        img: "oil.jpg",
+        img: "oil.png",
         name: "Sesamöl",
         background: "51, 10%",
     },
     "soy-sauce": {
-        img: "soy-sauce.jpg",
+        img: "soy-sauce.png",
         name: "Sojasauce",
         background: "110, 29%",
     },
@@ -247,7 +247,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "42, 47%",
     },
     "tomato": {
-        img: "tomato.jpg",
+        img: "tomato.png",
         name: "Tomate",
         background: "8, 81%",
     },
@@ -262,7 +262,7 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
         background: "49, 94%",
     },
     "yoghurt": {
-        img: "yoghurt.jpg",
+        img: "yoghurt.png",
         name: "Yoghurt",
         background: "70, 50%",
     },

@@ -1,10 +1,10 @@
 ---
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import IngredientGrid from './IngredientGrid.astro';
 import NewCardBackground from './recipe-card/NewCardBackground.astro';
 import LayeredRecipeImage from './recipe-card/LayeredRecipeImage.astro';
 import { Icon } from 'astro-icon/components';
+import IngredientList from './IngredientList.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -42,10 +42,12 @@ const { Content } = await render(recipe);
     </section>
     <section class="ingredients">
         <h2>Zutaten</h2>
-        <IngredientGrid recipe={recipe} direction="vertical"/>
+        <hr/>
+        <IngredientList recipe={recipe}/>
     </section>
     <section class="instructions">
         <h2>Zubereitung</h2>
+        <hr/>
         <Content/>
     </section>
 </div>

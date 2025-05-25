@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { mapIngredient } from '../utils/ingredients';
+
+type Recipe = CollectionEntry<'recipes'>;
+
+interface Props {
+  recipe: Recipe;
+}
+
+const { recipe } = Astro.props;
+
+const ingredientImages = import.meta.glob<{ default: ImageMetadata }>("/src/images/ingredients/*");
+---
+
+<ul>
+    {recipe.data.ingredients
+        .sort((x, y) => Number(y.hasOwnProperty("amount")) - Number(x.hasOwnProperty("amount")))
+        .map(ingredient => {
+            const { img: imgFileName, name, background } = mapIngredient(ingredient.key);
+            const imageFile = ingredientImages[`/src/images/ingredients/${imgFileName}`];
+            return (
+                <li style={`--ingredient-color: ${background}`}>
+                    <Image
+                        src={imageFile()}
+                        alt={name}
+                        width={60}
+                        height={40}
+                    />
+                    <span>{ingredient.amount}</span>
+                    <strong>{name}</strong>
+                </li>
+            )
+        }
+    )}
+</ul>
+
+<style lang="scss">
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 1ch;
+        padding: .5rem .5rem .5rem 0;
+        color: hsl(var(--ingredient-color), 60%);
+        position: relative;
+    }
+
+    img {
+        object-fit: contain;
+        object-position: center 75%;
+    }
+</style>
