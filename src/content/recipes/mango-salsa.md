@@ -48,12 +48,12 @@ ingredients: [
 
 ### Zutaten schneiden
 
-1. 🔪 Mango in 1 cm breite Würfel schneiden.
-2. 🔪 Zwiebel und Frühlingszwiebel in feine Stücke schneiden.
-3. 🔪 Chilischote in feine Stücke schneiden.
-4. 🔪 Avocado in 1 cm breite Stücke schneiden.
+1. 🔪 <span class="i-mango">Mango</span> in 1 cm breite Würfel schneiden.
+2. 🔪 <span class="i-onion">Zwiebel</span> und <span class="i-spring-onion">Frühlingszwiebel</span> in feine Stücke schneiden.
+3. 🔪 <span class="i-chili">Chilischote</span> in feine Stücke schneiden.
+4. 🔪 <span class="i-avocado">Avocado</span> in 1 cm breite Stücke schneiden.
 
 ### Zutaten mischen
 
-5. 🥣 Mango, Zwiebel, Frühlingszwiebel, Chili, (NICHT die Avocado), Limettensaft und Salz in Schüssel geben und vermischen.
-6. 🥣 Avocado, Koriander und schwarzen Pfeffer dazu geben und vorsichtig vermischen.
+5. 🥣 <span class="i-mango">Mango</span>, <span class="i-onion">Zwiebel</span>, <span class="i-spring-onion">Frühlingszwiebel</span>, <span class="i-chili">Chili</span>, (NICHT die <span class="i-avocado">Avocado</span>), <span class="i-lime-juice">Limettensaft</span> und <span class="i-salt">Salz</span> in Schüssel geben und vermischen.
+6. 🥣 <span class="i-avocado">Avocado</span>, Koriander und schwarzen Pfeffer dazu geben und vorsichtig vermischen.

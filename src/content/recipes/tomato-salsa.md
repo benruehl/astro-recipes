@@ -46,16 +46,16 @@ ingredients: [
 ### Zutaten schneiden
 
 1. 🔪 Kirschtomaten halbieren.
-2. 🔪 Zwiebel in grobe Spalten schneiden.
+2. 🔪 <span class="i-onion">Zwiebel</span> in grobe Spalten schneiden.
 
 ### Ofengemüse garen
 
-3. 🍅 Tomaten und Zwiebeln auf Backblech verteilen und Öl und Salz darübergeben.
+3. 🍅 <span class="i-tomato">Tomaten</span> und <span class="i-onion">Zwiebeln</span> auf Backblech verteilen und <span class="i-oil">Öl</span> und <span class="i-salt">Salz</span> darübergeben.
 4. 🔥 Bei 190 °C für 20 - 25 min garen.
 
 ### Zutaten pürieren
 
-5. 🔪 Koriander, Jalapeño und Knoblauch kleinschneiden.
-6. ⚙️ Tomaten, Zwiebel, Jalapeño, Knoblauch, Limettensaft und Chipotle Paste in Mixer geben.
+5. 🔪 <span class="i-koriander">Koriander</span>, <span class="i-jalapeno">Jalapeño</span> und <span class="i-garlic">Knoblauch</span> kleinschneiden.
+6. ⚙️ <span class="i-tomato">Tomaten</span>, <span class="i-onion">Zwiebel</span>, <span class="i-jalapeno">Jalapeño</span>, <span class="i-garlic">Knoblauch</span>, <span class="i-lime-juice">Limettensaft</span> und <span class="i-chipotle-paste">Chipotle Paste</span> in Mixer geben.
 7. ⚙️ Vorsichtig mixen, am besten stoßweise, bis Konsistenz cremig ist, aber noch Stückchen bleiben.
-8. 🌿 Koriander dazugeben und noch einmal mixen / umrühren.
+8. 🌿 <span class="i-koriander">Koriander</span> dazugeben und noch einmal mixen / umrühren.

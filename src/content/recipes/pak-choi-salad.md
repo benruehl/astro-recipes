@@ -39,10 +39,10 @@ ingredients: [
 
 ### Zutaten schneiden
 
-1. 🔪 Pak Choi in 1 - 2 cm breite Stücke schneiden.
-2. 🔪 Paprika in 0.5 - 1 cm breite Scheiben schneiden.
+1. 🔪 <span class="i-pak-choi">Pak Choi</span> in 1 - 2 cm breite Stücke schneiden.
+2. 🔪 <span class="i-bell-pepper">Paprika</span> in 0.5 - 1 cm breite Scheiben schneiden.
 
 ### Zutaten mischen
 
 3. 🥣 Beides in einer Schüssel vermengen.
-4. 🧂 Limettensaft, Olivenöl und Salz darüber geben und alles vermengen.
+4. 🧂 <span class="i-lime-juice">Limettensaft</span>, <span class="i-oil">Olivenöl</span> und <span class="i-salt">Salz</span> darüber geben und alles vermengen.

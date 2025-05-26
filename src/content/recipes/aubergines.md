@@ -44,10 +44,10 @@ ingredients: [
 
 ### 1. Marinade herstellen
 
-1. 🥣 Miso vorsichtig mit etwas Wasser verdünnen, bis eine cremige Paste entsteht.
-2. 🥣 Öl, Honig, Knoblauch und Chili hinzugeben und verrühren.
+1. 🥣 <span class="i-miso">Miso</span> vorsichtig mit etwas Wasser verdünnen, bis eine cremige Paste entsteht.
+2. 🥣 <span class="i-oil">Öl</span>, <span class="i-honey">Honig</span>, <span class="i-garlic">Knoblauch</span> und <span class="i-chili">Chili</span> hinzugeben und verrühren.
 
 ### 2. Aubergine zubereiten
 
-3. 🔪 Aubergine in 1 cm dicke Scheiben schneiden.
+3. 🔪 <span class="i-aubergine">Aubergine</span> in 1 cm dicke Scheiben schneiden.
 4. 🔥 Auberginenscheiben mit Marinade bestreichen und auf beiden Seiten anbraten.

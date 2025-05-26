@@ -66,14 +66,14 @@ ingredients: [
 
 ### Karotten im Ofen garen
 
-1. 🔪 Karotten längs halbieren und in 3-5 cm lange Stücke schneiden.
-2. 🧂 Karottenstücke in Olivenöl wälzen und mit Kreuzkümmel(samen) würzen.
-3. 🥕 Karottenstücke auf Ofenblech verteilen.
-4. 🧄 Knoblauchknolle etwas anschneiden oder aufschlagen, mit Öl beträufeln, in Alufolie einwickeln und mit aufs Blech legen.
+1. 🔪 <span class="i-carrot">Karotten</span> längs halbieren und in 3-5 cm lange Stücke schneiden.
+2. 🧂 <span class="i-carrot">Karottenstücke</span> in Olivenöl wälzen und mit <span class="i-cumin">Kreuzkümmel(samen)</span> würzen.
+3. 🥕 <span class="i-carrot">Karottenstücke</span> auf Ofenblech verteilen.
+4. 🧄 <span class="i-garlic">Knoblauchknolle</span> etwas anschneiden oder aufschlagen, mit <span class="i-oil">Öl</span> beträufeln, in Alufolie einwickeln und mit aufs Blech legen.
 5. 🔥 Bei 200 °C ca. 30 min garen.
-6. 💤 Karottenstücke und Knoblauch etwas abkühlen lassen.
+6. 💤 <span class="i-carrot">Karottenstücke</span> und <span class="i-garlic">Knoblauch</span> etwas abkühlen lassen.
 
 ### Zutaten pürieren
 
-7. ⚙️ Karottenstücke, Knoblauch, Kichererbsen, Tahini, Limettensaft, Cayennepfeffer, Paprikapulver, Kurkuma, Zimt, Olivenöl, Salz und Pfeffer in Mixer geben.
+7. ⚙️ <span class="i-carrot">Karottenstücke</span>, <span class="i-garlic">Knoblauch</span>, <span class="i-chickpeas">Kichererbsen</span>, <span class="i-tahini">Tahini</span>, <span class="i-lime-juice">Limettensaft</span>, <span class="i-cayenne">Cayennepfeffer</span>, <span class="i-paprika">Paprikapulver</span>, <span class="i-turmeric">Kurkuma</span>, <span class="i-cinnamon">Zimt</span>, <span class="i-oil">Olivenöl</span>, <span class="i-salt">Salz</span> und <span class="i-pepper">Pfeffer</span> in Mixer geben.
 8. 💧 Beim Mixen Wasser hinzugeben, bis die Konsistenz cremig ist.

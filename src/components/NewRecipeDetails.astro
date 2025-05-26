@@ -5,6 +5,7 @@ import NewCardBackground from './recipe-card/NewCardBackground.astro';
 import LayeredRecipeImage from './recipe-card/LayeredRecipeImage.astro';
 import { Icon } from 'astro-icon/components';
 import IngredientList from './IngredientList.astro';
+import IngredientTagStyles from './IngredientTagStyles.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -49,6 +50,7 @@ const { Content } = await render(recipe);
         <h2>Zubereitung</h2>
         <hr/>
         <Content/>
+        <IngredientTagStyles/>
     </section>
 </div>
 
@@ -135,6 +137,10 @@ const { Content } = await render(recipe);
         :global(li) {
             text-indent: -3ch;
             margin-bottom: .5rem;
+        }
+
+        :global(pointed-cabbage) {
+            color: red;
         }
     }
 </style>

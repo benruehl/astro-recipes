@@ -10,7 +10,7 @@ interface IngredientMetadata {
     background: string;
 }
 
-const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
+export const ingredientMap: { [id in IngredientKey ] : IngredientMetadata } = {
     "almonds": {
         img: "almonds.png",
         name: "Mandeln",
@@ -268,4 +268,4 @@ const imageMap: { [id in IngredientKey ] : IngredientMetadata } = {
     },
 };
 
-export const mapIngredient = (ingredient: IngredientKey): IngredientMetadata => imageMap[ingredient];
+export const mapIngredient = (ingredient: IngredientKey): IngredientMetadata => ingredientMap[ingredient];

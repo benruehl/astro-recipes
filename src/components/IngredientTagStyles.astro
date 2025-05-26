@@ -1,0 +1,10 @@
+---
+import { ingredientMap } from '../utils/ingredients';
+
+const styles = Object.entries(ingredientMap)
+    .map(([key, ingredient]) => (`.i-${key} { color: hsl(${ingredient.background}, 60%); }`))
+    .join('\n');
+---
+
+<style is:inline set:html={styles}>
+</style>

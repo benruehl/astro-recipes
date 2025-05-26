@@ -40,10 +40,10 @@ ingredients: [
 
 ### Brokkoli zubereiten
 
-1. 🥦 Brokkoli auf Ofenblech verteilen.
-2. 🧂 Etwas Öl über Brokkoli geben, mit Salz und Knoblauchpulver würzen.
+1. 🥦 <span class="i-broccoli">Brokkoli</span> auf Ofenblech verteilen.
+2. 🧂 Etwas <span class="i-oil">Öl</span> über <span class="i-broccoli">Brokkoli</span> geben, mit <span class="i-salt">Salz</span> und <span class="i-garlic-powder">Knoblauchpulver</span> würzen.
 3. 🔥 Bei 180 °C ca. 15 min im Ofen garen.
 
 ### Brokkoli anrichten
 
-4. 🍋‍🟩 Brokkoli in Schüssel füllen, etwas Limettensaft darüber geben, mit Käse bestreuen.
+4. 🍋‍🟩 <span class="i-broccoli">Brokkoli</span> in Schüssel füllen, etwas <span class="i-lime-juice">Limettensaft</span> darüber geben, mit Käse bestreuen.

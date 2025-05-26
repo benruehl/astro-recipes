@@ -65,11 +65,11 @@ ingredients: [
 
 ### 1. Zutaten schneiden
 
-1. 🔪 Gurke in 1 - 2 mm breite Scheiben schneiden.
-2. 🔪 Karotte in Stifte schneiden oder reiben.
-3. 🔪 Zwiebel in halbe Ringe schneiden.
-4. 🔪 Knoblauch fein hacken.
-5. 🥣 Geschnittene Zutaten in Schüssel geben und salzen.
+1. 🔪 <span class="i-cucumber">Gurke</span> in 1 - 2 mm breite Scheiben schneiden.
+2. 🔪 <span class="i-carrot">Karotte</span> in Stifte schneiden oder reiben.
+3. 🔪 <span class="i-onion">Zwiebel</span> in halbe Ringe schneiden.
+4. 🔪 <span class="i-garlic">Knoblauch</span> fein hacken.
+5. 🥣 Geschnittene Zutaten in Schüssel geben und <span class="i-salt">salzen</span>.
 
 ### 2. Ruhen lassen
 
@@ -78,7 +78,7 @@ ingredients: [
 
 ### 3. Würzen
 
-8. 🥣 Gochugaru, Zucker, Essig, Fischsauce und Sesamöl zur Schüssel geben und verrühren.
-9. 🥣 Mit Sesam dekorieren.
+8. 🥣 <span class="i-gochugaru">Gochugaru</span>, <span class="i-sugar">Zucker</span>, <span class="i-vinegar">Essig</span>, <span class="i-fish-sauce">Fischsauce</span> und <span class="i-sesame-oil">Sesamöl</span> zur Schüssel geben und verrühren.
+9. 🥣 Mit <span class="i-sesame">Sesam</span> dekorieren.
 
 Je nach Wunsch einige Stunden einziehen lassen oder sofort servieren.

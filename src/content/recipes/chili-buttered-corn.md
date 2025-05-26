@@ -43,12 +43,12 @@ ingredients: [
 
 ### Mais anbraten
 
-1. 🔥 Öl über Maiskolben geben und ringsum gold-braun anbraten (ca. 10 min).
+1. 🔥 <span class="i-oil">Öl</span> über <span class="i-corn">Maiskolben</span> geben und ringsum gold-braun anbraten (ca. 10 min).
 
 ### Zutaten vermengen
 
-2. 🔪 Frühlingszwiebel, Chili und Koriander kleinschneiden.
-3. 🧈 Einen reichlichen Esslöffel Butter in Raumtemperatur in Schüssel geben.
-4. 🧂 Chili, Frühlingszwiebel, Salz und Knoblauchpulver dazugeben und gut verrühren.
-5. 🔪 Mais vom Kolben schneiden und zur Butter geben.
-6. 🥣 Die Butter sollte durch den warmen Mais schmelzen und sich alles gut vermengen lassen.
+2. 🔪 <span class="i-spring-onion">Frühlingszwiebel</span>, <span class="i-chili">Chili</span> und <span class="i-koriander">Koriander</span> kleinschneiden.
+3. 🧈 Einen reichlichen Esslöffel <span class="i-butter">Butter</span> in Raumtemperatur in Schüssel geben.
+4. 🧂 <span class="i-chili">Chili</span>, <span class="i-spring-onion">Frühlingszwiebel</span>, Salz und <span class="i-garlic-powder">Knoblauchpulver</span> dazugeben und gut verrühren.
+5. 🔪 <span class="i-corn">Mais</span> vom Kolben schneiden und zur <span class="i-butter">Butter</span> geben.
+6. 🥣 Die <span class="i-butter">Butter</span> sollte durch den warmen <span class="i-corn">Mais</span> schmelzen und sich alles gut vermengen lassen.
