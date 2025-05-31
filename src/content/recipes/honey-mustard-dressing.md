@@ -2,10 +2,18 @@
 title: Honig-Senf-Dressing 
 subtitle: mit Joghurt
 tagline: Standard-Dressing für Salate oder Bowls.
+imageLayers: [
+    "./honey-mustard-dressing-1.png",
+    "./honey-mustard-dressing-2.png",
+    "./honey-mustard-dressing-3.png"
+]
 image: ./honey-mustard-dressing.jpg
 category: Dressing
 totalTime: 5 min
 diet: Vegetarian
+background:
+    startColor: "#655A77"
+    endColor: "#474054"
 hueRotate: 120
 ingredients: [
     {
