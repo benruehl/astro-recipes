@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import NewCardBackground from './recipe-card/NewCardBackground.astro';
@@ -52,6 +53,16 @@ const { Content } = await render(recipe);
         <Content/>
         <IngredientTagStyles/>
     </section>
+    <section class="images">
+        <h2>Fotos</h2>
+        <hr/>
+        <div class="image-grid">
+            <Image
+                src={recipe.data.image}
+                alt={recipe.data.title}
+                width={600}/>
+            </div>
+    </section>
 </div>
 
 <style lang="scss">
@@ -59,7 +70,9 @@ const { Content } = await render(recipe);
         display: grid;
         grid-template-areas:
             "image overview"
-            "ingredients instructions";
+            "ingredients instructions"
+            "images images"
+        ;
         gap: 3rem;
 
         @media (max-width: $md) {
@@ -70,30 +83,18 @@ const { Content } = await render(recipe);
         .head-background {
             grid-column: 1 / span 2;
             grid-row: 1;
-            z-index: -1;
-            scale: 1.25 1;
-            transform-origin: center bottom;
         }
 
         .image-container {
             grid-area: image;
-            width: 300px;
-            overflow-y: clip;
-            position: relative;
-
-            .image {
-                position: absolute;
-                width: 450px;
-                bottom: -10%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
         }
     
         .overview {
             grid-area: overview;
-            padding: 2rem 0;
-            position: relative;
+        }
+
+        .images {
+            grid-area: images;
         }
 
         .ingredients {
@@ -111,16 +112,55 @@ const { Content } = await render(recipe);
         margin-bottom: .2em;
     }
 
+    h2 {
+        margin-top: 0;
+    }
+
     hr {
         opacity: .5;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
+    .head-background {
+        z-index: -1;
+        scale: 1.25 1;
+        transform-origin: center bottom;
+    }
+
+    .image-container {
+        width: 300px;
+        overflow-y: clip;
+        position: relative;
+
+        .image {
+            position: absolute;
+            width: 450px;
+            bottom: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .overview {
+        padding: 2rem 0;
+    }
+
     .attributes {
         display: flex;
         flex-direction: row;
         font-weight: bold;
+    }
+
+    .image-grid {
+        display: flex;
+
+        img {
+            height: 250px;
+            width: auto;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
     }
 
     .total-time {
