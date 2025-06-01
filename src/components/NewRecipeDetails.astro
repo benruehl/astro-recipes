@@ -78,13 +78,24 @@ const { Content } = await render(recipe);
         gap: 3rem;
 
         @media (max-width: $md) {
-            grid-template-columns: 1fr;
+            grid-template-areas:
+                "overview"
+                "image"
+                "ingredients"
+                "instructions"
+                "images"
+            ;
             margin-bottom: 1rem;
         }
 
         .head-background {
             grid-column: 1 / span 2;
             grid-row: 1;
+
+            @media (max-width: $md) {
+                grid-column: 1;
+                grid-row: 1 / span 2;
+            }
         }
 
         .image-container {
@@ -132,6 +143,7 @@ const { Content } = await render(recipe);
 
     .image-container {
         width: 300px;
+        min-height: 300px;
         overflow-y: clip;
         position: relative;
 
@@ -145,7 +157,9 @@ const { Content } = await render(recipe);
     }
 
     .overview {
-        padding: 2rem 0;
+        @media (min-width: $md) {
+            padding: 2rem 0;
+        }
     }
 
     .attributes {
@@ -160,6 +174,7 @@ const { Content } = await render(recipe);
         img {
             height: 250px;
             width: auto;
+            max-width: 100%;
             object-fit: cover;
             border-radius: 1rem;
         }
