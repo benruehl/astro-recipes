@@ -25,7 +25,9 @@ const baseUrl = import.meta.env.BASE_URL;
                 startColor={recipe.data.background?.startColor}
                 endColor={recipe.data.background?.endColor}
             />
-            <LayeredRecipeImage recipe={recipe}/>
+            {recipe.data.imageLayers && (
+                <LayeredRecipeImage imageLayers={recipe.data.imageLayers} title={recipe.data.title}/>
+            )}
         </div>
     </Card3D>
     <NewRecipeCardContent class="card-bottom" recipe={recipe}/>
@@ -62,8 +64,9 @@ const baseUrl = import.meta.env.BASE_URL;
     }
 
     .card-layout {
-        width: 100%;
+        width: 110%;
         height: 100%;
+        margin: -5%;
     }
 
     .card-background {

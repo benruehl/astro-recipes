@@ -26,7 +26,9 @@ const { Content } = await render(recipe);
         />
     </div>
     <section class="image-container">
-        <LayeredRecipeImage class="image" recipe={recipe}/>
+        {recipe.data.imageLayers && (
+            <LayeredRecipeImage class="image" imageLayers={recipe.data.imageLayers} title={recipe.data.title}/>
+        )}
     </section>
     <section class="overview">
         <h1>

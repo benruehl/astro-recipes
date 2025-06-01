@@ -1,0 +1,72 @@
+---
+import heroBowlLayer1 from "../images/hero-bowl-1.png";
+import heroBowlLayer2 from "../images/hero-bowl-2.png";
+import heroBowlLayer3 from "../images/hero-bowl-3.png";
+import heroBowlLayer4 from "../images/hero-bowl-4.png";
+import Card3D from './card-3d/Card3D.astro';
+import LayeredRecipeImage from './recipe-card/LayeredRecipeImage.astro';
+
+const imageLayers = [heroBowlLayer1, heroBowlLayer2, heroBowlLayer3, heroBowlLayer4];
+---
+
+<section class="hero">
+    <div class="text-container">
+        <h1><span class="small">Finest Selection</span>Benjamins Bowls</h1>
+        <p>
+            Ausgewählte Rezepte für Bowls und deren Komponenten.
+            Auch für Grillbeilagen oder Salate geeignet.
+            Guten Appetit!
+        </p>
+    </div>
+    <div class="image-container">
+        <Card3D>
+            <LayeredRecipeImage
+                class="layered-image"
+                imageLayers={imageLayers}
+                title='Bowl mit Reis, Salat, Aubergine, Paprika, Chicken Teriyaki, Karotte, Avocado und Bohnen'
+                height={600}
+            />
+        </Card3D>
+    </div>
+</section>
+
+<style lang="scss">
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 10rem;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    p {
+        font-size: 1.2rem;
+        max-width: 500px;
+    }
+
+    .image-container {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 120%;
+            aspect-ratio: 1 / 1;
+            transform: translate(-20%, -55%);
+            background: linear-gradient(120deg in oklch, #755C75, #362836);
+            border-radius: 1000px;
+            z-index: -1;
+        }
+    }
+
+    .layered-image {
+        padding: 2rem;
+        width: 500px;
+    }
+</style>

@@ -1,20 +1,17 @@
 ---
+import Hero from '../components/Hero.astro';
 import NewRecipeGrid from '../components/NewRecipeGrid.astro';
 import NewLayout from '../layouts/NewLayout.astro';
 ---
 
 <NewLayout title="Bowls">
 	<main>
-		<h1>Bowls <span class="small">& more</span></h1>
+		<Hero/>
 		<NewRecipeGrid/>
 	</main>
 </NewLayout>
 
 <style lang="scss">
-	h1 {
-		color: rgb(245, 245, 245);
-	}
-
 	// ### START WORKAROUND ###
 	// Makes missing clipping during view-transitions less noticeable.
 	// Might be replaced by "Nested view transitions" which is estimated for Chrome 138.

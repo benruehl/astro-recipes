@@ -1,27 +1,29 @@
 ---
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
 import CardContent from '../card-3d/CardContent.astro';
 
-type Recipe = CollectionEntry<'recipes'>;
-
 interface Props {
-    recipe: Recipe;
+    imageLayers: ImageMetadata[];
+    title: string;
+    width?: number;
+    height?: number;
     class?: string;
 }
 
-const { recipe, class: className } = Astro.props;
+const { imageLayers, title, width, height, class: className } = Astro.props;
 ---
 
 <div
     class:list={["overlay-container", className]}
-    transition:name={`recipe-image-${recipe.data.title}`}
+    transition:name={`recipe-image-${title}`}
 >
-    {recipe.data.imageLayers?.map((img, index) => (
-        <CardContent translateZ={(index + 1) * 10}>
+    {imageLayers.map((img, index) => (
+        <CardContent translateZ={(imageLayers.length * -5) + (index + 1) * 10}>
             <Image
                 src={img}
-                alt={recipe.data.title}
+                alt={title}
+                width={width}
+                height={height}
             />
         </CardContent>
     ))}
@@ -41,12 +43,10 @@ const { recipe, class: className } = Astro.props;
 
     img {
         box-sizing: border-box;
-        width: 100%;
         max-width: 100%;
         height: auto;
         object-fit: contain;
         object-position: center;
-        transform: scale(1.1);
         transition: transform .2s;
     }
 </style>
