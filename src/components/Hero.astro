@@ -1,12 +1,8 @@
 ---
-import heroBowlLayer1 from "../images/hero-bowl-1.png";
-import heroBowlLayer2 from "../images/hero-bowl-2.png";
-import heroBowlLayer3 from "../images/hero-bowl-3.png";
-import heroBowlLayer4 from "../images/hero-bowl-4.png";
-import Card3D from './card-3d/Card3D.astro';
-import LayeredRecipeImage from './recipe-card/LayeredRecipeImage.astro';
-
-const imageLayers = [heroBowlLayer1, heroBowlLayer2, heroBowlLayer3, heroBowlLayer4];
+import { Image } from 'astro:assets';
+import heroBowl from "../images/hero-bowl.png";
+import heroSilhouette from "../images/hero-silhouette.svg";
+import heroGlow from "../images/hero-glow.svg";
 ---
 
 <section class="hero">
@@ -19,14 +15,9 @@ const imageLayers = [heroBowlLayer1, heroBowlLayer2, heroBowlLayer3, heroBowlLay
         </p>
     </div>
     <div class="image-container">
-        <Card3D>
-            <LayeredRecipeImage
-                class="layered-image"
-                imageLayers={imageLayers}
-                title='Bowl mit Reis, Salat, Aubergine, Paprika, Chicken Teriyaki, Karotte, Avocado und Bohnen'
-                height={600}
-            />
-        </Card3D>
+        <Image class="glow" src={heroGlow} alt="" height="1200"/>
+        <Image class="silhouette" src={heroSilhouette} alt="" height="2000"/>
+        <Image src={heroBowl} alt="" height="500"/>
     </div>
 </section>
 
@@ -51,17 +42,21 @@ const imageLayers = [heroBowlLayer1, heroBowlLayer2, heroBowlLayer3, heroBowlLay
     .image-container {
         position: relative;
 
-        &::before {
-            content: "";
+        .silhouette {
             position: absolute;
+            right: 0;
             top: 50%;
-            left: 0;
-            height: 120%;
-            aspect-ratio: 1 / 1;
-            transform: translate(-20%, -55%);
-            background: linear-gradient(120deg in oklch, #755C75, #362836);
-            border-radius: 1000px;
+            transform: translateY(-50%);
             z-index: -1;
+        }
+
+        .glow {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(20%, -50%);
+            z-index: -2;
+            filter: blur(4px);
         }
     }
 
