@@ -13,10 +13,7 @@ interface Props {
 const { imageLayers, title, width, height, class: className } = Astro.props;
 ---
 
-<div
-    class:list={["overlay-container", className]}
-    transition:name={`recipe-image-${title}`}
->
+<div class:list={["overlay-container", className]}>
     {imageLayers.map((img, index) => (
         <CardContent translateZ={(imageLayers.length * -5) + (index + 1) * 10}>
             <Image
@@ -24,6 +21,7 @@ const { imageLayers, title, width, height, class: className } = Astro.props;
                 alt={title}
                 width={width}
                 height={height}
+                transition:name={`recipe-image-${title}-${index}`}
             />
         </CardContent>
     ))}
