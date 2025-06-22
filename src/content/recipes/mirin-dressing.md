@@ -7,7 +7,6 @@ image: ./mirin-dressing.jpg
 category: Dressing
 totalTime: 5 min
 diet: Vegetarian
-hueRotate: 150
 ingredients: [
     {
         key: "mirin",

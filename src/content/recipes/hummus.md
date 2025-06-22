@@ -16,7 +16,6 @@ source: "https://youtu.be/BDwLAn_N_ZU?t=138"
 background:
     startColor: "#764c59"
     endColor: "#441e1e"
-hueRotate: 150
 ingredients: [
     {
         key: "carrot",

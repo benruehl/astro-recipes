@@ -6,7 +6,6 @@ category: SideDish
 totalTime: 40 min
 diet: Vegetarian
 source: https://youtu.be/sTFJJCX0RRY?t=500
-hueRotate: 150
 ingredients: [
     {
         key: "tomato",

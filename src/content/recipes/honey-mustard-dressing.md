@@ -14,7 +14,6 @@ diet: Vegetarian
 background:
     startColor: "#655A77"
     endColor: "#474054"
-hueRotate: 120
 ingredients: [
     {
         key: "yoghurt",

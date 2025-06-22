@@ -16,7 +16,6 @@ source: https://www.youtube.com/shorts/oXoIhqZIJRU
 background:
     startColor: "#755C75"
     endColor: "#4F2424"
-hueRotate: 150
 ingredients: [
     {
         key: "cucumber",

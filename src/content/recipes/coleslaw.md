@@ -16,7 +16,6 @@ source: https://www.hensslers-schnelle-nummer.de/schnelle-rezepte/5-zutaten-in-1
 background:
     startColor: "#755C75"
     endColor: "#362836"
-hueRotate: 300
 ingredients: [
     {
         key: "pointed-cabbage",

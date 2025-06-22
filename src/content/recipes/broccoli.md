@@ -17,7 +17,6 @@ diet: Vegan
 background:
     startColor: "#704754"
     endColor: "#695e26"
-hueRotate: 250
 ingredients: [
     {
         key: "broccoli",

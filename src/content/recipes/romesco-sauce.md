@@ -7,7 +7,6 @@ category: Dressing
 totalTime: 30 min
 diet: Vegetarian
 source: https://youtu.be/BDwLAn_N_ZU?t=396
-hueRotate: 160
 ingredients: [
     {
         key: "bell-pepper",

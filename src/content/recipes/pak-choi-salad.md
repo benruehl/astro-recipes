@@ -15,7 +15,6 @@ background:
     startColor: "#697047"
     endColor: "#5C7075"
 source: https://youtu.be/BDwLAn_N_ZU?t=266
-hueRotate: 250
 ingredients: [
     {
         key: "pak-choi",

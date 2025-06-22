@@ -15,7 +15,6 @@ source: https://youtu.be/BDwLAn_N_ZU?t=292
 background:
     startColor: "#5c756f"
     endColor: "#362836"
-hueRotate: 150
 ingredients: [
     {
         key: "aubergine",

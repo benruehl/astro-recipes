@@ -18,7 +18,6 @@ const recipeCollection = defineCollection({
             startColor: z.string(),
             endColor: z.string()
         }).optional(),
-        hueRotate: z.number(),
         ingredients: z.array(z.object({
             key: z.enum([
                 "almonds",

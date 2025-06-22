@@ -16,7 +16,6 @@ background:
     startColor: "#697047"
     endColor: "#633324"
 source: https://youtu.be/sTFJJCX0RRY?t=234
-hueRotate: 250
 ingredients: [
     {
         key: "mango",
