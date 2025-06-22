@@ -15,7 +15,7 @@ import heroGlow from "../images/hero-glow.svg";
         </p>
     </div>
     <div class="image-container">
-        <Image class="glow" src={heroGlow} alt="" height="1200"/>
+        <Image class="glow" src={heroGlow} alt="" height="750"/>
         <Image class="silhouette" src={heroSilhouette} alt="" height="2000"/>
         <Image src={heroBowl} alt="" height="500"/>
     </div>
@@ -54,9 +54,9 @@ import heroGlow from "../images/hero-glow.svg";
             position: absolute;
             right: 0;
             top: 50%;
-            transform: translate(20%, -50%);
+            transform: translate(15%, -57%);
+            mask-image: linear-gradient(250deg, black 20%, transparent 70%);
             z-index: -2;
-            filter: blur(4px);
         }
     }
 
