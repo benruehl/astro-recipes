@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import NewLayout from '../../../layouts/NewLayout.astro';
-import NewRecipeDetails from '../../../components/NewRecipeDetails.astro';
+import NewLayout from '../../layouts/NewLayout.astro';
+import NewRecipeDetails from '../../components/RecipeDetails.astro';
 
 export async function getStaticPaths() {
 	const allRecipes = await getCollection('recipes');

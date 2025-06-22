@@ -3,8 +3,8 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Card3D from '../card-3d/Card3D.astro';
 import CardContent from '../card-3d/CardContent.astro';
-import NewCardBackground from './NewCardBackground.astro';
-import NewRecipeCardContent from './NewRecipeCardContent.astro';
+import NewCardBackground from './CardBackground.astro';
+import NewRecipeCardContent from './RecipeCardContent.astro';
 import LayeredRecipeImage from './LayeredRecipeImage.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
@@ -17,7 +17,7 @@ const { recipe } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<a class="card-container overlay-container" href=`${baseUrl}/beta/recipes/${recipe.id}`>
+<a class="card-container overlay-container" href=`${baseUrl}/recipes/${recipe.id}`>
     <Card3D>
         <div class="card-layout overlay-container">
             <NewCardBackground
