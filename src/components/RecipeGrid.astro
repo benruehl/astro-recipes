@@ -1,7 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import NewRecipeCard from '../components/recipe-card/RecipeCard.astro';
-import Grid from './Grid.astro';
+import Grid from './common/Grid.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 type Category = Recipe["data"]["category"];
