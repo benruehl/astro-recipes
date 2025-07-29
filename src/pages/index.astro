@@ -1,12 +1,14 @@
 ---
-import Hero from '../components/Hero.astro';
+import HeaderBackground from '../components/hero/HeaderBackground.astro';
+import NewHero from '../components/hero/NewHero.astro';
 import NewRecipeGrid from '../components/RecipeGrid.astro';
 import NewLayout from '../layouts/NewLayout.astro';
 ---
 
 <NewLayout title="Bowls">
+	<HeaderBackground/>
 	<main>
-		<Hero/>
+		<NewHero/>
 		<NewRecipeGrid/>
 	</main>
 </NewLayout>
