@@ -1,8 +1,8 @@
 ---
 import { Image, getImage } from 'astro:assets';
-import heroBowl from "../../images/hero-bowl.png";
 import titleTextArt from "../../images/title-text-art.svg";
 import patternImage from "../../images/wave-pattern.svg";
+import HeroBowl from './HeroBowl.astro';
 
 const optimizedPatternImage = await getImage({ src: patternImage });
 ---
@@ -18,9 +18,7 @@ const optimizedPatternImage = await getImage({ src: patternImage });
             Guten Appetit!
         </p>
     </div>
-    <div class="image-container">
-        <Image src={heroBowl} alt="Signature Bowl" height="500"/>
-    </div>
+    <HeroBowl/>
 </section>
 
 <style lang="scss">
@@ -28,9 +26,10 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         --negative-padding: 2rem;
         
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
         gap: 2rem;
+        flex-wrap: wrap;
         margin-top: 5rem;
         margin-left: calc(var(--negative-padding) * -1);
         margin-right: calc(var(--negative-padding) * -1);
@@ -106,14 +105,5 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         font-size: 1.2rem;
         max-width: 500px;
         color: #ede1c9;
-    }
-
-    .image-container {        
-        img {
-            position: absolute;
-            bottom: -110px;
-            right: -30px;
-            transform: rotate(-5deg);
-        }
     }
 </style>

@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import heroBowl from "../../images/hero-bowl.png";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<div class="image-container">
+    <Image src={heroBowl} alt="Signature Bowl" width="550"/>
+    <video width="1280" height="720" autoplay muted loop playsinline>
+        <source src=`${baseUrl}/steam.webm` type="video/webm">
+    </video>
+</div>
+
+<style lang="scss">
+    .image-container {
+        flex: 1 1 auto;
+        justify-self: center;
+        position: relative;
+        width: 320px;
+        max-width: 100%;
+        min-height: 250px;
+    }
+
+    img {
+        position: absolute;
+        bottom: -210px;
+        right: -150px;
+        width: 70vw;
+        max-width: 550px;
+        min-width: 450px;
+        height: auto;
+        transform: rotate(-5deg);
+    }
+
+    video {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(37%, -20%);
+        display: block;
+        width: 140vw;
+        max-width: 1400px;
+        min-width: 1000px;
+        height: auto;
+        mix-blend-mode: screen;
+        mask-image: linear-gradient(to bottom, black 70%, transparent);
+        opacity: .25;
+    }
+</style>
