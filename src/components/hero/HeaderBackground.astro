@@ -26,6 +26,10 @@ import concentricRings from "../../images/concentric-rings.png";
             radial-gradient(ellipse at 80% -80%, black, transparent 40%),
         ;
 
+        @media (max-width: $md) {
+            opacity: .4;
+        }
+
         :global(> *) {
             position: absolute;
             left: 0;
@@ -38,5 +42,7 @@ import concentricRings from "../../images/concentric-rings.png";
 
     .rings {
         mix-blend-mode: color-dodge;
+        min-height: 1024px;
+        object-fit: cover;
     }
 </style>

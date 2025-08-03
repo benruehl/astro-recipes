@@ -28,9 +28,14 @@ const baseUrl = import.meta.env.BASE_URL;
         right: -150px;
         width: 70vw;
         max-width: 550px;
-        min-width: 450px;
+        min-width: 400px;
         height: auto;
         transform: rotate(-5deg);
+
+        @media (max-width: 800px) {
+            right: -50px;
+            bottom: -130px;
+        }
     }
 
     video {
@@ -41,10 +46,14 @@ const baseUrl = import.meta.env.BASE_URL;
         display: block;
         width: 140vw;
         max-width: 1400px;
-        min-width: 1000px;
+        min-width: 1100px;
         height: auto;
         mix-blend-mode: screen;
         mask-image: linear-gradient(to bottom, black 70%, transparent);
-        opacity: .25;
+        opacity: .35;
+
+        @media (max-width: 800px) {
+            transform: translate(30%, -20%);
+        }
     }
 </style>

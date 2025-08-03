@@ -11,7 +11,7 @@ const optimizedPatternImage = await getImage({ src: patternImage });
     <div class="background-pattern" style={`background-image: url('${optimizedPatternImage.src}')`}></div>
     <div class="text-container">
         <h1>
-            <Image src={titleTextArt} alt="Benjamins Bowls" height="250"/>
+            <Image class="title" src={titleTextArt} alt="Benjamins Bowls" height="250"/>
         </h1>
         <p>
             Ausgewählte Rezepte für Bowls und deren Komponenten sowie einige Grillbeilagen und Salate.
@@ -23,7 +23,10 @@ const optimizedPatternImage = await getImage({ src: patternImage });
 
 <style lang="scss">
     .hero {
-        --negative-padding: 2rem;
+        --negative-margin: 0rem;
+        @media (min-width: 1270px) {
+            --negative-margin: 2rem;
+        }
         
         display: flex;
         align-items: stretch;
@@ -31,14 +34,17 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         gap: 2rem;
         flex-wrap: wrap;
         margin-top: 5rem;
-        margin-left: calc(var(--negative-padding) * -1);
-        margin-right: calc(var(--negative-padding) * -1);
-        padding: calc(var(--negative-padding) + 4rem);
-        background: rgba(22, 22, 22, .85);
-        border-radius: 2rem;
-        backdrop-filter: blur(20px);
+        margin-left: calc(var(--negative-margin) * -1);
+        margin-right: calc(var(--negative-margin) * -1);
         position: relative;
         overflow-y: clip;
+
+        @media (min-width: $md) {
+            padding: calc(var(--negative-margin) + 4rem) calc(var(--negative-margin) + min(4rem, 10vw));
+            background: rgba(22, 22, 22, .85);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+        }
 
         /* gradient border */
         &::before {
@@ -48,24 +54,34 @@ const optimizedPatternImage = await getImage({ src: patternImage });
             padding: 1px; /* border thickness  */
             background: conic-gradient(
                 from 180deg,
-                #161616 20%,
-                #e7dd93,
-                #e0f27b,
-                #99f27b,
-                #161616 72%,
-                #161616 78%,
-                #e2b269 80%,
-                #161616 95%,
+                #e2b269,
+                transparent 30deg,
+                transparent 70%,
             );
             border-radius: inherit;
             mask: conic-gradient(#000 0 0) content-box exclude,conic-gradient(#000 0 0);
             pointer-events: none;
+
+            @media (min-width: $md) {
+                background: conic-gradient(
+                    from 180deg,
+                    #161616 20%,
+                    #e7dd93,
+                    #e0f27b,
+                    #99f27b,
+                    #161616 72%,
+                    #161616 78%,
+                    #e2b269 80%,
+                    #161616 95%,
+                );
+            }
         }
 
+        /* inset texture */
         &::after {
             content: "";
             position: absolute;
-            inset: 8px;
+            inset: -1rem;
             border-radius: calc(2rem - 6px);
             background: linear-gradient(
                 to bottom right,
@@ -74,6 +90,10 @@ const optimizedPatternImage = await getImage({ src: patternImage });
             );
             pointer-events: none;
             z-index: -1;
+
+            @media (min-width: $md) {
+                inset: 8px;
+            }
         }
 
         .background-pattern {
@@ -94,6 +114,11 @@ const optimizedPatternImage = await getImage({ src: patternImage });
             opacity: .5;
             z-index: -1;
         }
+    }
+
+    .title {
+        max-width: 100%;
+        height: auto;
     }
 
     h1 {
