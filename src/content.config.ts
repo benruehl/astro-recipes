@@ -55,6 +55,7 @@ const recipeCollection = defineCollection({
                 "mustard",
                 "oil",
                 "onion",
+                "onion-powder",
                 "pak-choi",
                 "paprika",
                 "pepper",
