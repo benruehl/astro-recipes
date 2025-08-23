@@ -188,7 +188,7 @@ export const ingredientMap: { [id in IngredientKey ] : IngredientMetadata } = {
     },
     "onion-powder": {
         img: "garlic-powder.png",
-        name: "Zwiebel",
+        name: "Zwiebelpulver",
         background: "23, 22%",
     },
     "pak-choi": {
