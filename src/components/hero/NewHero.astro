@@ -22,12 +22,7 @@ const optimizedPatternImage = await getImage({ src: patternImage });
 </section>
 
 <style lang="scss">
-    .hero {
-        --negative-margin: 0rem;
-        @media (min-width: 1270px) {
-            --negative-margin: 2rem;
-        }
-        
+    .hero {        
         display: flex;
         align-items: stretch;
         justify-content: space-between;
@@ -40,78 +35,52 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         overflow-y: clip;
 
         @media (min-width: $md) {
-            padding: calc(var(--negative-margin) + 4rem) calc(var(--negative-margin) + min(4rem, 10vw));
-            background: rgba(22, 22, 22, .85);
-            backdrop-filter: blur(20px);
-            border-radius: 2rem;
+            padding: 4rem 0;
         }
 
-        /* gradient border */
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            padding: 1px; /* border thickness  */
-            background: conic-gradient(
-                from 180deg,
-                #e2b269,
-                transparent 30deg,
-                transparent 70%,
-            );
-            border-radius: inherit;
-            mask: conic-gradient(#000 0 0) content-box exclude,conic-gradient(#000 0 0);
-            pointer-events: none;
-
-            @media (min-width: $md) {
-                background: conic-gradient(
-                    from 180deg,
-                    #161616 20%,
-                    #e7dd93,
-                    #e0f27b,
-                    #99f27b,
-                    #161616 72%,
-                    #161616 78%,
-                    #e2b269 80%,
-                    #161616 95%,
-                );
-            }
-        }
-
-        /* inset texture */
+        /* inset background */
         &::after {
             content: "";
             position: absolute;
-            inset: -1rem;
-            border-radius: calc(2rem - 6px);
-            background: linear-gradient(
-                to bottom right,
-                transparent 50%,
-                rgba(238, 167, 67, 0.2)
-            );
+            top: 0;
+            left: 50%;
+            width: 100vw;
+            height: 100%;
+            transform: translateX(-50%);
+            background:
+                radial-gradient(circle at 30% 110%, rgba(151, 140, 152, 0.2), transparent 30%),
+                radial-gradient(ellipse at 90% 115%, rgba(213, 149, 81, 0.35), transparent 40%)
+            ;
             pointer-events: none;
             z-index: -1;
 
             @media (min-width: $md) {
-                inset: 8px;
+                background:
+                    radial-gradient(ellipse at 50% 140%, rgba(151, 140, 152, 0.2), transparent 30%),
+                    radial-gradient(ellipse at 75% 115%, rgba(213, 149, 81, 0.35), transparent 30%)
+                ;
             }
         }
 
+        /* inset texture */
         .background-pattern {
             position: absolute;
-            inset: 8px;
-            border-radius: calc(2rem - 6px);
+            top: 0;
+            left: 50%;
+            width: 100vw;
+            height: 100%;
+            transform: translateX(-50%);
             background-size: 320px 320px;
             mix-blend-mode: color-burn;
-            mask-image: linear-gradient(
-                to bottom right,
-                transparent 40%,
+            mask-image: radial-gradient(
+                at 75% 100%,
+                black,
+                rgba(0, 0, 0, .5) 20%,
+                rgba(0, 0, 0, .2) 30%,
+                rgba(0, 0, 0, .1) 40%,
                 rgba(0, 0, 0, .05) 55%,
-                rgba(0, 0, 0, .1) 60%,
-                rgba(0, 0, 0, .2) 70%,
-                rgba(0, 0, 0, .5) 80%,
-                black
+                transparent 60%,
             );
-            opacity: .5;
             z-index: -1;
         }
     }
