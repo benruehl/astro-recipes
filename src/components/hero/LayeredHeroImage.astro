@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    imageLayers: ImageMetadata[];
+    title: string;
+    width?: number;
+    height?: number;
+    class?: string;
+}
+
+const { imageLayers, title, width, height, class: className } = Astro.props;
+---
+
+<div class:list={["overlay-container", "animate", className]}>
+    {imageLayers.map((img, index) => (
+        <Image
+            src={img}
+            alt={title}
+            width={width}
+            height={height}
+            class={`hero-image-layer-${index}`}
+        />
+    ))}
+</div>
+
+<style lang="scss">
+    .overlay-container {
+        display: grid;
+        grid-template-areas: "overlay";
+
+        :global(> *) {
+            grid-area: overlay;
+            min-width: 0;
+        }
+    }
+
+    img {
+        box-sizing: border-box;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .animate {
+        img {
+            animation: MoveUpDown 5s ease infinite;
+        }
+        
+        .hero-image-layer-0 {
+            --move-distance: 10px;
+            animation-delay: 0s;
+        }
+        
+        .hero-image-layer-1 {
+            --move-distance: 8px;
+            animation-delay: -0.4s;
+        }
+        
+        .hero-image-layer-2 {
+            --move-distance: 7px;
+            animation-delay: -0.8s;
+        }
+        
+        .hero-image-layer-3 {
+            --move-distance: 6px;
+            animation-delay: -1.2s;
+        }
+
+        @keyframes MoveUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(var(--move-distance));
+            }
+        }
+    }
+</style>

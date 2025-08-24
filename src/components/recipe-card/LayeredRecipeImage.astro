@@ -7,14 +7,13 @@ interface Props {
     title: string;
     width?: number;
     height?: number;
-    animate?: boolean;
     class?: string;
 }
 
-const { imageLayers, title, width, height, animate, class: className } = Astro.props;
+const { imageLayers, title, width, height, class: className } = Astro.props;
 ---
 
-<div class:list={["overlay-container", animate ? "animate" : undefined, className]}>
+<div class:list={["overlay-container", className]}>
     {imageLayers.map((img, index) => (
         <CardContent translateZ={(imageLayers.length * -5) + (index + 1) * 10}>
             <Image
@@ -23,7 +22,6 @@ const { imageLayers, title, width, height, animate, class: className } = Astro.p
                 width={width}
                 height={height}
                 transition:name={`recipe-image-${title}-${index}`}
-                class={`recipe-image-layer-${index}`}
             />
         </CardContent>
     ))}
@@ -48,40 +46,5 @@ const { imageLayers, title, width, height, animate, class: className } = Astro.p
         object-fit: contain;
         object-position: center;
         transition: transform .2s;
-    }
-
-    .animate {
-        img {
-            animation: MoveUpDown 5s ease infinite;
-        }
-        
-        .recipe-image-layer-0 {
-            --move-distance: 10px;
-            animation-delay: 0s;
-        }
-        
-        .recipe-image-layer-1 {
-            --move-distance: 8px;
-            animation-delay: -0.4s;
-        }
-        
-        .recipe-image-layer-2 {
-            --move-distance: 7px;
-            animation-delay: -0.8s;
-        }
-        
-        .recipe-image-layer-3 {
-            --move-distance: 6px;
-            animation-delay: -1.2s;
-        }
-
-        @keyframes MoveUpDown {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(var(--move-distance));
-            }
-        }
     }
 </style>

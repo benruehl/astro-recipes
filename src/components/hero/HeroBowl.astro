@@ -1,21 +1,18 @@
 ---
-import { Image } from 'astro:assets';
-import heroBowl from "../../images/hero-bowl.png";
 import heroBowl1 from "../../images/hero-bowl-1.png";
 import heroBowl2 from "../../images/hero-bowl-2.png";
 import heroBowl3 from "../../images/hero-bowl-3.png";
 import heroBowl4 from "../../images/hero-bowl-4.png";
-import LayeredRecipeImage from '../recipe-card/LayeredRecipeImage.astro';
+import LayeredHeroImage from './LayeredHeroImage.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class="image-container">
-    <LayeredRecipeImage
+    <LayeredHeroImage
         class="bowl-image"
         imageLayers={[heroBowl1, heroBowl2, heroBowl3, heroBowl4]}
         title="Signature Bowl"
-        animate={true}
     />
     <video width="1280" height="720" autoplay muted loop playsinline>
         <source src=`${baseUrl}/steam.webm` type="video/webm">
