@@ -8,8 +8,7 @@ import Button from '../common/Button.astro';
 const optimizedPatternImage = await getImage({ src: patternImage });
 ---
 
-<section class="hero">
-    <div class="background-pattern" style={`background-image: url('${optimizedPatternImage.src}')`}></div>
+<div class="hero">
     <div class="text-container">
         <h1>
             <Image class="title" src={titleTextArt} alt="Benjamins Bowls" height="250"/>
@@ -30,8 +29,12 @@ const optimizedPatternImage = await getImage({ src: patternImage });
             </Button>
         </div>
     </div>
+    <div
+        class="bowl-background-pattern"
+        style={`background-image: url('${optimizedPatternImage.src}')`}>
+    </div>
     <HeroBowl/>
-</section>
+</div>
 
 <style lang="scss">
     .hero {        
@@ -40,7 +43,6 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         justify-content: space-between;
         gap: 2rem;
         flex-wrap: wrap;
-        margin-top: 5rem;
         margin-left: calc(var(--negative-margin) * -1);
         margin-right: calc(var(--negative-margin) * -1);
         position: relative;
@@ -75,7 +77,7 @@ const optimizedPatternImage = await getImage({ src: patternImage });
         }
 
         /* inset texture */
-        .background-pattern {
+        .bowl-background-pattern {
             position: absolute;
             top: 0;
             left: 50%;
