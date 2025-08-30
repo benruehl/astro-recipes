@@ -27,12 +27,11 @@ const { title } = Astro.props;
 
 <style is:global lang="scss">
 	:root {
-		--accent: 203, 200, 197;
+		--accent: 190, 93, 119;
 		--text-base: 0, 0, 0;
 		--text-light: 128, 128, 128;
 		--text-lighter: 200, 200, 200;
-		--page-background: 245, 243, 240;
-		--card-background: 255, 255, 255;
+		--page-background: 26, 26, 26;
 	}
 	
 	html {
@@ -51,6 +50,7 @@ const { title } = Astro.props;
 	body {
 		max-width: 100%;
 		overflow-x: hidden;
+  		scroll-behavior: smooth;
 	}
 	body {
 		margin: 0;
@@ -61,7 +61,7 @@ const { title } = Astro.props;
 		font-family: 'Averia Serif Libre', system-ui;
 		font-size: min(4rem, 14vw);
 		line-height: 1;
-		margin-bottom: 1em;
+		margin-bottom: .5em;
 		text-align: center;
 	}
 
