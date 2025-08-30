@@ -1,12 +1,15 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import '@fontsource/averia-serif-libre';
+import { getImage } from 'astro:assets';
+import backgroundTexture from "../images/background-texture.jpg";
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+const backgroundImage = await getImage({src: backgroundTexture});
 ---
 
 <!doctype html>
@@ -25,10 +28,12 @@ const { title } = Astro.props;
 	</body>
 </html>
 
-<style is:global lang="scss">
+<style is:global lang="scss" define:vars={{
+    "background-image-src": `url(${backgroundImage.src})`
+}}>
 	:root {
 		--accent: 190, 93, 119;
-		--text-base: 0, 0, 0;
+		--text-base: 255, 255, 255;
 		--text-light: 128, 128, 128;
 		--text-lighter: 200, 200, 200;
 		--page-background: 26, 26, 26;
@@ -39,11 +44,23 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		font-size: 18px;
 		line-height: 1.5;
-		background: rgb(var(--page-background));
 		color: rgb(var(--text-base));
+		background: radial-gradient(at center bottom, #1a1a1a, #0f0f0f);
+		background-attachment: fixed;
+		padding-bottom: 4rem;
 
 		@media (max-width: $sm) {
 			font-size: 16px;
+		}
+
+		&::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			background-image: var(--background-image-src);
+			background-size: cover;
+			opacity: .05;
+			pointer-events: none;
 		}
 	}
 

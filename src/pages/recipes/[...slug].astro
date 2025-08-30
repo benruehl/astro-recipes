@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import NewLayout from '../../layouts/NewLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewRecipeDetails from '../../components/RecipeDetails.astro';
 
 export async function getStaticPaths() {
@@ -21,11 +21,11 @@ interface Props {
 const { recipe } = Astro.props;
 ---
 
-<NewLayout title={recipe.data.title}>
+<BaseLayout title={recipe.data.title}>
 	<main>
 		<NewRecipeDetails recipe={recipe}/>
 	</main>
-</NewLayout>
+</BaseLayout>
 
 <style lang="scss">
 	main {
