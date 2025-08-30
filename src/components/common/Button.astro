@@ -9,14 +9,14 @@ const { href } = Astro.props;
 ---
 
 <a href={href}>
-    <Icon name="solar:arrow-right-broken" size={24} />
+    <Icon name="solar:arrow-right-linear" size={24} />
     <slot/>
 </a>
 
 <style lang="scss">
     a {
         color: rgb(var(--accent));
-        border: 2px solid rgba(var(--accent), .1);
+        border: 2px solid rgba(var(--accent), .5);
 		background: rgb(var(--page-background));
         padding: .5em 1em;
         border-radius: .5rem;
