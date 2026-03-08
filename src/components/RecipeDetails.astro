@@ -2,11 +2,12 @@
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import NewCardBackground from './recipe-card/CardBackground.astro';
+import CardBackground from './recipe-card/CardBackground.astro';
 import LayeredRecipeImage from './recipe-card/LayeredRecipeImage.astro';
 import { Icon } from 'astro-icon/components';
 import IngredientList from './IngredientList.astro';
 import IngredientTagStyles from './IngredientTagStyles.astro';
+import ViewTransitionClipper from './common/ViewTransitionClipper.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
 
@@ -20,15 +21,20 @@ const { Content } = await render(recipe);
 
 <article class="recipe">
     <div class="head-background">
-        <NewCardBackground
+        <CardBackground
             startColor={recipe.data.background?.startColor}
             endColor={recipe.data.background?.endColor}
         />
     </div>
     <section class="image-container">
-        {recipe.data.imageLayers && (
-            <LayeredRecipeImage class="image" imageLayers={recipe.data.imageLayers} title={recipe.data.title}/>
-        )}
+        <ViewTransitionClipper
+            class="image-container-transition"
+            transitionId={recipe.data.title}
+        >
+            {recipe.data.imageLayers && (
+                <LayeredRecipeImage class="image" imageLayers={recipe.data.imageLayers} title={recipe.data.title}/>
+            )}
+        </ViewTransitionClipper>
     </section>
     <section class="overview">
         <h1>
@@ -155,6 +161,11 @@ const { Content } = await render(recipe);
             bottom: -10%;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        .image-container-transition {
+            position: absolute;
+            inset: 0;
         }
     }
 

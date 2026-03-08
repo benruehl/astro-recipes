@@ -1,21 +1,25 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Card3D from '../card-3d/Card3D.astro';
-import CardBackground from './CardBackground.astro';
-import RecipeCardContent from './RecipeCardContent.astro';
-import LayeredRecipeImage from './LayeredRecipeImage.astro';
+import type { CollectionEntry } from "astro:content";
+import Card3D from "../card-3d/Card3D.astro";
+import CardBackground from "./CardBackground.astro";
+import RecipeCardContent from "./RecipeCardContent.astro";
+import LayeredRecipeImage from "./LayeredRecipeImage.astro";
+import ViewTransitionClipper from "../common/ViewTransitionClipper.astro";
 
-type Recipe = CollectionEntry<'recipes'>;
+type Recipe = CollectionEntry<"recipes">;
 
 interface Props {
-  recipe: Recipe;
+    recipe: Recipe;
 }
 
 const { recipe } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<a class="card-container overlay-container" href=`${baseUrl}/recipes/${recipe.id}`>
+<a
+    class="card-container overlay-container"
+    href=`${baseUrl}/recipes/${recipe.id}`
+>
     <Card3D>
         <div class="card-layout overlay-container">
             <CardBackground
@@ -23,12 +27,18 @@ const baseUrl = import.meta.env.BASE_URL;
                 startColor={recipe.data.background?.startColor}
                 endColor={recipe.data.background?.endColor}
             />
-            {recipe.data.imageLayers && (
-                <LayeredRecipeImage imageLayers={recipe.data.imageLayers} title={recipe.data.title}/>
-            )}
+            <ViewTransitionClipper transitionId={recipe.data.title}>
+                {recipe.data.imageLayers && (
+                        <LayeredRecipeImage
+                            imageLayers={recipe.data.imageLayers}
+                            title={recipe.data.title}
+                        />
+                    )
+                }
+            </ViewTransitionClipper>
         </div>
     </Card3D>
-    <RecipeCardContent class="card-bottom" recipe={recipe}/>
+    <RecipeCardContent class="card-bottom" recipe={recipe} />
 </a>
 
 <style lang="scss">
@@ -41,8 +51,8 @@ const baseUrl = import.meta.env.BASE_URL;
         &::before {
             content: "";
             position: absolute;
-            inset: .5rem -.5rem -.5rem .5rem;
-            background: rgba(0, 0, 0, .2);
+            inset: 0.5rem -0.5rem -0.5rem 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 1.4rem;
             transition: transform 0.2s;
             transform-origin: top left;
@@ -52,7 +62,7 @@ const baseUrl = import.meta.env.BASE_URL;
             transform: scale(1.025);
 
             &::before {
-                transform: translate(.5rem, .25rem);
+                transform: translate(0.5rem, 0.25rem);
             }
         }
 

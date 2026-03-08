@@ -1,0 +1,32 @@
+---
+// This component can be used as a clipping container around elements having
+// view transitions to ensure the clipping stays consistent during the animation.
+// See https://developer.chrome.com/docs/css-ui/view-transitions/nested-view-transition-groups
+interface Props {
+    transitionId: string;
+    class?: string;
+}
+
+const { transitionId, class: className } = Astro.props;
+const fullTransitionName = `clipper-${transitionId}`;
+---
+
+<div class:list={["clipper", className]} transition:name={fullTransitionName}>
+    <slot />
+</div>
+
+<style>
+    .clipper {
+        view-transition-group: contain;
+        overflow-y: clip;
+    }
+
+    /*
+      We target all groups for now but it would be better to add the 
+      fullTransitionName into the paranthesis.
+      There's just no way to do that at the moment.
+    */
+    :global(::view-transition-group-children(*)) {
+        overflow-y: clip;
+    }
+</style>
