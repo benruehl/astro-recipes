@@ -25,6 +25,18 @@ const backgroundImage = await getImage({src: backgroundTexture});
 		<ClientRouter/>
 	</head>
 	<body>
+		<script>
+			// Disable smooth scrolling on browser back navigation
+			// because it is annoying and breaks view transitions.
+			// See https://events-3bg.pages.dev/jotter/tips/instant-scrolling-history-navigation/
+			document.addEventListener('astro:before-swap', (event) => {
+				event.newDocument.documentElement.style.scrollBehavior =
+					event.navigationType === 'traverse' ? 'auto' : 'smooth';
+				event.viewTransition.updateCallbackDone.finally(() => {
+					document.documentElement.style.scrollBehavior = 'smooth';
+				});
+			});
+		</script>
 		<slot />
 	</body>
 </html>
