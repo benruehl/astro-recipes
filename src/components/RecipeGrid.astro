@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import NewRecipeCard from '../components/recipe-card/RecipeCard.astro';
+import RecipeCard from '../components/recipe-card/RecipeCard.astro';
 import Grid from './common/Grid.astro';
 
 type Recipe = CollectionEntry<'recipes'>;
@@ -18,9 +18,9 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
 
 {categories.map(category => (
     <h2 id={categoryMap[category]}>{categoryMap[category]}</h2>
-    <Grid class="cards-list" minItemWidth="300px" maxColumns={3} gap="4rem">
+    <Grid class="cards-list" minItemWidth="300px" maxColumns={3} gap="min(5vw, 4rem)">
         {allRecipes.filter(r => r.data.category === category).map(recipe => {
-            return <NewRecipeCard recipe={recipe}/>
+            return <RecipeCard recipe={recipe}/>
         })}
     </Grid>
 ))}
@@ -35,6 +35,10 @@ const categories = Object.keys(categoryMap) as Array<keyof typeof categoryMap>;
     .cards-list {
         position: relative;
         margin-bottom: 2rem;
+
+        @media (max-width: $md) {
+            grid-template-columns: minmax(0, 1fr);
+        }
 
         &::before {
             content: "";
