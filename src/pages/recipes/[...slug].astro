@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import NewRecipeDetails from '../../components/RecipeDetails.astro';
+import RecipeDetails from '../../components/RecipeDetails.astro';
+import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
 	const allRecipes = await getCollection('recipes');
@@ -19,11 +20,21 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title={recipe.data.title}>
+	<header>
+		<nav>
+			<a class="back-button" href={baseUrl}>
+				<Icon name="solar:arrow-left-linear" size={24} />
+				Zur Übersicht
+			</a>
+		</nav>
+	</header>
 	<main>
-		<NewRecipeDetails recipe={recipe}/>
+		<RecipeDetails recipe={recipe}/>
 	</main>
 </BaseLayout>
 
@@ -32,10 +43,46 @@ const { recipe } = Astro.props;
         width: 900px;
 		margin-bottom: 1rem;
 
+		@media (max-width: $md) {
+			--header-inset-top: 3rem;
+		}
+
 		@media (min-width: $md) {
-			margin-top: 4rem;
+			margin-top: 2rem;
 		}
 	}
+
+	header {
+        width: 900px;
+		display: flex;
+		position: relative;
+	}
+
+	nav {
+	
+		@media (max-width: $md) {
+			position: absolute;
+			z-index: 100;
+		}
+	}
+
+    .back-button {
+        display: flex;
+        gap: 1ch;
+        margin-top: 1rem;
+		padding: .2em 1em;
+        color: rgb(var(--text-base));
+		border-radius: .25em;
+        text-decoration: none;
+
+		&:hover {
+			background: rgba(var(--text-base), .1);
+		}
+
+		@media (max-width: $md) {
+			padding-left: 0;
+		}
+    }
 
 	// ### START WORKAROUND ###
 	// Makes missing clipping during view-transitions less noticeable.
