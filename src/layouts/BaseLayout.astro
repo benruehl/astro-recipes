@@ -77,7 +77,7 @@ const backgroundImage = await getImage({src: backgroundTexture});
 
 	h1 {
 		font-family: 'Averia Serif Libre', system-ui;
-		font-size: min(4rem, 14vw);
+		font-size: clamp(2rem, 14vw, 4rem);
 		line-height: 1;
 		margin-bottom: .5em;
 		text-align: center;
@@ -85,7 +85,7 @@ const backgroundImage = await getImage({src: backgroundTexture});
 
 	h2 {
 		font-family: 'Averia Serif Libre', system-ui;
-		font-size: min(2rem, 7vw);
+		font-size: clamp(1.3rem, 7vw, 2rem);
 		font-weight: 400;
 		line-height: 1;
 		margin-top: 3rem;
@@ -94,7 +94,7 @@ const backgroundImage = await getImage({src: backgroundTexture});
 	}
 
 	h3 {
-		font-size: 1.5rem;
+		font-size: clamp(1rem, 6vw, 1.5rem);
 		font-weight: 400;
 		line-height: 1;
 		hyphens: auto;
